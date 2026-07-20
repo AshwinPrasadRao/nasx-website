@@ -9,6 +9,7 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720b">
 ---
 
 ```{=html}
@@ -138,13 +139,12 @@ Overview
     <div class="apply-grid">
       <div class="apply-lead">
         <span class="eyebrow">Fellowship award</span>
-        <h2 class="gcpp-h2">INR 1,00,000 per track</h2>
+        <h2 class="gcpp-h2">Recognising the best work</h2>
         <div class="apply-fee">
-          <span class="fee-label">Cash award</span>
+          <span class="fee-label">Cash award · top performer per track</span>
           <span class="fee-amt">₹1,00,000</span>
-          <span class="fee-note">to the top performer in each track, at the conclusion of the fellowship.</span>
         </div>
-        <span class="apply-tag">The fellowship is open to anyone who would like to publish original and independent work. We look for intellectual seriousness and a genuine commitment to producing sustained scholarship.</span>
+        <p class="nasx-prose">Awarded to the top performer in each track at the conclusion of the fellowship. The fellowship is open to anyone who would like to publish original and independent work — we look for intellectual seriousness and a genuine commitment to producing sustained scholarship.</p>
       </div>
       <div>
         <span class="eyebrow">Who should apply</span>
@@ -173,17 +173,16 @@ Overview
     <div class="apply-grid">
       <div class="apply-lead">
         <span class="eyebrow">Programme fee</span>
-        <h2 class="gcpp-h2">INR 45,000</h2>
+        <h2 class="gcpp-h2">A year-long commitment</h2>
         <div class="apply-fee">
-          <span class="fee-label">Payable on joining the cohort</span>
+          <span class="fee-label">Payable on joining · seats limited to 6 per cohort</span>
           <span class="fee-amt">₹45,000</span>
-          <span class="fee-note">seats limited to 6 per cohort.</span>
         </div>
       </div>
       <div>
-        <p class="apply-tag" style="margin-bottom:16px;">For the upcoming cohort, we have redesigned the fellowship to nurture a smaller group of researchers committed to producing rigorous, high-quality scholarship over the course of a year. The fee asserts the programme's emphasis on long-term commitment, regular engagement, and the successful completion of an original research project.</p>
-        <p class="apply-tag" style="margin-bottom:16px;">Fellows sign a formal commitment document on joining. All public outputs produced during the fellowship are subject to organisational review before publication.</p>
-        <p class="apply-tag">This is primarily an online fellowship with no requirement for frequent travel. The two in-person workshops will require fellows to travel to either Delhi or Bengaluru; fellows are expected to self-fund their travel and accommodation.</p>
+        <p class="nasx-prose">For the upcoming cohort, we have redesigned the fellowship to nurture a smaller group of researchers committed to producing rigorous, high-quality scholarship over the course of a year. The fee asserts the programme's emphasis on long-term commitment, regular engagement, and the successful completion of an original research project.</p>
+        <p class="nasx-prose">Fellows sign a formal commitment document on joining. All public outputs produced during the fellowship are subject to organisational review before publication.</p>
+        <p class="nasx-prose">This is primarily an online fellowship with no requirement for frequent travel. The two in-person workshops will require fellows to travel to either Delhi or Bengaluru; fellows are expected to self-fund their travel and accommodation.</p>
       </div>
     </div>
   </div>

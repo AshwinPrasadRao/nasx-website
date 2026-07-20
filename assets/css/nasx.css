@@ -4,6 +4,17 @@
    Brand: #620d3c wine, #f1a222 gold. Hairline borders, no shadows.
    ============================================================ */
 
+/* ─── Readable body prose (award / fee blurbs, etc.) ──────────── */
+.programme-page .nasx-prose {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--tk-ink-70);
+  margin: 0 0 16px;
+}
+.programme-page .nasx-prose:last-child { margin-bottom: 0; }
+/* Fee note / label a touch larger so the definition reads clearly */
+.programme-page .apply-fee .fee-note { font-size: 13.5px; }
+
 /* ─── Carousel (subject-matter specialists · previous cohorts) ─── */
 .programme-page .nasx-carousel {
   position: relative;
