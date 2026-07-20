@@ -1,0 +1,30 @@
+```{=html}
+<div class="listing-section">
+    <% if (items.length> 0) { %>
+        <div class="listing-grid">
+            <% for (const item of items) { %>
+                <a href="<%= item.link %>" class="listing-card-accent">
+                    <div class="newsletter-content-section">
+                        <div class="newsletter-logo">
+                            <img src="<%= templateParams.path_prefix %><%= item.image %>" alt="<%= item.title %>" />
+                        </div>
+                        <div class="newsletter-title">
+                            <h6>
+                                <%= item.title %>
+                            </h6>
+                        </div>
+                        <div class="newsletter-description">
+                            <%= item.description %>
+                        </div>
+                        <div class="newsletter-footer">
+                            <%= item.footer %>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+        <% } else { %>
+            <p>No items found.</p>
+            <% } %>
+</div>
+```

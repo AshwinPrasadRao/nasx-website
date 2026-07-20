@@ -1,0 +1,62 @@
+/* Navbar Styling */
+
+.navbar {
+    height: clamp($navbar-height-mobile, 10vw, $navbar-height-desktop);
+    padding: 0 clamp(15px, 4.8vw, 48px);
+    // position: fixed !important;
+    width: 100%;
+
+    .navbar-container {
+        max-width: 1280px;
+    }
+
+    .navbar-logo {
+        max-height: clamp(42px, 4.2vw, 62px);
+    }
+
+    .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: clamp(14px, 1.6vw, 16px);
+        line-height: 1.3;
+        letter-spacing: 0.3px;
+        padding: clamp(6px, 0.8vw, 8px) clamp(10px, 1.2vw, 12px);
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0 clamp(5px, 0.8vw, 8px);
+    }
+
+    /* Navbar Search Icon Color */
+    .aa-SubmitIcon {
+        color: $accent-color !important;
+    }
+}
+
+/* Navbar Mobile Adjustments */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0 clamp(12px, 2.4vw, 24px);
+    }
+
+    .navbar-collapse {
+        background-color: $primary-color;
+        padding: 16px;
+
+        .navbar-nav .nav-link {
+            font-size: 16px;
+            padding: 10px 15px;
+        }
+    }
+    .navbar-toggler {
+        padding: 5px 10px;
+
+        .navbar-toggler-icon {
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+}

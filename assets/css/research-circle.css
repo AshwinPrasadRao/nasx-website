@@ -1,0 +1,205 @@
+/* ──────────────────────────────────────────────────────────────────────
+   Takshashila — research-circle page family
+   Layout components shared across research-programme pages (High-Tech
+   Geopolitics, Indo-Pacific Studies, Strategic Studies, etc.).
+
+   Components in this file:
+     .about-narr               multi-column narrative
+     .research-featres         featured research strip
+     .focus-list / .focus-row  focus areas with publication sidebar
+     .research-pubs            publication list wrapper
+     .research-tiles/.tile     blog tile grid (3-col)
+     .nrow                     compact news rows
+     .research-courses/.course course cards (3-col)
+
+   Newsletter cards (.np-grid/.np-tile) now live in takshashila-base.css —
+   they're used sitewide (home page + every research-circle page), not
+   specific to this page family.
+
+   The masthead is NOT in this file — research-circle pages reuse the
+   shared `.programme-page > .gcpp-hero` template, which lives in
+   takshashila-base.css (loaded globally). The markup still wraps the
+   masthead in a `.programme-page` div so the scoped hero rules apply.
+
+   Pairs with: assets/css/takshashila-base.css (tokens, chrome, shared
+   listing primitives, page-columns neutralizer). Loaded via include-in-
+   header from each research-circle .qmd.
+
+   Breakpoints: 960 + 560 (matching the policy school stack). Where the
+   handoff used 720 or 900, we snap to the nearest anchor.
+   ────────────────────────────────────────────────────────────────────── */
+
+/* Hide Quarto's default title block — research-circle pages render their
+   own masthead. The custom title-block partial in includes/title-block.html
+   is bypassed when a page has listings (Quarto applies its own template). */
+#title-block-header { display: none; }
+
+/* ── About narrative (multi-column body copy) ─────────────────────── */
+.about-narr { display: block; }
+.about-narr .body { columns: 2; column-gap: 56px; }
+.about-narr .body p {
+  font-size: 16px; line-height: 1.65; color: var(--tk-ink-70);
+  text-wrap: pretty; margin: 0 0 18px; break-inside: avoid;
+}
+
+/* ── Featured research strip ──────────────────────────────────────── */
+.research-featres {
+  border-left: 2px solid var(--tk-primary); padding: 8px 0 8px 32px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+}
+.research-featres .fr-eyebrow {
+  font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--tk-primary); margin-bottom: 12px;
+}
+.research-featres h3 {
+  font-family: var(--tk-serif); font-weight: 400; font-size: 44px;
+  line-height: 1.0; letter-spacing: -0.025em; margin: 0; text-wrap: balance;
+}
+.research-featres p {
+  font-family: var(--tk-serif); font-weight: 300; font-size: 17px;
+  line-height: 1.55; color: var(--tk-ink-70); margin: 0 0 20px; text-wrap: pretty;
+}
+.research-featres .fr-link {
+  font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--tk-ink);
+  border-bottom: 1px solid var(--tk-ink); padding-bottom: 3px; display: inline-block;
+}
+
+/* ── Focus areas (1fr + 320px sidebar of publications) ────────────── */
+.focus-list { border-top: 2px solid var(--tk-ink); border-bottom: var(--tk-rule); }
+.focus-row {
+  display: grid; grid-template-columns: 7fr 5fr; gap: 64px;
+  padding: 36px 0; border-bottom: var(--tk-rule); align-items: start;
+}
+.focus-row:last-child { border-bottom: none; }
+.focus-row .fn {
+  font-family: var(--tk-mono); font-size: 13px; color: var(--tk-primary);
+  letter-spacing: 0.08em; padding-top: 8px;
+}
+.focus-row .ft {
+  font-family: var(--tk-serif); font-size: 32px; line-height: 1.1;
+  letter-spacing: -0.015em; margin: 0 0 14px; text-wrap: balance;
+}
+.focus-row .ft em { font-style: italic; color: var(--tk-primary); }
+.focus-row .fb {
+  font-family: var(--tk-serif); font-weight: 300; font-size: 17px;
+  line-height: 1.55; color: var(--tk-ink-70); margin: 0 0 14px;
+  max-width: 620px; text-wrap: pretty;
+}
+.focus-row .fl {
+  font-family: var(--tk-mono); font-size: 11px; color: var(--tk-ink);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  border-bottom: 1px solid var(--tk-ink); padding-bottom: 3px;
+}
+.focus-row .fpubs { display: grid; gap: 6px; padding-top: 4px; }
+.focus-row .fpubs .pl {
+  font-family: var(--tk-mono); font-size: 10px; color: var(--tk-ink-50);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.focus-row .fpubs a {
+  font-family: var(--tk-serif); font-size: 14px; line-height: 1.4;
+  color: var(--tk-ink); padding: 6px 0; border-bottom: 1px dotted var(--tk-ink-20);
+}
+.focus-row .fpubs a:last-child { border-bottom: none; }
+
+/* ── Publication list wrapper specific to research-circle pages ──── */
+.research-pubs { border-top: var(--tk-rule); border-bottom: var(--tk-rule); }
+.research-pubs .tk-pub-title small {
+  display: block; font-family: var(--tk-mono); font-size: 11px;
+  color: var(--tk-ink-50); letter-spacing: 0.06em; margin-top: 4px; font-weight: normal;
+}
+
+/* ── Blog tile grid (denser variant than .tile in base) ──────────── */
+.research-tiles { display: grid; grid-template-columns: repeat(3, 1fr); border: var(--tk-rule); background: var(--tk-paper); }
+.research-tile { padding: 22px 24px 26px; border-right: var(--tk-rule); border-bottom: var(--tk-rule); }
+.research-tiles > .research-tile:nth-child(3n) { border-right: none; }
+.research-tiles > .research-tile:nth-last-child(-n+3) { border-bottom: none; }
+.research-tile .tn {
+  font-family: var(--tk-mono); font-size: 10px; color: var(--tk-primary);
+  letter-spacing: 0.1em; margin-bottom: 10px;
+}
+.research-tile .tt {
+  font-family: var(--tk-serif); font-size: 19px; line-height: 1.25;
+  letter-spacing: -0.005em; margin: 0 0 14px; text-wrap: pretty;
+}
+.research-tile .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.research-tile .tags span {
+  font-family: var(--tk-mono); font-size: 9.5px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--tk-ink-50);
+  padding: 2px 6px; border: 1px solid var(--tk-ink-20);
+}
+.research-tile .tm {
+  font-family: var(--tk-mono); font-size: 10.5px; color: var(--tk-ink-50);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+/* ── Compact news rows (title | source | date) ────────────────────── */
+.nrow {
+  display: grid; grid-template-columns: 1fr 220px 110px; gap: 24px;
+  padding: 18px 0; border-bottom: var(--tk-rule); align-items: baseline;
+}
+.nrow:last-child { border-bottom: none; }
+.nrow .nt {
+  font-family: var(--tk-serif); font-size: 19px; line-height: 1.3;
+  letter-spacing: -0.005em; margin: 0; text-wrap: pretty;
+}
+.nrow .ns {
+  font-family: var(--tk-mono); font-size: 11px; color: var(--tk-ink-70);
+  letter-spacing: 0.06em;
+}
+.nrow .ns b { color: var(--tk-ink); font-weight: 500; }
+.nrow .nd {
+  font-family: var(--tk-mono); font-size: 11px; color: var(--tk-ink-50);
+  letter-spacing: 0.08em; text-align: right;
+}
+
+/* ── Course cards (3-col, hover-fill) ─────────────────────────────── */
+.research-courses { display: grid; grid-template-columns: repeat(3, 1fr); border: var(--tk-rule); background: var(--tk-paper); }
+.research-course {
+  padding: 32px 30px 36px; border-right: var(--tk-rule);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: background 0.15s ease;
+}
+.research-course:last-child { border-right: none; }
+.research-course:hover { background: var(--tk-bg-deep); }
+.research-course .c-type {
+  font-family: var(--tk-mono); font-size: 10.5px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--tk-primary);
+}
+.research-course h3 {
+  font-family: var(--tk-serif); font-size: 26px; line-height: 1.15;
+  letter-spacing: -0.01em; margin: 0; font-weight: 500; text-wrap: pretty;
+}
+.research-course p {
+  font-family: var(--tk-serif); font-weight: 300; font-size: 15px;
+  line-height: 1.55; color: var(--tk-ink-70); margin: 0; flex: 1; text-wrap: pretty;
+}
+.research-course .c-link {
+  font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--tk-ink);
+  border-bottom: 1px solid var(--tk-ink); padding-bottom: 3px;
+  align-self: flex-start; margin-top: 6px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .research-featres { grid-template-columns: 1fr; gap: 20px; }
+
+  .focus-row { grid-template-columns: 1fr; gap: 16px; }
+  .focus-row .ft { font-size: 24px; }
+
+  .research-courses { grid-template-columns: 1fr; }
+  .research-course { border-right: none; border-bottom: var(--tk-rule); }
+  .research-course:last-child { border-bottom: none; }
+}
+
+@media (max-width: 560px) {
+  .about-narr .body { columns: 1; }
+
+  .research-tiles { grid-template-columns: 1fr; }
+  .research-tile { border-right: none; border-bottom: var(--tk-rule); }
+  .research-tiles > .research-tile:last-child { border-bottom: none; }
+
+  .nrow { grid-template-columns: 1fr; gap: 4px; }
+  .nrow .nd { text-align: left; }
+}

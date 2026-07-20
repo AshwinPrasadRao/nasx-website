@@ -1,0 +1,25 @@
+/* Variable Font Declarations */
+@font-face {
+    font-family: "Roboto";
+    src: url("fonts/Roboto.woff2") format("woff2-variations");
+    font-weight: 100 900; /* Range from thin to black */
+    font-stretch: 75% 125%;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("fonts/Inter.woff2") format("woff2-variations");
+    font-weight: 100 900; /* Range from thin to black */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto Mono";
+    src: url("fonts/RobotoMono.woff2") format("woff2-variations");
+    font-weight: 100 700; /* variable weight axis */
+    font-style: normal;
+    font-display: swap;
+}

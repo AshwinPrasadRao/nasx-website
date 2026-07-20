@@ -1,0 +1,113 @@
+```{=html}
+<div class="content-outer" id="<%= templateParams.carousel_id %>">
+  <div class="carousel-container">
+    <div class="carousel-content">
+      <% for (const item of items) { %>
+        <a href="<%= item.path %>">
+          <div class="content-card" data-author-string="<%= String(item.author) %>">
+            <h2 class="content-title">
+              <%= item.title %>
+            </h2>
+            <div class="content-authors"></div>
+            <div class="read-more">Read more <span class="arrow">→</span></div>
+          </div>
+        </a>
+        <% } %>
+    </div>
+  </div>
+
+  <div class="carousel-nav-container">
+    <button class="content-nav-btn prev-btn" aria-label="Previous publications">
+      <span aria-hidden="true">&lt;</span>
+    </button>
+
+    <button class="content-nav-btn next-btn" aria-label="Next publications">
+      <span aria-hidden="true">&gt;</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carouselId = "<%= templateParams.carousel_id %>";
+    const carouselContainer = document.getElementById(carouselId);
+
+    if (!carouselContainer) {
+      console.error("Carousel container not found:", carouselId);
+      return;
+    }
+
+    // Process authors for each card
+    const contentCards = carouselContainer.querySelectorAll('.content-card');
+    contentCards.forEach(card => {
+      const authorsElement = card.querySelector('.content-authors');
+      const authorString = card.getAttribute('data-author-string');
+      
+      if (authorString && authorsElement) {
+        // Parse the comma-separated author string
+        const authors = authorString.split(',').map(author => author.trim());
+        
+        let authorText = '';
+        if (authors.length === 1) {
+          authorText = authors[0];
+        } else if (authors.length === 2) {
+          authorText = authors[0] + ', ' + authors[1];
+        } else if (authors.length > 2) {
+          authorText = authors[0] + ', ' + authors[1] + ' et al.';
+        }
+        
+        authorsElement.textContent = authorText;
+      } else if (authorsElement) {
+        authorsElement.style.display = 'none';
+      }
+    });
+
+    const carousel = carouselContainer.querySelector('.carousel-content');
+    const prevBtn = carouselContainer.querySelector('.prev-btn');
+    const nextBtn = carouselContainer.querySelector('.next-btn');
+
+    // Set initial button state
+    updateButtonState();
+
+    // Determine scroll amount based on screen size
+    function getScrollAmount() {
+      // On mobile, scroll full width
+      if (window.innerWidth < 768) {
+        return carousel.offsetWidth;
+      }
+      // On tablet, scroll half width
+      else if (window.innerWidth < 1200) {
+        return carousel.offsetWidth / 2;
+      }
+      // On desktop, scroll one third width
+      else {
+        return carousel.offsetWidth / 3;
+      }
+    }
+
+    // Handle button clicks
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+
+    // Update button state on scroll
+    carousel.addEventListener('scroll', updateButtonState);
+    window.addEventListener('resize', updateButtonState);
+
+    function updateButtonState() {
+      const isAtStart = carousel.scrollLeft <= 10;
+      const isAtEnd = carousel.scrollWidth - carousel.clientWidth - carousel.scrollLeft <= 10;
+
+      prevBtn.disabled = isAtStart;
+      prevBtn.style.opacity = isAtStart ? '0.5' : '1';
+
+      nextBtn.disabled = isAtEnd;
+      nextBtn.style.opacity = isAtEnd ? '0.5' : '1';
+    }
+  });
+</script>
+```

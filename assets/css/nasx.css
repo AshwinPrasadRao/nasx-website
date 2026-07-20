@@ -1,0 +1,117 @@
+/* ============================================================
+   NASx Fellowship — carousel + track-page extras
+   Scoped to .programme-page so it inherits the --tk-* tokens.
+   Brand: #620d3c wine, #f1a222 gold. Hairline borders, no shadows.
+   ============================================================ */
+
+/* ─── Carousel (subject-matter specialists · previous cohorts) ─── */
+.programme-page .nasx-carousel {
+  position: relative;
+  margin-top: 24px;
+}
+.programme-page .nasx-track {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.programme-page .nasx-track::-webkit-scrollbar { display: none; }
+
+.programme-page .nc-card {
+  flex: 0 0 clamp(220px, 24%, 280px);
+  scroll-snap-align: start;
+  padding: 20px 20px 24px;
+  border-right: var(--tk-rule);
+  text-decoration: none;
+  color: var(--tk-ink);
+  display: block;
+}
+.programme-page .nc-card:last-child { border-right: none; }
+
+.programme-page .nc-photo {
+  aspect-ratio: 1;
+  margin-bottom: 16px;
+  position: relative;
+  background: repeating-linear-gradient(135deg, rgba(23,20,19,0.04) 0 8px, rgba(23,20,19,0.09) 8px 16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.programme-page .nc-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.programme-page .nc-photo .nc-initials {
+  font-family: var(--tk-display);
+  font-size: 32px;
+  color: var(--tk-ink-50);
+  letter-spacing: 0.02em;
+}
+.programme-page .nc-card strong {
+  display: block;
+  font-family: var(--tk-display);
+  font-size: 17px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.programme-page .nc-card .nc-role {
+  display: block;
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tk-primary);
+  margin-bottom: 8px;
+}
+.programme-page .nc-card .nc-bio {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--tk-ink-70);
+}
+
+/* Nav buttons */
+.programme-page .nasx-carousel .nc-nav {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+.programme-page .nc-btn {
+  width: 44px;
+  height: 44px;
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+  color: var(--tk-primary);
+  font-family: var(--tk-mono);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+.programme-page .nc-btn:hover:not(:disabled) { background: var(--tk-bg-deep); }
+.programme-page .nc-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* Placeholder ribbon so reviewers know real data is coming */
+.programme-page .nasx-placeholder-note {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--tk-ink-50);
+}
+
+@media (max-width: 560px) {
+  .programme-page .nc-card { flex-basis: 78%; }
+}

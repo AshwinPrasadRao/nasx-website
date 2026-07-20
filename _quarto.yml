@@ -1,0 +1,79 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "index.qmd"
+    - "pages/fellowships/nasx/*.qmd"
+    - "404.qmd"
+  resources:
+    - assets/
+
+execute:
+  freeze: false
+  cache: false
+
+website:
+  title: "Takshashila Institution"
+  favicon: assets/images/favicon.ico
+  # Preview build of the NAS Fellowship (NASx) pages. Not the main site.
+  site-url: https://takshashila.org.in
+  search: false
+  navbar:
+    background: "#620d3c"
+    foreground: "white"
+    collapse-below: lg
+    pinned: true
+    logo: "assets/images/main-logo-dark.svg"
+    logo-alt: "Takshashila Institution"
+    logo-href: "pages/fellowships/nasx/index.qmd"
+    title: false
+    right:
+      - text: "NAS Fellowship"
+        menu:
+          - text: "Overview"
+            href: "pages/fellowships/nasx/index.qmd"
+          - text: "NAS-Technology Track (NAST)"
+            href: "pages/fellowships/nasx/nast.qmd"
+          - text: "NAS-China Track (NASC)"
+            href: "pages/fellowships/nasx/nasc.qmd"
+          - text: "NAS-Pakistan Track (NASP)"
+            href: "pages/fellowships/nasx/nasp.qmd"
+      - text: "Our Research"
+        href: "https://takshashila.org.in/pages/research-areas/"
+      - text: "Policy School"
+        href: "https://takshashila.org.in/pages/policy-school/"
+      - text: "About Us"
+        menu:
+          - text: "Mission"
+            href: "https://takshashila.org.in/pages/mission.html"
+          - text: "Team"
+            href: "https://takshashila.org.in/pages/team/"
+          - text: "Milestones"
+            href: "https://takshashila.org.in/pages/milestones.html"
+      - text: "Donate"
+        href: "https://pages.razorpay.com/pl_NPItghFeJGN6vP/view"
+
+format:
+  html:
+    include-in-header:
+      - includes/favicon-meta.html
+    css:
+      - assets/css/takshashila-base-20260707.css
+    backgroundcolor: "#FDFDFD"
+    theme:
+      - default
+      - takshashila.scss
+    fontfamily: Inter
+    mainfont: Inter
+    anchor-sections: false
+    toc: false
+    page-layout: article
+    grid:
+      body-width: 1280px
+      margin-width: 300px
+      sidebar-width: 300px
+    template-partials:
+      - includes/title-block.html
+      - includes/toc.html
+    include-after-body:
+      file: "includes/footer.html"

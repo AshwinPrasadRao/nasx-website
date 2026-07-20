@@ -1,0 +1,10 @@
+/.quarto/
+/_site/
+/.vscode/
+site_libs/
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+**/*.quarto_ipynb
+/_preview

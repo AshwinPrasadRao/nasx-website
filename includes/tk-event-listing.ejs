@@ -1,0 +1,64 @@
+```{=html}
+<%
+// Split into upcoming (ascending) and past (descending) — same .ev-card
+// markup as includes/tk-event-card.ejs (home page "Recent convenings").
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const upcomingEvents = items.filter(item => {
+  const eventDate = new Date(item.date);
+  eventDate.setHours(0, 0, 0, 0);
+  return eventDate >= today;
+}).sort((a, b) => new Date(a.date) - new Date(b.date));
+
+const pastEvents = items.filter(item => {
+  const eventDate = new Date(item.date);
+  eventDate.setHours(0, 0, 0, 0);
+  return eventDate < today;
+}).sort((a, b) => new Date(b.date) - new Date(a.date));
+%>
+
+<div class="tk-section-head"><h2 class="tk-h2">Upcoming Events</h2></div>
+<% if (upcomingEvents.length > 0) { %>
+  <div class="ev-cards">
+    <% for (const item of upcomingEvents) { %>
+      <a class="ev-card" href="<%= item.path %>"<% if (item.path && item.path.startsWith('http')) { %> target="_blank" rel="noopener"<% } %>>
+        <div class="ev-body">
+          <% if (item.date) {
+            const d = new Date(item.date);
+          %>
+            <div class="ev-date"><%= d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase() %></div>
+          <% } %>
+          <h3><%= item.title %></h3>
+          <% if (item.description) { %><p><%= item.description %></p><% } %>
+          <span class="ev-link">Read more →</span>
+        </div>
+      </a>
+    <% } %>
+  </div>
+<% } else { %>
+  <p>No upcoming events.</p>
+<% } %>
+
+<div class="tk-section-head" style="margin-top: 56px;"><h2 class="tk-h2">Past Events</h2></div>
+<% if (pastEvents.length > 0) { %>
+  <div class="ev-cards">
+    <% for (const item of pastEvents) { %>
+      <a class="ev-card" href="<%= item.path %>"<% if (item.path && item.path.startsWith('http')) { %> target="_blank" rel="noopener"<% } %>>
+        <div class="ev-body">
+          <% if (item.date) {
+            const d = new Date(item.date);
+          %>
+            <div class="ev-date"><%= d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase() %></div>
+          <% } %>
+          <h3><%= item.title %></h3>
+          <% if (item.description) { %><p><%= item.description %></p><% } %>
+          <span class="ev-link">Read more →</span>
+        </div>
+      </a>
+    <% } %>
+  </div>
+<% } else { %>
+  <p>No past events.</p>
+<% } %>
+```

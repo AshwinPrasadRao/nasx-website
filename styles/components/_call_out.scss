@@ -1,0 +1,88 @@
+/* Callout Box */
+
+.callout-box {
+    background-color: white;
+    border-left: 4px solid $primary-color;
+    padding: clamp(20px, 3vw, 30px);
+    margin: clamp(40px, 6vw, 60px) 0;
+    border-radius: 0 6px 6px 0;
+}
+
+.callout-box h3 {
+    color: $primary-color;
+    font-size: clamp(20px, 2.5vw, 24px);
+    margin-bottom: clamp(12px, 2vw, 16px);
+    font-weight: 500;
+}
+
+.callout-box p {
+    color: #505050;
+    font-size: clamp(15px, 1.8vw, 17px);
+    line-height: 1.6;
+    margin-bottom: clamp(16px, 2.5vw, 20px);
+    font-weight: 300;
+}
+
+.callout-link {
+    color: $primary-color;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: clamp(14px, 1.6vw, 16px);
+    display: inline-flex;
+    align-items: center;
+}
+
+.callout-link::after {
+    content: "→";
+    margin-left: 6px;
+    transition: transform 0.2s ease;
+}
+
+.callout-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    /* Grid layout for desktop */
+    .research-areas-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(20px, 3vw, 30px);
+    }
+
+    .research-areas-container h2 {
+        grid-column: 1 / -1;
+    }
+
+    .callout-box {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 767px) {
+    .research-areas-hero-content {
+        padding: 20px;
+    }
+
+    .research-areas-hero h1 {
+        font-size: 28px;
+    }
+
+    .research-areas-hero .subtitle {
+        font-size: 16px;
+    }
+
+    .research-area-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .research-area-card h3 {
+        font-size: 20px;
+    }
+
+    .research-area-card p {
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,22 @@
+```{=html}
+<div class="tk-pub-list">
+  <% for (const item of items) { %>
+    <a class="tk-pub" href="<%= item.path %>">
+      <span class="tk-pub-title">
+        <%= item.title %>
+        <% if (item.authors || item.author) { %>
+          <small><%
+            const a = item.authors || item.author;
+            if (Array.isArray(a)) { %><%= a.join(", ") %><% } else { %><%= a %><% }
+          %></small>
+        <% } %>
+      </span>
+      <% if (item.date) {
+        const d = new Date(item.date);
+      %>
+        <span class="tk-pub-date"><%= d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase() %></span>
+      <% } %>
+    </a>
+  <% } %>
+</div>
+```

@@ -1,0 +1,73 @@
+```{=html}
+<%
+  // Dashboard tab template
+  // Each item in dashboards.yml should have:
+  //   title       – display name of the dashboard
+  //   path        – external URL to the dashboard (Quarto requires "path", not "url")
+  //   description – one-line description (optional)
+  //   date        – date created/updated (optional)
+  //   image       – thumbnail image path (optional)
+%>
+<% if (!items || items.length === 0) { %>
+<!-- sentinel: JS uses this to hide the section when no dashboards exist -->
+<span class="section-empty-sentinel" style="display:none;"></span>
+<% } else { %>
+<% var displayItems = items.slice().reverse(); %>
+<div class="dashboard-tabs-wrapper">
+  <div class="dashboard-tab-buttons" role="tablist">
+    <% displayItems.forEach(function(item, i) { %>
+    <button class="dashboard-tab-btn<%= i === 0 ? ' active' : '' %>"
+            role="tab"
+            data-tab="<%= i %>"
+            aria-selected="<%= i === 0 ? 'true' : 'false' %>">
+      <%= item.title %>
+    </button>
+    <% }); %>
+  </div>
+  <div class="dashboard-tab-panels">
+    <% displayItems.forEach(function(item, i) { %>
+    <div class="dashboard-tab-panel<%= i === 0 ? ' active' : '' %>"
+         data-tab="<%= i %>"
+         role="tabpanel">
+      <div class="dashboard-iframe-bar">
+        <a href="<%= item.path || '#' %>" target="_blank" rel="noopener" class="dashboard-open-link">Open in new tab →</a>
+      </div>
+      <div class="dashboard-embed-wrapper">
+        <% if (item.image) { %>
+        <a href="<%= item.path || '#' %>" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="<%= item.image %>" class="dashboard-fallback-img" alt="<%= item.title %>" loading="lazy">
+        </a>
+        <% } %>
+        <iframe src="<%= item.path || '#' %>"
+                title="<%= item.title %>"
+                class="dashboard-iframe<%= item.image ? ' has-fallback' : '' %>"
+                loading="lazy"
+                onload="this.classList.add('iframe-loaded')"
+                onerror="this.classList.add('iframe-error')"
+                sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
+        </iframe>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>
+<script>
+(function() {
+  var wrapper = document.querySelector('.dashboard-tabs-wrapper');
+  if (!wrapper) return;
+  var btns = wrapper.querySelectorAll('.dashboard-tab-btn');
+  var panels = wrapper.querySelectorAll('.dashboard-tab-panel');
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var tab = btn.getAttribute('data-tab');
+      btns.forEach(function(b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      wrapper.querySelector('.dashboard-tab-panel[data-tab="' + tab + '"]').classList.add('active');
+    });
+  });
+})();
+</script>
+<% } %>
+```

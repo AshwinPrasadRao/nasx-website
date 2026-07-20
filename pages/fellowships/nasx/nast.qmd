@@ -1,0 +1,179 @@
+---
+title: "NAS-Technology Track (NAST)"
+description: "NAST builds high-quality scholarship at the intersection of technology and geopolitics — a domain central to national power yet under-studied in Indian policy research."
+page-layout: full
+toc: false
+anchor-sections: false
+section-divs: false
+include-in-header:
+  - text: |
+      <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
+      <link rel="stylesheet" href="../../../assets/css/research-circle.css">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720">
+include-after-body:
+  - text: |
+      <script src="../../../assets/js/nasx-carousel.js?v=20260720" defer></script>
+---
+
+```{=html}
+<!-- ============ BREADCRUMB ============ -->
+<div class="tk-crumb">
+  <div class="inner"><a href="index.qmd">NAS FELLOWSHIP</a> &nbsp;/&nbsp; <b>NAST</b></div>
+</div>
+```
+
+::: {.programme-page}
+
+<!-- ============ HERO ============ -->
+::: {.gcpp-hero}
+::: {.gcpp-hero__grid}
+::: {.gcpp-hero__lead}
+```{=html}
+<h1 class="gcpp-hero__h1">NAS&#8209;Technology Track</h1>
+```
+
+::: {.gcpp-hero__lede}
+NAST seeks to build high-quality scholarship at the intersection of technology and geopolitics — an area increasingly central to questions of national power, economic strategy, and foreign policy, yet under-studied in Indian academia and policy research.
+:::
+:::
+
+::: {.gcpp-hero__aside}
+::: {.eyebrow}
+Quick facts
+:::
+| | |
+|---|---|
+| **DOMAIN**    | Technology & geopolitics |
+| **COURSE**    | 12-week GCPP-TP programme |
+| **PROPOSAL**  | 1,000–1,500 words + 500–800-word SoP |
+| **FELLOWS**   | Up to 6 per cohort |
+:::
+:::
+:::
+
+```{=html}
+<!-- ============ RESEARCH DOMAINS ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <span class="eyebrow">Research domains</span>
+    <h2 class="gcpp-h2">Propose your own topic</h2>
+    <p class="apply-tag" style="margin-bottom:24px;">This is a general call for research proposals. Fellows are not required to work on pre-assigned themes. You propose a topic within the broad domain of technology and geopolitics. The domains encompass, but are not limited to, the following areas.</p>
+    <ul class="unit-list">
+      <li><span class="u">T.01</span> Artificial Intelligence and National Security</li>
+      <li><span class="u">T.02</span> Semiconductors and Supply Chain Resilience</li>
+      <li><span class="u">T.03</span> Cybersecurity and Digital Infrastructure</li>
+      <li><span class="u">T.04</span> Space Technologies and Geopolitics</li>
+      <li><span class="u">T.05</span> Lethal Autonomous Weapons and Drones</li>
+      <li><span class="u">T.06</span> Biotechnology and Biosecurity</li>
+      <li><span class="u">T.07</span> Quantum Technologies</li>
+      <li><span class="u">T.08</span> Nuclear Technologies</li>
+      <li><span class="u">T.09</span> Geospatial Technologies</li>
+      <li><span class="u">T.10</span> Technology, Geoeconomics, and National Power</li>
+    </ul>
+    <p class="apply-tag" style="margin-top:24px;">As part of the fellowship, fellows will undertake Takshashila's flagship <strong>12-week GCPP-TP programme</strong> to update themselves with the geopolitics of the current age of technology.</p>
+  </div>
+</div>
+
+<!-- ============ SUBJECT-MATTER SPECIALISTS ============ -->
+<!-- PLACEHOLDER carousel: replace .nc-card contents (photo, name, role, bio) with real specialists. -->
+<div class="gcpp-section alt">
+  <div class="gcpp-container">
+    <span class="eyebrow">Guidance</span>
+    <h2 class="gcpp-h2">Subject-matter specialists</h2>
+    <div class="nasx-carousel">
+      <div class="nasx-track">
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+      </div>
+      <div class="nc-nav">
+        <button class="nc-btn nc-prev" aria-label="Previous specialists">&#8249;</button>
+        <button class="nc-btn nc-next" aria-label="Next specialists">&#8250;</button>
+      </div>
+    </div>
+    <span class="nasx-placeholder-note">Placeholder — specialist profiles to be confirmed.</span>
+  </div>
+</div>
+
+<!-- ============ APPLICATION PROCESS ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <span class="eyebrow">Application process</span>
+    <h2 class="gcpp-h2">How to apply</h2>
+    <div class="apply-list">
+      <div class="apply-item">
+        <span class="n">A.01</span>
+        <div class="body">
+          <h3>Proposal & Statement of Purpose</h3>
+          <p>Submit a research proposal of 1,000–1,500 words outlining the topic, the research questions, and the approach. Proposals should clearly identify the gap in existing scholarship and explain why the topic merits sustained attention. Also submit a 500–800-word Statement of Purpose explaining your reasons for pursuing a fellowship in this domain. Only one author per proposal will be accepted.</p>
+        </div>
+      </div>
+      <div class="apply-item">
+        <span class="n">A.02</span>
+        <div class="body">
+          <h3>Interviews</h3>
+          <p>Submitted proposals undergo internal review, and applicants whose proposals are shortlisted will be invited to a virtual interview.</p>
+        </div>
+      </div>
+      <div class="apply-item">
+        <span class="n">A.03</span>
+        <div class="body">
+          <h3>Fellow announcements</h3>
+          <p>Up to 6 selected candidates will be invited to join the 2026–2027 NAS fellowship cohort.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ APPLY CTA ============ -->
+<!-- PLACEHOLDER: replace href="#apply" with the NAST Google Form link once ready. -->
+<div class="gcpp-section cta-band">
+  <div class="gcpp-container">
+    <div class="cta-row">
+      <div class="cta-text">
+        <h3>Apply to NAST</h3>
+        <p class="apply-tag">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
+      </div>
+      <a class="btn-gold" href="#apply">Apply now &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FELLOWS FROM PREVIOUS COHORTS ============ -->
+<!-- PLACEHOLDER carousel. Real fellow profiles/photos to be fetched from the cohort pages linked below and dropped into .nc-card. -->
+<div class="gcpp-section alt">
+  <div class="gcpp-container">
+    <span class="eyebrow">Community</span>
+    <h2 class="gcpp-h2">Fellows from previous cohorts</h2>
+    <div class="nasx-carousel">
+      <div class="nasx-track">
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2024–25 Cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2024–25 Cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2024–25 Cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2025–26 Cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2025–26 Cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2025–26 Cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+      </div>
+      <div class="nc-nav">
+        <button class="nc-btn nc-prev" aria-label="Previous fellows">&#8249;</button>
+        <button class="nc-btn nc-next" aria-label="Next fellows">&#8250;</button>
+      </div>
+    </div>
+    <div class="cohort-tiles-grid two-up" style="margin-top:24px;">
+      <a class="cohort-tile" href="https://legion.takshashila.org.in/network-for-advanced-study-of-technology-geopolitics-2425" target="_blank" rel="noopener">
+        <span class="tag">2024–25</span><h4>Meet the 24–25 cohort</h4><p class="count">View fellows and their work</p><span class="arrow">View cohort &#8594;</span>
+      </a>
+      <a class="cohort-tile" href="https://legion.takshashila.org.in/network-for-advanced-study-of-technology-geopolitics" target="_blank" rel="noopener">
+        <span class="tag">2025–26</span><h4>Meet the 25–26 cohort</h4><p class="count">View fellows and their work</p><span class="arrow">View cohort &#8594;</span>
+      </a>
+    </div>
+    <span class="nasx-placeholder-note">Placeholder cards above — individual fellow profiles to be added; cohort links are live.</span>
+  </div>
+</div>
+```
+
+:::

@@ -1,0 +1,70 @@
+$if(title)$
+<header id="title-block-header" class="quarto-title-block">
+    <div class="programme-page doc-hero">
+        <div class="gcpp-hero">
+            <div class="gcpp-hero__grid">
+                <div class="gcpp-hero__lead">
+                    <h1 class="gcpp-hero__h1">$title$</h1>
+                    $if(subtitle)$
+                    <div class="gcpp-hero__lede">$subtitle$</div>
+                    $else$
+                    $if(description)$
+                    <div class="gcpp-hero__lede">$description$</div>
+                    $endif$
+                    $endif$
+                </div>
+                $if(date)$
+                <div class="gcpp-hero__aside">
+                    <div class="eyebrow">$if(doctype)$Document Details$else$$if(categories)$Document Details$else$$if(author)$Document Details$else$Event Details$endif$$endif$$endif$</div>
+                    <table class="caption-top table">
+                        <tbody>
+                            $if(author)$
+                            <tr>
+                                <td><strong>AUTHOR</strong></td>
+                                <td>$for(author)$<a href="/content/team/$author.metadata.page-url$.html">$author.name$</a>$sep$, $endfor$</td>
+                            </tr>
+                            $endif$
+                            <tr><td><strong>DATE</strong></td><td>$date$</td></tr>
+                            $if(doctype)$<tr><td><strong>DOCUMENT</strong></td><td>$doctype$</td></tr>$endif$
+                            $if(docversion)$<tr><td><strong>VERSION</strong></td><td>$docversion$</td></tr>$endif$
+                            $if(categories)$
+                            <tr>
+                                <td><strong>CATEGORIES</strong></td>
+                                <td class="gcpp-hero__aside-tags">
+                                    $for(categories)$
+                                    <a class="tk-tag" href="$if(doctype)$/pages/publications/$else$/pages/blogs/$endif$index.html#category=$categories$">$categories$</a>
+                                    $endfor$
+                                </td>
+                            </tr>
+                            $endif$
+                        </tbody>
+                    </table>
+                </div>
+                $endif$
+            </div>
+        </div>
+    </div>
+</header>
+$endif$
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const titleBlock = document.getElementById("title-block-header");
+        const contentBlock = document.getElementById("quarto-content");
+
+        const hasTitle = titleBlock && titleBlock.querySelector("h1");
+        if (titleBlock && !hasTitle) {
+            titleBlock.remove();
+            return;
+        }
+
+        // Strip " | Day N of Operation ..." suffix from bulletin titles
+        if (hasTitle) {
+            hasTitle.textContent = hasTitle.textContent.replace(/\s*\|\s*Day\s*\d+.*/i, '').trim();
+        }
+
+        if (titleBlock && contentBlock) {
+            contentBlock.parentNode.insertBefore(titleBlock, contentBlock);
+        }
+    });
+</script>

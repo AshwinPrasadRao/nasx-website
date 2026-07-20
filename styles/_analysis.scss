@@ -1,0 +1,213 @@
+/* Analysis Listing Page Styles */
+
+/* Main container for the analysis page */
+.analysis-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  /* Grid layout for content and sidebar */
+  .analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+  }
+  
+  @media (max-width: 992px) {
+    .analysis-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Content area styles */
+  .analysis-content {
+    margin-bottom: 30px;
+  }
+  
+  .analysis-content h1 {
+    font-size: clamp(28px, 4vw, 36px);
+    color: #404040;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  
+  .analysis-content .subtitle {
+    font-size: clamp(16px, 1.8vw, 18px);
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 300;
+  }
+  
+  /* Analysis card styles */
+  .analysis-card {
+    background-color: #FFF7FC;
+    border: 1px solid rgba(98, 13, 60, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .analysis-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(98, 13, 60, 0.1);
+  }
+  
+  .analysis-card-content {
+    padding: 20px 25px;
+  }
+  
+  .analysis-title {
+    color: #620d3c;
+    font-size: clamp(18px, 2.5vw, 22px);
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+  
+  .analysis-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .analysis-title a:hover {
+    text-decoration: underline;
+  }
+  
+  .analysis-description {
+    color: #555;
+    font-size: clamp(14px, 1.6vw, 16px);
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  .analysis-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .read-more {
+    color: #620d3c;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .read-more .arrow {
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+  }
+  
+  .read-more:hover .arrow {
+    transform: translateX(3px);
+  }
+  
+  /* Sidebar styles */
+  .analysis-sidebar {
+    background-color: #FFF7FC;
+    border-radius: 6px;
+    padding: 25px;
+    border: 1px solid rgba(98, 13, 60, 0.1);
+  }
+  
+  .analysis-sidebar h2 {
+    color: #620d3c;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(98, 13, 60, 0.1);
+  }
+  
+  .category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .category-item {
+    margin-bottom: 5px;
+  }
+  
+  .category-link {
+    color: #404040;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.2s ease;
+  }
+  
+  .category-link:hover, 
+  .category-link.active {
+    color: #620d3c;
+    font-weight: 500;
+  }
+  
+  .count {
+    color: #777;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  
+  /* Hide quarto's default category UI */
+  .quarto-listing-category {
+    display: none;
+  }
+  
+  /* Pagination controls */
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 5px;
+  }
+  
+  .pagination-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #404040;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  
+  .pagination-link:hover {
+    background-color: #f5f5f5;
+    border-color: #bbb;
+  }
+  
+  .pagination-link.current {
+    background-color: #620d3c;
+    color: white;
+    border-color: #620d3c;
+    font-weight: 500;
+  }
+  
+  .pagination-link.prev,
+  .pagination-link.next {
+    font-weight: bold;
+  }
+  
+  /* Hide Quarto's default category filters on small screens */
+  @media (max-width: 767px) {
+    .quarto-listing-category,
+    .listing-no-matching {
+      display: none !important;
+    }
+    
+    .analysis-sidebar {
+      margin-top: 30px;
+    }
+  }

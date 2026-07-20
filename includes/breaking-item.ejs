@@ -1,0 +1,47 @@
+```{=html}
+<%
+  // Breaking — From Our Desk item template
+  // Renders a compact row: type badge · title (linked) · author/source · date
+  // Set template-params.item_type = "Publication" | "News" | "Blog" | "Podcast"
+  var typeLabel = (templateParams && templateParams.item_type) || '';
+  var typeClass  = typeLabel.toLowerCase();
+%>
+<% if (!items || items.length === 0) { %>
+<span class="breaking-empty" style="display:none;"></span>
+<% } else { %>
+<% items.forEach(function(item) { %>
+<%
+  // Build href — external URLs are used as-is; internal paths get a leading slash
+  var href = item.path || '#';
+  var isExternal = href.indexOf('http') === 0;
+  if (!isExternal && href !== '#' && href.charAt(0) !== '/') href = '/' + href;
+
+  // Author / source string
+  var authorArr = Array.isArray(item.authors) ? item.authors
+                : (item.author ? [item.author] : []);
+  var authorStr = authorArr.map(function(a){ return (a||'').trim(); }).filter(Boolean).join(', ');
+  var sourceStr = (item.source || '').trim();
+  var metaParts = [];
+  if (authorStr) metaParts.push(authorStr);
+  if (sourceStr && sourceStr !== authorStr) metaParts.push(sourceStr);
+  var metaStr = metaParts.join(' · ');
+
+  var dateStr = item.date
+    ? new Date(item.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' })
+    : '';
+%>
+<div class="breaking-item">
+  <div class="breaking-item-top">
+    <% if (typeLabel) { %><span class="breaking-type-badge breaking-type-<%= typeClass %>"><%= typeLabel %></span><% } %>
+    <a href="<%= href %>" class="breaking-item-title"<% if (isExternal) { %> target="_blank" rel="noopener"<% } %>><%= item.title %></a>
+  </div>
+  <% if (metaStr || dateStr) { %>
+  <div class="breaking-item-meta">
+    <% if (metaStr) { %><span class="breaking-item-author"><%= metaStr %></span><% } %>
+    <% if (dateStr) { %><span class="breaking-item-date"><%= dateStr %></span><% } %>
+  </div>
+  <% } %>
+</div>
+<% }); %>
+<% } %>
+```

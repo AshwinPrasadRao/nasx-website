@@ -1,0 +1,5 @@
+/* Fix Quarto Header Size */
+#quarto-header {
+    min-height: clamp($navbar-height-mobile, 10vw, $navbar-height-desktop);
+    position: fixed !important;
+}

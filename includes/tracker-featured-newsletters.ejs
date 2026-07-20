@@ -1,0 +1,69 @@
+```{=html}
+<%
+  // tracker-featured-newsletters.ejs
+  // Reads featured_newsletters from items[0] — works whether the listing
+  // source is a bulletin QMD file or featured-newsletters.yml (same structure).
+  // template-params.newsletter_type = "institutional" | "individual"
+  const _hasItems  = items && items.length > 0;
+  const bulletin   = _hasItems ? items[0] : {};
+  const featured   = (bulletin.featured_newsletters) || {};
+  const type       = (templateParams && templateParams.newsletter_type) || 'institutional';
+  const entries    = type === 'all'
+    ? [].concat(Array.isArray(featured.institutional) ? featured.institutional : [],
+                Array.isArray(featured.individual)    ? featured.individual    : [])
+    : Array.isArray(featured[type]) ? featured[type] : [];
+  const VISIBLE    = 5;
+  const moreCount  = Math.max(0, entries.length - VISIBLE);
+  const uid        = 'fnl-' + type;
+  const label      = type === 'all' ? '' : type.charAt(0).toUpperCase() + type.slice(1);
+%>
+
+<% if (_hasItems && entries.length > 0) { %>
+<% if (label) { %><h3 class="featured-nl-subheading"><%= label %></h3><% } %>
+<div class="featured-nl-section">
+
+  <ul class="featured-nl-list">
+    <% entries.slice(0, VISIBLE).forEach(function(nl) { %>
+    <li class="featured-nl-item">
+      <a href="<%= nl.url || '#' %>" target="_blank" rel="noopener" class="featured-nl-item-title"><%= nl.title %></a>
+      <div class="featured-nl-item-meta"><% if (nl.source) { %><span class="featured-nl-source"><%= nl.source %></span><% } %><% if (nl.date) { %><span class="featured-nl-date"><%= new Date(nl.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }) %></span><% } %></div>
+    </li>
+    <% }); %>
+  </ul>
+
+  <% if (moreCount > 0) { %>
+  <ul class="featured-nl-list featured-nl-list-more" id="<%= uid %>-more" hidden>
+    <% entries.slice(VISIBLE).forEach(function(nl) { %>
+    <li class="featured-nl-item">
+      <a href="<%= nl.url || '#' %>" target="_blank" rel="noopener" class="featured-nl-item-title"><%= nl.title %></a>
+      <div class="featured-nl-item-meta"><% if (nl.source) { %><span class="featured-nl-source"><%= nl.source %></span><% } %><% if (nl.date) { %><span class="featured-nl-date"><%= new Date(nl.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' }) %></span><% } %></div>
+    </li>
+    <% }); %>
+  </ul>
+  <button class="featured-nl-toggle"
+          data-target="<%= uid %>-more"
+          data-more-text="Show <%= moreCount %> more ▼"
+          data-less-text="Show less ▲"
+          onclick="(window.__toggleFeaturedNl||function(){})(this)">
+    Show <%= moreCount %> more <span aria-hidden="true">▼</span>
+  </button>
+  <% } %>
+
+</div>
+
+<script>
+if (!window.__toggleFeaturedNl) {
+  window.__toggleFeaturedNl = function(btn) {
+    var list = document.getElementById(btn.getAttribute('data-target'));
+    if (!list) return;
+    var hidden = list.hasAttribute('hidden');
+    list.toggleAttribute('hidden');
+    btn.innerHTML = hidden
+      ? btn.getAttribute('data-less-text')
+      : btn.getAttribute('data-more-text');
+  };
+}
+</script>
+
+<% } %>
+```

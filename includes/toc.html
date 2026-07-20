@@ -1,0 +1,88 @@
+<nav id="$idprefix$TOC" role="doc-toc">
+    $if(toc-title)$
+    <h2 id="$idprefix$toc-title">$toc-title$</h2>
+    $endif$ 
+    
+    <!-- Progress indicator container -->
+    <div class="toc-progress-container">
+      <div class="toc-progress-bar" id="toc-progress"></div>
+    </div>
+    
+    $table-of-contents$
+  </nav>
+  
+  <style>
+  </style>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the table of contents and progress bar
+    const toc = document.getElementById('TOC');
+    const progressBar = document.getElementById('toc-progress');
+    
+    if (!toc || !progressBar) return;
+    
+    // Track scroll position and update the active section and progress bar
+    updateTocOnScroll();
+    
+    function updateTocOnScroll() {
+      // Get all section headings with IDs
+      const headings = Array.from(document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]'));
+      if (headings.length === 0) return;
+      
+      // Get all links in the TOC
+      const links = Array.from(toc.querySelectorAll('a'));
+      
+      // Function to update active section based on scroll position
+      function updateActiveSection() {
+        // Calculate how far down the page has been scrolled
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercentage = scrollPosition / (documentHeight - windowHeight);
+        
+        // Update progress bar height
+        progressBar.style.height = Math.min(scrollPercentage * 100, 100) + '%';
+        
+        // Find the current section
+        let currentSection = null;
+        
+        for (let i = 0; i < headings.length; i++) {
+          const heading = headings[i];
+          const rect = heading.getBoundingClientRect();
+          
+          // Consider a heading in view if it's within 150px of the top
+          if (rect.top <= 150) {
+            currentSection = heading;
+          } else {
+            break;
+          }
+        }
+        
+        // Update active class on TOC links
+        if (currentSection) {
+          const id = currentSection.getAttribute('id');
+          
+          // Remove active class from all list items
+          toc.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+          
+          // Add active class to corresponding list item
+          const activeLink = toc.querySelector(`a[href="#${id}"]`);
+          if (activeLink) {
+            // Add active class to the parent list item
+            const activeLi = activeLink.closest('li');
+            if (activeLi) {
+              activeLi.classList.add('active');
+            }
+          }
+        }
+      }
+      
+      // Listen for scroll events
+      window.addEventListener('scroll', updateActiveSection);
+      
+      // Initialize on page load
+      updateActiveSection();
+    }
+  });
+  </script>

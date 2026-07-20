@@ -1,0 +1,122 @@
+/* News Card Styling */
+
+.news-grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .news-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .news-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.legacy-news-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 0;
+}
+
+.legacy-news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.news-logo {
+    padding: 1.25rem 1.25rem 0.5rem 1.25rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.news-logo img {
+    max-width: 100%;
+    max-height: 40px;
+    object-fit: contain;
+}
+
+.default-logo {
+    width: 40px;
+    height: 40px;
+    background-color: $primary-color;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+.news-content {
+    flex: 1;
+    padding: 0 1.25rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem !important;
+}
+
+.news-text {
+    margin: 0.5rem 0 auto 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-regular);
+    line-height: var(--line-height-tight);
+    height: calc(1.3em * 2);
+}
+
+.news-source {
+    margin: 0.5rem 0 auto 0;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-light);
+}
+
+.news-authors {
+    margin: 0.5rem 0 auto 0;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-light);
+}
+
+.news-date {
+    font-size: var(--font-size-xs);
+    color: $under-textcolor-light;
+    margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .news-logo {
+        padding: 1rem 1rem 0.25rem 1rem;
+    }
+
+    .news-content {
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .news-title {
+        font-size: 0.9rem;
+    }
+}

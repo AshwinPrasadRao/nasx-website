@@ -1,0 +1,18 @@
+```{=html}
+<ul class="list" style="list-style-type: none; padding-left: 0;">
+    <% if (items.length> 0) { %>
+        <% for (const item of items) { %>
+            <li <%=metadataAttrs(item) %>>
+                <div class="podcast-card">
+                    <iframe style="border-radius:6px" src="<%= item.link %>&theme=1" width="100%" height="352"
+                        frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+            </li>
+            <% } %>
+                <% } else { %>
+                    <p>No items found.</p>
+                    <% } %>
+</ul>
+```

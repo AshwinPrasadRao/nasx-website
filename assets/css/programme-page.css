@@ -1,0 +1,976 @@
+/* ============================================================
+   Takshashila programme page — interactive component styles
+   Drop into:  assets/css/programme-page.css
+   Loaded via the page's include-in-header front-matter.
+   Brand: #620d3c wine, #f1a222 gold
+   ============================================================ */
+
+/* Programme pages render their own visible <h1> in the hero, so Quarto's auto
+   title block must stay hidden. Convention: keep `title:` populated (it drives
+   the browser tab + SEO and stops Quarto from hoisting the hero <h1> into the
+   title block); no `pagetitle:` unless the tab must read differently from
+   `title`. The shared partial (includes/title-block.html) relocates the auto
+   block to the top of the page, so we hide it here — using the ID selector
+   `#title-block-header`, NOT `.quarto-title-block`: the class selector loses
+   the cascade in Chrome/Firefox and the block leaks above the breadcrumbs.
+   Matches research-circle.css, which has always used the ID form. */
+#title-block-header { display: none; }
+
+/* Breadcrumbs read in all caps on programme pages. */
+.tk-crumb { text-transform: uppercase; }
+
+.programme-page {
+  --tk-bg: #FFFFFF;
+  --tk-bg-deep: #F7F5F2;
+  --tk-ink: #171413;
+  --tk-ink-70: rgba(23,20,19,0.7);
+  --tk-ink-50: rgba(23,20,19,0.5);
+  --tk-ink-20: rgba(23,20,19,0.16);
+  --tk-primary: #620d3c;
+  --tk-primary-dark: #4a0a2e;
+  --tk-gold: #f1a222;
+  --tk-paper: #FFFFFF;
+  --tk-rule: 1px solid rgba(23,20,19,0.16);
+  --tk-display: Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --tk-mono: 'Roboto', system-ui, -apple-system, sans-serif;
+  --tk-body: Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  font-family: var(--tk-body);
+  color: var(--tk-ink);
+  background: var(--tk-bg);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.programme-page *, .programme-page *::before, .programme-page *::after { box-sizing: border-box; }
+.programme-page h1, .programme-page h2, .programme-page h3, .programme-page h4 {
+  font-family: var(--tk-display);
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.programme-page p { margin: 0; }
+.programme-page a { color: inherit; }
+.programme-page button { font-family: inherit; color: inherit; }
+
+/* Override site-global font cascade from styles/_fonts_base.scss */
+.programme-page p {
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.programme-page h1, .programme-page h2, .programme-page h3, .programme-page h4, .programme-page h5 {
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+/* Quarto's article container can be narrow — this page is full-bleed.
+   Let the page extend to viewport edges; we add our own gutter. */
+.programme-page .gcpp-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ─── Section label / eyebrow / utilities ─────────────────────── */
+.programme-page .section-label,
+.programme-page .eyebrow {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--tk-ink-50);
+  text-transform: none;
+}
+.programme-page .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--tk-primary);
+  margin-bottom: 28px;
+  display: block;
+}
+.programme-page .section-label.on-dark { color: rgba(255,255,255,0.55); }
+.programme-page .accent { color: var(--tk-primary); }
+.programme-page .accent-gold { color: var(--tk-gold); font-style: italic; }
+
+.programme-page .gcpp-h2 {
+  font-size: 44px;
+  line-height: 1.05;
+  margin: 0 0 32px;
+}
+.programme-page .gcpp-h2-row,
+.programme-page .faculty-head,
+.programme-page .curr-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.programme-page .gcpp-h2-row .gcpp-h2,
+.programme-page .faculty-head .gcpp-h2,
+.programme-page .curr-head .gcpp-h2,
+.programme-page .section-heading .gcpp-h2 { margin-bottom: 0; }
+
+.programme-page .section-meta {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--tk-ink-50);
+}
+
+/* ─── Status strip ─────────────────────────────────────────────── */
+.programme-page .gcpp-status {
+  border-bottom: var(--tk-rule);
+  background: var(--tk-bg-deep);
+}
+.programme-page .gcpp-status__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--tk-ink-50);
+}
+.programme-page .gcpp-dot { color: var(--tk-primary); }
+
+/* ─── Hero ─────────────────────────────────────────────────────── */
+/* The .gcpp-hero masthead now lives in assets/css/takshashila-base.css
+   (shared by policy-school + research-circle pages). It stays scoped to
+   .programme-page, so this page family is unaffected — base loads first,
+   globally, and the wrapper is supplied at page level here. */
+
+/* ─── Buttons ──────────────────────────────────────────────────── */
+.programme-page .btn-primary,
+.programme-page .btn-gold {
+  display: inline-block;
+  padding: 16px 24px;
+  font-family: var(--tk-mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+.programme-page .btn-primary {
+  background: var(--tk-primary);
+  color: var(--tk-paper);
+  width: 100%;
+}
+.programme-page .btn-primary:hover { background: var(--tk-primary-dark); color: #fff; }
+.programme-page .btn-gold {
+  background: var(--tk-gold);
+  color: var(--tk-ink);
+  padding: 14px 22px;
+  letter-spacing: 0.1em;
+}
+.programme-page .btn-gold:hover { background: #d68b15; color: var(--tk-ink); }
+
+/* ─── Generic section ──────────────────────────────────────────── */
+.programme-page .gcpp-section {
+  border-bottom: var(--tk-rule);
+  padding: 64px 40px;
+}
+.programme-page .gcpp-section.alt { background: var(--tk-bg-deep); }
+.programme-page .gcpp-section.dark {
+  background: var(--tk-primary);
+  color: var(--tk-paper);
+}
+.programme-page .gcpp-section.dark .gcpp-h2 em.accent-gold { color: var(--tk-gold); }
+.programme-page .gcpp-section.cta-band {
+  background: var(--tk-bg-deep);
+  padding: 60px 40px;
+}
+
+/* ─── Questions ────────────────────────────────────────────────── */
+.programme-page .gcpp-questions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+}
+.programme-page .q-card {
+  padding: 32px;
+  min-height: 220px;
+  border-right: var(--tk-rule);
+}
+.programme-page .q-card:last-child { border-right: none; }
+.programme-page .q-num {
+  display: block;
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  color: var(--tk-primary);
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+.programme-page .q-card { font-family: var(--tk-display); font-size: 22px; line-height: 1.3; }
+
+/* ─── Personas ─────────────────────────────────────────────────── */
+.programme-page .persona-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: var(--tk-rule);
+}
+.programme-page .persona-tab {
+  padding: 20px 18px;
+  border: none;
+  border-right: var(--tk-rule);
+  background: var(--tk-paper);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 96px;
+}
+.programme-page .persona-tab:last-child { border-right: none; }
+.programme-page .persona-tab .label {
+  font-family: var(--tk-display);
+  font-size: 19px;
+  line-height: 1.15;
+}
+.programme-page .persona-tab.is-active {
+  background: var(--tk-primary);
+  color: var(--tk-paper);
+}
+
+.programme-page .persona-detail {
+  border-left: var(--tk-rule);
+  border-right: var(--tk-rule);
+  border-bottom: var(--tk-rule);
+  padding: 44px 32px 48px;
+  background: var(--tk-bg-deep);
+}
+.programme-page .persona-pane { display: none; }
+.programme-page .persona-pane.is-active { display: block; }
+.programme-page .persona-pane .pain {
+  font-family: var(--tk-display);
+  font-size: 22px;
+  line-height: 1.25;
+  margin-bottom: 18px;
+  color: var(--tk-ink-70);
+}
+.programme-page .persona-pane .promise {
+  font-family: var(--tk-display);
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+/* ─── How it works ─────────────────────────────────────────────── */
+.programme-page .how-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+}
+.programme-page .how-step {
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
+  border-right: var(--tk-rule);
+  border-bottom: var(--tk-rule);
+}
+.programme-page .how-step:nth-child(2n) { border-right: none; }
+.programme-page .how-step:nth-last-child(-n+2) { border-bottom: none; }
+.programme-page .how-step .n {
+  font-family: var(--tk-mono);
+  font-size: 13px;
+  color: var(--tk-primary);
+  letter-spacing: 0.08em;
+  padding-top: 4px;
+}
+.programme-page .how-step h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.programme-page .how-step .body p,
+.programme-page .how-step .body { font-size: 14px; line-height: 1.6; color: var(--tk-ink-70); }
+
+/* ─── Curriculum ───────────────────────────────────────────────── */
+.programme-page .curr-tabs {
+  display: flex;
+  border: var(--tk-rule);
+  font-family: var(--tk-mono);
+  font-size: 12px;
+}
+.programme-page .curr-tab {
+  padding: 12px 18px;
+  border: none;
+  border-right: var(--tk-rule);
+  background: var(--tk-paper);
+  cursor: pointer;
+  letter-spacing: 0.08em;
+}
+.programme-page .curr-tab:last-child { border-right: none; }
+.programme-page .curr-tab.is-active { background: var(--tk-primary); color: var(--tk-paper); }
+.programme-page .curr-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+  min-height: 480px;
+}
+.programme-page .curr-list { border-right: var(--tk-rule); }
+.programme-page .curr-mod {
+  width: 100%;
+  padding: 20px 24px;
+  border: none;
+  border-bottom: var(--tk-rule);
+  border-left: 3px solid transparent;
+  background: var(--tk-paper);
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  text-align: left;
+}
+.programme-page .curr-mod:last-of-type { border-bottom: none; }
+.programme-page .curr-mod.is-active {
+  background: var(--tk-bg-deep);
+  border-left-color: var(--tk-primary);
+}
+.programme-page .curr-mod[hidden] { display: none; }
+.programme-page .curr-mod .m {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  color: var(--tk-primary);
+  letter-spacing: 0.06em;
+}
+.programme-page .curr-mod .t {
+  font-family: var(--tk-display);
+  font-size: 19px;
+  line-height: 1.2;
+}
+.programme-page .curr-mod .dot {
+  font-family: var(--tk-mono);
+  font-size: 14px;
+  color: var(--tk-ink-50);
+}
+.programme-page .curr-mod.is-active .dot { color: var(--tk-primary); }
+
+.programme-page .curr-detail {
+  padding: 32px 36px;
+  background: var(--tk-bg-deep);
+}
+.programme-page .curr-pane { display: none; }
+.programme-page .curr-pane.is-active { display: block; }
+.programme-page .curr-pane h3 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 14px 0;
+  letter-spacing: -0.01em;
+}
+.programme-page .curr-pane p { font-size: 15px; line-height: 1.6; color: var(--tk-ink-70); margin-bottom: 28px; }
+.programme-page .curr-pane .section-label { display: block; margin-bottom: 14px; }
+.programme-page .unit-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--tk-ink-20);
+}
+.programme-page .unit-list ul { list-style: none; margin: 0; padding: 0; }
+.programme-page .unit-list li,
+.programme-page ul.unit-list li {
+  background: var(--tk-paper);
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: center;
+  font-size: 14px;
+}
+.programme-page .unit-list .u {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  color: var(--tk-primary);
+  letter-spacing: 0.06em;
+}
+
+/* ─── Faculty ──────────────────────────────────────────────────── */
+.programme-page .faculty-link {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--tk-ink);
+  padding-bottom: 4px;
+  text-decoration: none;
+}
+.programme-page .faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+}
+.programme-page .f-card {
+  padding: 20px 20px 22px;
+  border-right: var(--tk-rule);
+  border-bottom: var(--tk-rule);
+}
+.programme-page .f-card:nth-child(4n) { border-right: none; }
+.programme-page .f-card:nth-last-child(-n+4) { border-bottom: none; }
+.programme-page .f-photo {
+  aspect-ratio: 1;
+  background: repeating-linear-gradient(135deg, rgba(23,20,19,0.04) 0 8px, rgba(23,20,19,0.09) 8px 16px);
+  margin-bottom: 16px;
+  position: relative;
+}
+.programme-page .f-num {
+  position: absolute;
+  top: 8px; left: 10px;
+  font-family: var(--tk-mono);
+  font-size: 10px;
+  color: var(--tk-ink-50);
+  letter-spacing: 0.08em;
+}
+.programme-page .f-card strong {
+  display: block;
+  font-family: var(--tk-display);
+  font-size: 17px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.programme-page .f-card .role {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--tk-ink-70);
+}
+.programme-page .f-card {
+  text-decoration: none;
+  display: block;
+}
+.programme-page .f-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Testimonials ─────────────────────────────────────────────── */
+.programme-page .testi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+}
+.programme-page .testi {
+  padding: 32px 32px 28px;
+  border-right: var(--tk-rule);
+  border-bottom: var(--tk-rule);
+  font-family: var(--tk-display);
+  font-size: 19px;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+.programme-page .testi:nth-child(2n) { border-right: none; }
+.programme-page .testi:nth-last-child(-n+2) { border-bottom: none; }
+.programme-page .testi .quote {
+  display: block;
+  font-size: 28px;
+  color: var(--tk-gold);
+  line-height: 1;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.programme-page .testi .attr {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: var(--tk-rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.programme-page .testi .attr strong {
+  font-family: var(--tk-display);
+  font-size: 16px;
+  font-weight: 500;
+}
+.programme-page .testi .tag {
+  font-family: var(--tk-mono);
+  font-size: 10.5px;
+  color: var(--tk-ink-50);
+  letter-spacing: 0.08em;
+}
+
+/* ─── Dates / timeline ─────────────────────────────────────────── */
+.programme-page .dates-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 64px;
+  align-items: start;
+}
+.programme-page .dates-lead .gcpp-h2 { color: var(--tk-paper); margin-bottom: 24px; }
+.programme-page .dates-lead p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.78); margin-bottom: 28px; }
+.programme-page .dates-list { border-top: 1px solid rgba(255,255,255,0.22); }
+.programme-page .date-row {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+  font-family: var(--tk-mono);
+  font-size: 13px;
+}
+.programme-page .date-row:last-child { border-bottom: none; }
+.programme-page .date-row .t {
+  color: rgba(255,255,255,0.45);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+.programme-page .date-row .label {
+  font-family: var(--tk-display);
+  font-size: 18px;
+  letter-spacing: -0.005em;
+}
+.programme-page .date-row .date {
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.92);
+}
+.programme-page .date-row.highlight .date { color: var(--tk-gold); font-weight: 600; }
+
+/* ─── Workshop (light, with framed images) ─────────────────────── */
+.programme-page .gcpp-section.dark.workshop {
+  background: var(--tk-bg-deep);
+  color: var(--tk-ink);
+}
+.programme-page .workshop .section-label.on-dark { color: var(--tk-ink-50); }
+.programme-page .workshop-split {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 56px;
+  align-items: start;
+  margin: 24px 0 0;
+}
+.programme-page .workshop-text { padding-top: 8px; }
+.programme-page .workshop-text .gcpp-h2 {
+  margin: 0 0 24px;
+  color: var(--tk-ink);
+}
+.programme-page .workshop-text .gcpp-h2 em.accent-gold {
+  color: var(--tk-primary);
+  font-style: italic;
+}
+.programme-page .workshop-lede {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--tk-ink-70);
+  display: grid;
+  gap: 14px;
+}
+.programme-page .workshop-lede p { margin: 0; }
+.programme-page .workshop-note {
+  display: block;
+  margin-top: 6px;
+  padding-top: 16px;
+  border-top: var(--tk-rule);
+  font-family: var(--tk-mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+  color: var(--tk-ink-50);
+}
+.programme-page .workshop-collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.programme-page .workshop-img {
+  margin: 0;
+  overflow: hidden;
+  background: var(--tk-paper);
+  border: var(--tk-rule);
+}
+.programme-page .workshop-img p { margin: 0; }
+.programme-page .workshop-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.programme-page .workshop-stats {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  padding-top: 28px;
+  border-top: var(--tk-rule);
+}
+.programme-page .workshop-stats .stat .n {
+  display: block;
+  font-family: var(--tk-display);
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--tk-primary);
+  margin-bottom: 6px;
+}
+.programme-page .workshop-stats .stat .l {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tk-ink-50);
+}
+
+@media (max-width: 960px) {
+  .programme-page .workshop-split { grid-template-columns: 1fr; gap: 32px; }
+  .programme-page .workshop-stats { grid-template-columns: 1fr; gap: 20px; }
+}
+
+/* ─── Apply & fees ─────────────────────────────────────────────── */
+.programme-page .apply-grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 56px;
+  align-items: start;
+  margin-top: 24px;
+}
+.programme-page .apply-lead .gcpp-h2 { margin: 0 0 28px; }
+.programme-page .apply-fee {
+  border-top: var(--tk-rule);
+  border-bottom: var(--tk-rule);
+  padding: 18px 0;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+.programme-page .apply-fee .fee-label {
+  display: block;
+  flex-basis: 100%;
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tk-ink-50);
+  margin-bottom: 6px;
+}
+.programme-page .apply-fee .fee-amt {
+  font-family: var(--tk-display);
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  color: var(--tk-primary);
+}
+.programme-page .apply-fee .fee-note {
+  font-family: var(--tk-mono);
+  font-size: 12px;
+  color: var(--tk-ink-50);
+  letter-spacing: 0.04em;
+}
+.programme-page .apply-tag {
+  display: block;
+  font-family: var(--tk-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--tk-ink-70);
+  line-height: 1.55;
+}
+.programme-page .apply-list {
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+}
+.programme-page .apply-item {
+  padding: 22px 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
+  border-bottom: var(--tk-rule);
+}
+.programme-page .apply-item:last-child { border-bottom: none; }
+.programme-page .apply-item .n {
+  font-family: var(--tk-mono);
+  font-size: 13px;
+  color: var(--tk-primary);
+  letter-spacing: 0.08em;
+  padding-top: 4px;
+}
+.programme-page .apply-item h3 {
+  font-family: var(--tk-display);
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+.programme-page .apply-item .body p,
+.programme-page .apply-item .body { font-size: 14.5px; line-height: 1.6; color: var(--tk-ink-70); }
+
+@media (max-width: 960px) {
+  .programme-page .apply-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ─── Video highlights ─────────────────────────────────────────── */
+.programme-page .video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+.programme-page .video-card {
+  background: var(--tk-paper);
+  border: var(--tk-rule);
+}
+.programme-page .video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--tk-ink);
+}
+.programme-page .video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 960px) {
+  .programme-page .video-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ─── FAQ ──────────────────────────────────────────────────────── */
+.programme-page .faq {
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+}
+.programme-page .faq-item { border-bottom: var(--tk-rule); }
+.programme-page .faq-item:last-child { border-bottom: none; }
+.programme-page .faq-q {
+  width: 100%;
+  padding: 18px 24px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 18px;
+  align-items: center;
+}
+.programme-page .faq-item.is-open .faq-q { background: var(--tk-bg-deep); }
+.programme-page .faq-q .num {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  color: var(--tk-primary);
+  letter-spacing: 0.06em;
+}
+.programme-page .faq-q .text {
+  font-family: var(--tk-display);
+  font-size: 18px;
+  line-height: 1.3;
+}
+.programme-page .faq-q .toggle {
+  font-family: var(--tk-mono);
+  font-size: 14px;
+  color: var(--tk-primary);
+}
+.programme-page .faq-a {
+  display: none;
+  padding: 0 24px 22px 76px;
+  background: var(--tk-bg-deep);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--tk-ink-70);
+}
+.programme-page .faq-item.is-open .faq-a { display: block; }
+
+/* ─── Final CTA band ───────────────────────────────────────────── */
+.programme-page .cta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.programme-page .cta-text h3 {
+  font-family: var(--tk-display);
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.programme-page .cta-row .btn-primary { width: auto; padding: 16px 28px; letter-spacing: 0.1em; }
+
+/* ─── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .programme-page {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    max-width: none;
+  }
+
+  .programme-page .gcpp-section,
+  .programme-page .gcpp-status__inner { padding-left: 24px; padding-right: 24px; }
+  .programme-page .gcpp-container { padding: 0; }
+
+  .programme-page .gcpp-status__inner { flex-direction: column; gap: 4px; text-align: center; }
+  .programme-page .gcpp-h2 { font-size: 32px; }
+
+  .programme-page .gcpp-questions { grid-template-columns: 1fr; }
+  .programme-page .q-card { border-right: none; border-bottom: var(--tk-rule); min-height: 0; }
+  .programme-page .q-card:last-child { border-bottom: none; }
+
+  .programme-page .persona-tabs { grid-template-columns: repeat(2, 1fr); }
+  .programme-page .persona-tab { border-right: none; border-bottom: var(--tk-rule); min-width: 0; padding: 16px 12px; min-height: 80px; }
+  .programme-page .persona-tab:nth-child(odd) { border-right: var(--tk-rule); }
+  .programme-page .persona-tab .label {
+    font-size: 14.5px;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
+  }
+  .programme-page .persona-detail { padding: 28px 20px; }
+
+  .programme-page .how-grid { grid-template-columns: 1fr; }
+  .programme-page .how-step { border-right: none !important; border-bottom: var(--tk-rule) !important; }
+  .programme-page .how-step:last-child { border-bottom: none !important; }
+
+  .programme-page .curr-grid { grid-template-columns: 1fr; }
+  .programme-page .curr-list { border-right: none; border-bottom: var(--tk-rule); }
+  .programme-page .curr-tabs { width: 100%; }
+  .programme-page .curr-tab { flex: 1; font-size: 11px; padding: 10px 8px; }
+
+  .programme-page .faculty-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .programme-page .f-card { border-right: none !important; border-bottom: var(--tk-rule) !important; }
+  .programme-page .f-card:nth-child(odd) { border-right: var(--tk-rule) !important; }
+  .programme-page .f-card:last-child { border-bottom: none !important; }
+
+  .programme-page .testi-grid { grid-template-columns: 1fr; }
+  .programme-page .testi { border-right: none !important; border-bottom: var(--tk-rule) !important; }
+  .programme-page .testi:last-child { border-bottom: none !important; }
+
+  .programme-page .dates-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  .programme-page .cta-row { flex-direction: column; align-items: stretch; }
+  .programme-page .cta-row .btn-primary { text-align: center; }
+}
+
+@media (max-width: 560px) {
+  .programme-page .gcpp-section { padding: 44px 18px; }
+
+  .programme-page .gcpp-h2 { font-size: 28px; }
+
+  .programme-page .q-card { padding: 24px; font-size: 18px; }
+  .programme-page .q-num { margin-bottom: 16px; }
+
+  .programme-page .how-step { padding: 24px 20px; gap: 16px; }
+  .programme-page .how-step h3 { font-size: 18px; line-height: 1.25; }
+
+  .programme-page .persona-tabs { grid-template-columns: 1fr; }
+  .programme-page .persona-tab { border-right: none !important; border-bottom: var(--tk-rule); min-height: 64px; padding: 14px 16px; }
+  .programme-page .persona-tab:last-child { border-bottom: none; }
+  .programme-page .persona-tab .label { font-size: 16px; }
+  .programme-page .persona-pane .pain,
+  .programme-page .persona-pane .promise { font-size: 18px; line-height: 1.3; }
+  .programme-page .persona-detail { padding: 24px 20px 28px; }
+
+  .programme-page .curr-mod { padding: 16px 18px; gap: 12px; }
+  .programme-page .curr-mod .t { font-size: 15px; line-height: 1.25; }
+  .programme-page .curr-mod .m { font-size: 10px; }
+  .programme-page .curr-detail { padding: 24px 20px; }
+  .programme-page .curr-pane h3 { font-size: 22px; line-height: 1.2; margin: 10px 0; }
+  .programme-page .curr-pane p { font-size: 14px; }
+
+  .programme-page .apply-item { padding: 18px 20px; gap: 16px; }
+  .programme-page .apply-item h3 { font-size: 18px; }
+  .programme-page .apply-fee .fee-amt { font-size: 32px; }
+
+  .programme-page .date-row { padding: 12px 16px; gap: 12px; }
+  .programme-page .date-row .label { font-size: 13px; }
+  .programme-page .date-row .date { font-size: 13px; }
+
+  .programme-page .testi { padding: 24px; }
+
+  .programme-page .faculty-grid { grid-template-columns: 1fr; }
+  .programme-page .f-card { border-right: none !important; }
+  .programme-page .f-card:nth-child(odd) { border-right: none !important; }
+
+  .programme-page .faq-q { padding: 14px 18px; gap: 12px; }
+  .programme-page .faq-q .text { font-size: 16px; }
+  .programme-page .faq-a { padding: 0 18px 18px 50px; }
+
+  .programme-page .workshop-stats .stat .n { font-size: 32px; }
+
+  .programme-page .cta-text h3 { font-size: 28px; line-height: 1.1; }
+
+  .programme-page .btn-primary,
+  .programme-page .btn-gold { padding: 14px 18px; font-size: 11px; }
+}
+
+/* ============ COHORTS SECTION ============ */
+.programme-page .cohort-subhead {
+  font: 600 14px/1.2 var(--tk-mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin: 32px 0 16px;
+  color: var(--tk-primary);
+}
+.programme-page .cohort-tiles-grid { display: grid; gap: 24px; }
+.programme-page .cohort-tiles-grid.one-up { grid-template-columns: 1fr; }
+.programme-page .cohort-tiles-grid.two-up { grid-template-columns: repeat(2, 1fr); }
+.programme-page .cohort-tile {
+  display: block;
+  padding: 32px;
+  border: var(--tk-rule);
+  background: var(--tk-paper);
+  text-decoration: none;
+  color: var(--tk-ink);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.programme-page .cohort-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+}
+.programme-page .cohort-tile.current {
+  background: var(--tk-bg-deep);
+  border-color: var(--tk-gold);
+}
+.programme-page .cohort-tile .tag {
+  display: inline-block;
+  font: 600 11px/1 var(--tk-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid currentColor;
+  margin-bottom: 16px;
+}
+.programme-page .cohort-tile.current .tag { color: var(--tk-gold); }
+.programme-page .cohort-tile h4 {
+  font-family: var(--tk-display);
+  font-size: 28px;
+  margin: 8px 0;
+}
+.programme-page .cohort-tile .count {
+  font: 400 14px var(--tk-mono);
+  color: var(--tk-ink-50);
+  margin: 0 0 24px;
+}
+.programme-page .cohort-tile .arrow {
+  font: 600 13px var(--tk-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+@media (max-width: 720px) {
+  .programme-page .cohort-tiles-grid.two-up { grid-template-columns: 1fr; }
+}

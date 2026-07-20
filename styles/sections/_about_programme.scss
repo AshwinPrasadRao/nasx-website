@@ -1,0 +1,15 @@
+/* About Programme Section Styling */
+
+.about-programme-section {
+    background-color: $card-color-accent;
+    border-radius: 30px;
+    padding: clamp(5px, 0.325vw, 10px) clamp(20px, 1.5vw, 40px);
+
+    h1 {
+        color: $primary-color;
+    }
+
+    p {
+        color: $primary-color;
+    }
+}

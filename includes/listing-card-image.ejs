@@ -1,0 +1,42 @@
+```{=html}
+<div class="listing-section">
+    <% if (items.length > 0) { %>
+        <div class="listing-grid">
+            <% for (const item of items) { %>
+                <a href="<%= item.path %>" class="listing-card-image">
+                    <% if (item.image) { %>
+                        <div class="listing-image">
+                            <% if (templateParams) { %>
+                                <% if (templateParams.path_prefix) { %>
+                                    <img src="<%= templateParams.path_prefix %><%= item.image %>" alt="<%= item.title %>" />
+                                <% } %>
+                            <% } else { %>
+                                <img src="<%= item.image %>" alt="<%= item.title %>" />
+                            <% } %>
+                        </div>
+                    <% } %>
+                    <div class="listing-content">
+                        <h2>
+                            <%= item.title %>
+                        </h2>
+                        <% if (item.subtitle) { %>
+                            <p>
+                                <%= item.subtitle %>
+                            </p>
+                        <% } else if (item.description) { %>
+                            <p>
+                                <%= item.description %>
+                            </p>
+                        <% } %>
+                        <span class="listing-link">
+                            <%= item.linkText || "Learn more" %>
+                        </span>
+                    </div>
+                </a>
+            <% } %>
+        </div>
+    <% } else { %>
+        <p>No items found.</p>
+    <% } %>
+</div>
+```

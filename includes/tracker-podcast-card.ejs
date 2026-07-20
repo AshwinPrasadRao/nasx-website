@@ -1,0 +1,45 @@
+```{=html}
+<%
+  // Tracker Podcast Card
+  // Each item in podcasts.yml should have:
+  //   title       – episode title (required)
+  //   path        – Spotify episode URL or any podcast link (required)
+  //                 Use "path" not "url" — Quarto requires this field name.
+  //                 Spotify URLs (open.spotify.com/episode/...) render
+  //                 an in-page embedded player automatically.
+  //   show        – podcast show name (optional)
+  //   date        – episode date, YYYY-MM-DD (optional)
+  //   description – brief episode description (optional)
+%>
+<% if (!items || items.length === 0) { %>
+<span class="section-empty-sentinel" style="display:none;"></span>
+<% } else { %>
+<div class="tracker-podcast-grid">
+<% items.slice().reverse().forEach(function(item) { %>
+<%
+  var url      = item.url || item.path || '#';
+  var isExternal = url.indexOf('http') === 0;
+  var isSpotify  = url.indexOf('open.spotify.com/episode') >= 0;
+  var embedUrl   = isSpotify
+    ? url.replace('open.spotify.com/episode', 'open.spotify.com/embed/episode').split('?')[0] + '?utm_source=generator'
+    : null;
+%>
+<div class="tracker-podcast-item">
+  <% if (embedUrl) { %>
+  <iframe
+    src="<%= embedUrl %>"
+    title="<%= item.title %>"
+    width="100%"
+    height="80"
+    frameborder="0"
+    loading="lazy"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    style="border-radius:8px; display:block;"></iframe>
+  <% } else { %>
+  <a href="<%= url %>" class="tracker-podcast-title"<% if (isExternal) { %> target="_blank" rel="noopener"<% } %>><%= item.title %></a>
+  <% } %>
+</div>
+<% }); %>
+</div>
+<% } %>
+```

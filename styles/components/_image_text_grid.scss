@@ -1,0 +1,43 @@
+/* Image Text Grid Styling */
+
+.image-text-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 3vw, 30px);
+}
+
+@media (min-width: 768px) {
+    .image-text-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .image-text-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.image-text-grid-item {
+    background-color: white;
+    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+
+    h2 {
+        margin-top: 0;
+        font-weight: var(--font-medium);
+        height: calc(1.7em * 2);
+    }
+
+    p {
+        font-size: var(--font-size-sm);
+        font-weight: var(--font-light);
+    }
+}

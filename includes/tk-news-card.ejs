@@ -1,0 +1,22 @@
+```{=html}
+<div class="news-cards">
+  <% for (const item of items) { %>
+    <a class="news-card" href="<%= item.path %>"<% if (item.path && item.path.startsWith('http')) { %> target="_blank" rel="noopener"<% } %>>
+      <h3 class="nc-title"><%= item.title %></h3>
+      <div class="nc-foot">
+        <% if (item.authors) { %>
+          <div class="nc-author"><%
+            if (Array.isArray(item.authors)) { %><%= item.authors.join(", ") %><% } else { %><%= item.authors %><% }
+          %></div>
+        <% } %>
+        <% if (item.source) { %><div class="nc-pub"><%= item.source %></div><% } %>
+        <% if (item.date) {
+          const d = new Date(item.date);
+        %>
+          <div class="nc-date"><%= d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase() %></div>
+        <% } %>
+      </div>
+    </a>
+  <% } %>
+</div>
+```

@@ -1,0 +1,159 @@
+/* Responsive Typography with Clamp */
+
+:root {
+    /* Font Sizes using clamp() for fluid scaling */
+    /* clamp(minimum, preferred, maximum) */
+
+    // --font-size-xs: clamp(10px, 2.5vw, 12px);
+    // --font-size-sm: clamp(14px, 3.5vw, 16px);
+    // --font-size-base: clamp(16px, 4vw, 18px);
+    // --font-size-md: clamp(18px, 4.5vw, 24px);     // h6
+    // --font-size-lg: clamp(24px, 6vw, 36px);       // h5 & h3
+    // --font-size-xl: clamp(32px, 7.5vw, 44px);     // h4 & h2
+    // --font-size-2xl: clamp(40px, 9vw, 55px);      // h1
+
+    --font-size-xs: clamp(0.85rem, 0.75rem + 0vw, 0.75rem);
+    --font-size-sm: clamp(1rem, 1rem + 0vw, 1rem);
+    --font-size-base: clamp(1rem, 0.9712rem + 0.1282vw, 1.125rem);
+    --font-size-md: clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem); // h6
+    --font-size-lg: clamp(1.5rem, 1.3269rem + 0.7692vw, 2.25rem); // h5 & h3
+    --font-size-xl: clamp(2rem, 1.8269rem + 0.7692vw, 2.75rem); // h4 & h2
+    --font-size-2xl: clamp(2.5rem, 2.2837rem + 0.9615vw, 3.4375rem); // h1
+
+    /* Line Heights */
+    --line-height-tight: 130%;
+    --line-height-normal: 150%;
+
+    /* Font Weights */
+    --font-thin: 100;
+    --font-extralight: 200;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+}
+
+/* Typography Classes */
+.extra-small {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-normal);
+}
+
+.small {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-light);
+
+    p {
+        font-size: var(--font-size-xs);
+        font-weight: var(--font-light);
+    }
+}
+
+.paragraph {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-normal);
+}
+
+p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-normal);
+}
+
+a {
+    // text-decoration: none;
+    color: $primary-color;
+}
+
+/* Heading Styles */
+
+.title-case {
+    h1 {
+        font-size: var(--font-size-2xl);
+        line-height: var(--line-height-tight);
+        font-weight: var(--font-semibold);
+    }
+
+    h2 {
+        font-size: var(--font-size-xl);
+        line-height: var(--line-height-tight);
+        font-weight: var(--font-semibold);
+    }
+}
+
+h1 {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-medium);
+}
+
+h2 {
+    font-size: var(--font-size-md);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-semibold);
+}
+
+h3 {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-semibold);
+}
+
+h4 {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-tight);
+    font-weight: var(--font-medium);
+}
+
+h5 {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-medium);
+}
+
+/* Alternative approach with more granular control */
+/*
+:root {
+    // Extra fine-tuned clamp values based on your screenshot
+    --font-size-xs: clamp(10px, 0.625rem + 0.5vw, 12px);
+    --font-size-sm: clamp(14px, 0.875rem + 0.5vw, 16px);
+    --font-size-base: clamp(16px, 1rem + 0.5vw, 18px);
+    --font-size-md: clamp(18px, 1.125rem + 0.5vw, 20px);
+    --font-size-lg: clamp(24px, 1.5rem + 1.5vw, 36px);
+    --font-size-xl: clamp(31px, 1.9375rem + 1.5vw, 44px);
+    --font-size-2xl: clamp(36px, 2.25rem + 2.5vw, 55px);
+}
+*/
+
+/* Media Query Fallback for older browsers */
+@supports not (font-size: clamp(1rem, 1vw, 1rem)) {
+    /* Mobile First Approach */
+    :root {
+        --font-size-xs: 10px;
+        --font-size-sm: 14px;
+        --font-size-base: 16px;
+        --font-size-md: 18px;
+        --font-size-lg: 24px;
+        --font-size-xl: 31px;
+        --font-size-2xl: 36px;
+    }
+
+    /* Desktop */
+    @media (min-width: 768px) {
+        :root {
+            --font-size-xs: 12px;
+            --font-size-sm: 16px;
+            --font-size-base: 18px;
+            --font-size-md: 20px;
+            --font-size-lg: 36px;
+            --font-size-xl: 44px;
+            --font-size-2xl: 55px;
+        }
+    }
+}

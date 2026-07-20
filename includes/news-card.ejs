@@ -1,0 +1,29 @@
+```{=html}
+<div class="news-grid-container">
+  <% for (const item of items.slice(0, 6)) { %>
+    <a href="<%= item.path %>" class="legacy-news-card" target="_blank">
+      <div class="news-content">
+        <div class="news-text"><%= item.title %></div>
+        <div class="news-authors">
+		<% if (item.authors) { %>
+		  <% if (Array.isArray(item.authors)) { %>
+		    <%= item.authors.join(", ") %>
+		  <% } else { %>
+		    <%= item.authors %>
+		  <% } %>
+		<% } %>
+	</div>
+        <div class="news-source"><%= item.source %></div>
+        <div class="news-date">
+          <% 
+            const date = new Date(item.date);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = date.toLocaleDateString('en-US', options);
+          %>
+          <%= formattedDate %>
+        </div>
+      </div>
+    </a>
+  <% } %>
+</div>
+```

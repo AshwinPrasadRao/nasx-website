@@ -1,0 +1,20 @@
+/* Buttons Styling */
+
+.primary-btn {
+    display: inline-block;
+    border: 1px solid $primary-color;
+    border-radius: 8px;
+    color: white;
+    padding: clamp(6px, 1vw, 8px) clamp(16px, 2vw, 24px);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: $primary-color;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-normal);
+
+    &:hover {
+        background-color: $primary-highlight-color;
+        color: white;
+    }
+}

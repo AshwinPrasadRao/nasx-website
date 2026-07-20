@@ -1,0 +1,44 @@
+/* ==========================================================
+   Takshashila — Research Areas index (editorial newspaper)
+   Page-specific components for pages/research-areas/index.qmd.
+   Loaded via the page's include-in-header front-matter, on top of
+   the global assets/css/takshashila-base.css (tokens + shared
+   primitives). Reuses base .news-cards and .pub-list / .tk-pub —
+   those are NOT redefined here. Only the masthead and the static
+   programme list live here.
+   ========================================================== */
+
+/* ── Masthead ── */
+.ra-mast { padding: 56px 0 64px; border-bottom: var(--tk-rule); }
+.ra-mast .inner { max-width: var(--tk-max); margin: 0 auto; padding: 0 var(--tk-pad-x); }
+.ra-mast .meta-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 32px; flex-wrap: wrap; gap: 12px; }
+.ra-mast .nameplate { font-family: var(--tk-serif); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tk-ink-50); }
+.ra-mast .issue { font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.14em; color: var(--tk-ink-50); }
+.ra-mast .issue b { color: var(--tk-primary); }
+
+.ra-mast .grid { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: end; }
+.ra-mast .ra-title { font-family: var(--tk-serif); font-weight: 400; font-size: 72px; line-height: 0.95; letter-spacing: -0.03em; margin: 0; text-wrap: balance; }
+.ra-mast .ra-title em { font-style: italic; color: var(--tk-primary); }
+.ra-mast .lede { font-family: var(--tk-serif); font-weight: 300; font-size: 22px; line-height: 1.5; color: var(--tk-ink-70); margin: 0; max-width: 520px; text-wrap: pretty; }
+
+@media (max-width: 960px) {
+  .ra-mast .grid { grid-template-columns: 1fr; gap: 32px; }
+  .ra-mast .ra-title { font-size: 48px; }
+}
+@media (max-width: 560px) {
+  .ra-mast .ra-title { font-size: 40px; }
+}
+
+/* ── Programmes list — mirrors HTG focus-area rows ── */
+.ra-list { border-top: var(--tk-rule); border-bottom: var(--tk-rule); }
+.ra-row { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; padding: 36px 0; border-bottom: var(--tk-rule); align-items: start; transition: background 0.15s ease; }
+.ra-row:last-child { border-bottom: none; }
+.ra-row:hover { background: var(--tk-bg-deep); }
+.ra-row .ra-name { font-family: var(--tk-serif); font-size: 32px; line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 14px; font-weight: 500; text-wrap: balance; }
+.ra-row .ra-blurb { font-family: var(--tk-serif); font-weight: 300; font-size: 15px; line-height: 1.55; color: var(--tk-ink-70); margin: 0 0 14px; max-width: 620px; text-wrap: pretty; }
+.ra-row .ra-link { font-family: var(--tk-mono); font-size: 11px; color: var(--tk-ink); letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--tk-ink); padding-bottom: 3px; display: inline-block; }
+.ra-row .ra-pubs { display: grid; gap: 6px; padding-top: 4px; }
+.ra-row .ra-pubs .pl { font-family: var(--tk-mono); font-size: 10px; color: var(--tk-ink-50); letter-spacing: 0.1em; text-transform: uppercase; }
+.ra-row .ra-pubs a { font-family: var(--tk-serif); font-size: 14px; line-height: 1.4; color: var(--tk-ink); padding: 6px 0; border-bottom: 1px dotted var(--tk-ink-20); }
+.ra-row .ra-pubs a:last-child { border-bottom: none; }
+@media (max-width: 960px) { .ra-row { grid-template-columns: 1fr; gap: 16px; } .ra-row .ra-name { font-size: 24px; } }

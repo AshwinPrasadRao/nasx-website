@@ -1,0 +1,48 @@
+```{=html}
+<div class="trackers-homepage-section">
+<% if (items.length > 0) { %>
+  <div class="tracker-cards-row">
+    <% for (const item of items) { %>
+      <a href="/<%= item.path %>" class="tracker-homepage-card">
+        <% if (item.image) { %>
+          <div class="tracker-card-image-wrap">
+            <img src="/<%= item.image %>" alt="<%= item.title %>" class="tracker-card-img" />
+          </div>
+        <% } %>
+        <div class="tracker-card-body">
+          <span class="tracker-live-badge">LIVE DOSSIER</span>
+          <h3 class="tracker-card-title"><%= item.title %></h3>
+          <span class="tracker-card-cta">Go to Live Dossier →</span>
+        </div>
+      </a>
+    <% } %>
+  </div>
+  <% if (items.length <= 2) { %>
+  <script>
+    (function () {
+      /* When there are 1–2 trackers the cards are already direct links,
+         so hide the generic "View All Trackers" link to reduce confusion. */
+      document.addEventListener('DOMContentLoaded', function () {
+        var inner = document.querySelector('.trackers-homepage-inner');
+        if (!inner) return;
+        var viewAll = inner.querySelector('a.view-all');
+        if (viewAll) viewAll.style.display = 'none';
+      });
+    })();
+  </script>
+  <% } %>
+<% } else { %>
+  <!-- No trackers: hide the homepage wrapper and hub section gracefully -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Hide homepage tracker banner wrapper if no trackers are configured
+      var wrapper = document.querySelector('.trackers-homepage-wrapper');
+      if (wrapper) wrapper.style.display = 'none';
+      // On the hub page hide the listing section too
+      var hub = document.querySelector('.trackers-hub-section');
+      if (hub) hub.style.display = 'none';
+    });
+  </script>
+<% } %>
+</div>
+```

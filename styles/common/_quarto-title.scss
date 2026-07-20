@@ -1,0 +1,18 @@
+/* .quarto-title-block's own layout (the old full-bleed, centred width/
+   padding rule) has been retired — the new document header
+   (includes/title-block.html) is left-aligned and handles its own width
+   via .gcpp-hero__grid (assets/css/takshashila-base-20260707.css), matching the
+   rest of the site's editorial, non-marketing register. The nested
+   .quarto-title/.quarto-title h1/.quarto-title .subtitle rules that used
+   to live here never matched the actual template output anyway (the
+   partial emits .gcpp-hero__h1/.gcpp-hero__lede, not .quarto-title) —
+   removed as dead code rather than ported forward. */
+
+/* Add horizontal rule styling */
+.quarto-title-block + hr {
+  max-width: 1280px;
+  margin: 20px auto;
+  border: 0;
+  height: 1px;
+  background-color: rgba(98, 13, 60, 0.1);
+}

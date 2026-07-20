@@ -1,0 +1,42 @@
+```{=html}
+<div class="listing-section">
+    <% if (items.length > 0) { %>
+        <div class="podcast-listing-grid">
+            <% for (const item of items) { %>
+                <a href="<%= item.path %>" class="podcast-card">
+                    <% if (item.image) { %>
+                        <div class="podcast-image">
+                            <% if (templateParams) { %>
+                                <% if (templateParams.path_prefix) { %>
+                                    <img src="<%= templateParams.path_prefix %><%= item.image %>" alt="<%= item.title %>" />
+                                <% } %>
+                            <% } else { %>
+                                <img src="<%= item.image %>" alt="<%= item.title %>" />
+                            <% } %>
+                        </div>
+                    <% } %>
+                    <div class="podcast-content">
+                        <h2>
+                            <%= item.title %>
+                        </h2>
+                        <% if (item.subtitle) { %>
+                            <p>
+                                <%= item.subtitle %>
+                            </p>
+                        <% } else if (item.description) { %>
+                            <p>
+                                <%= item.description %>
+                            </p>
+                        <% } %>
+                        <span class="podcast-link">
+                            <%= item.linkText || "View All Episodes" %>
+                        </span>
+                    </div>
+                </a>
+            <% } %>
+        </div>
+    <% } else { %>
+        <p>No podcasts found.</p>
+    <% } %>
+</div>
+```

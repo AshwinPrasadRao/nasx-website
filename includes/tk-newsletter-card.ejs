@@ -1,0 +1,11 @@
+```{=html}
+<div class="np-grid">
+  <% for (const item of items) { %>
+    <div class="np-tile">
+      <h3><%= item.title %></h3>
+      <p><%= item.description %><% if (item.footer) { %><%= item.description.trim().endsWith('.') ? '' : '.' %> <%= item.footer %>.<% } %></p>
+      <a class="tk-btn tk-btn-primary" href="<%= item.link %>" target="_blank" rel="noopener">Subscribe →</a>
+    </div>
+  <% } %>
+</div>
+```

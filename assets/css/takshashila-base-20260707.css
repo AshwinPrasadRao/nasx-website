@@ -1,0 +1,696 @@
+/* ──────────────────────────────────────────────────────────────────────
+   Takshashila — shared design tokens, chrome, and listing primitives
+   Loaded globally via _quarto.yml on every page.
+
+   What's here:
+     :root tokens              brand colours, neutrals, type families, --tk-pad-x, --tk-max
+     .tk-root                  opt-in wrapper for new-design pages
+     .tk-root aside            neutralizes Quarto's default <aside> styling
+     html:has(.tk-root)        overflow-x: clip safety net
+     page-columns neutralizer  defeats Quarto's listing-triggered grid
+                               cascade inside .tk-root
+     main.page-full override   pulls main back to column-page track on
+                               new-design pages (matches policy school)
+     .tk-banner / .tk-divider / .tk-status / .tk-footer
+                               chrome definitions (inactive — Quarto navbar
+                               still renders today; reserved for migration)
+     .tk-section / .tk-container
+                               layout + 1240px max-width
+     .tk-h1..h4 / .tk-lede / .tk-meta*
+                               type scale
+     .tk-btn / .tk-btn-*       button system
+     .tk-grid / .tk-cell / .tk-card / .tk-pub / .tk-imgph / .tk-feat / .tk-tag / .tk-stats
+                               grid + listing primitives
+     .ev-cards / .ev-card     event card grid (home + pages/events/index.qmd)
+     .programme-page .gcpp-hero*
+                               shared page-top masthead (policy school +
+                               research-circle); scoped to .programme-page
+     .news-cards / .news-card  shared news grid (used everywhere)
+     .blog-list / .blog-row / .blog-feed / .blog-feat
+                               blog listings (home + research-circle)
+     .np-grid / .np-tile       newsletter + podcast card grid (used everywhere;
+                               N-up, individually bordered — gracefully handles
+                               1 to 6+ items, unlike the old fixed 2-column split)
+     .tile-grid / .tile / .books
+                               misc tile grids
+     .pub-list / .tk-pub-list  publication list wrappers
+     responsive @960px + @560px
+
+   Layout: 1240px max content width, 1px hairline rules, white / deep-cream
+   alternating sections, 80px vertical section padding.
+   Brand: wine #620d3c · gold #f1a222
+   Type:  Inter (body + display) · Roboto Mono (eyebrows/meta)
+   Wordmark uses Georgia serif as a brand exception.
+
+   Breakpoints standardised on 960px and 560px — the values the policy
+   school programme pages have been optimised for.
+   ────────────────────────────────────────────────────────────────────── */
+
+/* Inter, Roboto Mono and Roboto are self-hosted via _fonts.scss
+   (compiled into the Quarto theme). No third-party font requests. */
+
+:root {
+  /* Brand */
+  --tk-primary: #620d3c;
+  --tk-primary-dark: #4a0a2e;
+  --tk-primary-soft: #f5e6ec;
+  --tk-gold: #f1a222;
+  --tk-gold-soft: #fcf0d9;
+
+  /* Neutrals */
+  --tk-bg: #FFFFFF;
+  --tk-bg-deep: #F7F5F2;
+  --tk-paper: #FFFFFF;
+  --tk-ink: #171413;
+  --tk-ink-70: rgba(23,20,19,0.70);
+  --tk-ink-50: rgba(23,20,19,0.50);
+  --tk-ink-20: rgba(23,20,19,0.16);
+  --tk-ink-10: rgba(23,20,19,0.08);
+
+  /* Type families */
+  --tk-sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --tk-serif: 'Inter', -apple-system, system-ui, sans-serif;
+  --tk-mono: 'Roboto Mono', ui-monospace, monospace;
+  /* Fallback for programme-page.css's --tk-display, in case that stylesheet
+     isn't loaded on the page (e.g. includes/title-block.html's gcpp-hero
+     markup runs globally, but programme-page.css is opt-in per page).
+     Programme pages that DO load programme-page.css still get its own
+     .programme-page { --tk-display: ... } — same value, just more specific,
+     so this is a no-op override there, not a behaviour change. */
+  --tk-display: var(--tk-sans);
+
+  /* Layout */
+  --tk-max: 1240px;
+  --tk-rule: 1px solid var(--tk-ink-20);
+  --tk-pad-x: 40px;
+}
+
+/* ── .tk-root: opt-in wrapper for the new design pages ───────────── */
+.tk-root *, .tk-root *::before, .tk-root *::after { box-sizing: border-box; }
+.tk-root {
+  font-family: var(--tk-sans); color: var(--tk-ink); background: var(--tk-bg);
+  font-size: 15px; line-height: 1.5;
+  /* No width / max-width here. The override below pulls main back to the
+     1280px column-page track (matching policy school), so .tk-root just
+     fills its parent naturally and section widths/backgrounds line up
+     pixel-for-pixel with .gcpp-section. */
+}
+
+/* When Quarto's listing pipeline adds page-columns + page-full to <main>,
+   the page-full rule sets grid-column: screen-start/screen-end !important
+   on main, making it span the full viewport AND turns main into a 14-track
+   grid container. Policy school pages (no listings) keep main as a plain
+   block element with column-page (page-start/page-end, ≈1280px).
+   To make new-design pages render with the same outer margin AND let
+   .tk-root fill main as a block child:
+     1) Restore main to the column-page grid track in its parent grid.
+     2) Force main itself to display: block so its children flow normally
+        (not as grid items in main's 14-track template).
+   The neutralizer below still handles page-columns / page-full classes
+   that Quarto recursively adds inside .tk-root. */
+html:has(.tk-root) main.page-full {
+  grid-column: page-start / page-end !important;
+  display: block !important;
+}
+
+/* Defeat Quarto's default <aside> styling inside the new-design pages.
+   Quarto's theme adds border-top, border-bottom, color: wine !important,
+   and font-size: 0.825rem to every <aside> — meant for sidenotes but
+   breaks any semantic <aside> we use for masthead datasheets or sidebars. */
+.tk-root aside {
+  border: none;
+  color: inherit !important;
+  font-size: inherit;
+}
+.tk-root a { color: inherit; text-decoration: none; cursor: pointer; }
+.tk-root img { max-width: 100%; display: block; }
+
+/* Prevent the 100vw horizontal-scrollbar bug — only on pages using the new design. */
+html:has(.tk-root) { overflow-x: clip; }
+
+/* ── Defeat Quarto's listing-triggered page-columns / page-full cascade ──
+   When a page has `listing:` frontmatter, Quarto's Lua filter recursively
+   adds `page-columns page-full` to every block descendant of <main>.
+   `.page-columns` is `display: grid` with a 14-track template that maxes
+   the body-content column at ~1280px. `.page-full > *` then pulls direct
+   children back into a narrower track, compounding the inward pull
+   across each nested layer. We neutralize both effects inside `.tk-root`,
+   then re-instate our own grid layouts below (source order makes the
+   later component rules win). */
+.tk-root.page-columns,
+.tk-root .page-columns {
+  display: block;
+  /* Note: do NOT also set `grid-template-columns: none` here. Source order
+     puts this rule after research-circle.css's grid rules, so it would
+     defeat our own grid components at equal specificity. `display: block`
+     alone is enough to neutralize Bootstrap's .page-columns grid — when
+     display is block, grid-template-columns is irrelevant. Restored grids
+     (.news-cards, .focus-row, .research-courses, etc.) set display:grid +
+     their own templates further down. */
+}
+.tk-root.page-full,
+.tk-root .page-full {
+  grid-column: auto;
+}
+.tk-root .page-full > *,
+.tk-root .column-page > * {
+  grid-column: auto;
+}
+
+/* Re-instate our genuinely-grid layouts. These come BEFORE the
+   component-level rules later in this file — those rules then
+   cascade-win and apply the real grid-template-columns. Listed here
+   only as a `display: grid` floor so the neutralizer above doesn't
+   accidentally collapse them. */
+.tk-root .news-cards,
+.tk-root .np-grid,
+.tk-root .research-courses,
+.tk-root .research-tiles,
+.tk-root .tile-grid,
+.tk-root .focus-row,
+.tk-root .research-featres {
+  display: grid;
+}
+
+/* ── Site banner (definition only — Quarto navbar still renders) ── */
+.tk-banner { background: var(--tk-primary); color: #fff; }
+.tk-banner .tk-inner {
+  max-width: var(--tk-max); margin: 0 auto; padding: 20px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.tk-banner .tk-logo-wrap { display: flex; align-items: center; gap: 16px; }
+.tk-banner .tk-logo-mark {
+  width: 58px; height: 58px; border-radius: 50%; background: var(--tk-gold);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  position: relative; overflow: hidden;
+}
+.tk-banner .tk-logo-mark svg { width: 32px; height: 38px; display: block; }
+.tk-banner .tk-logo-text { line-height: 1.05; color: #fff; font-family: 'Georgia', 'Times New Roman', serif; }
+.tk-banner .tk-logo-text .l1 { font-size: 22px; font-weight: 400; letter-spacing: 0.04em; }
+.tk-banner .tk-logo-text .l2 { font-size: 12px; letter-spacing: 0.22em; color: rgba(255,255,255,0.92); margin-top: 4px; font-weight: 400; }
+.tk-banner nav { display: flex; gap: 40px; align-items: center; font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; }
+.tk-banner nav a { color: #fff; display: inline-flex; align-items: center; gap: 6px; }
+.tk-banner nav a:hover { opacity: 0.85; }
+.tk-banner nav a .chev { font-size: 7px; opacity: 1; margin-left: 4px; }
+.tk-banner nav .search { color: var(--tk-gold); font-size: 22px; margin-left: 8px; }
+
+/* Paisley divider */
+.tk-divider {
+  height: 50px;
+  background:
+    radial-gradient(ellipse 18px 10px at 30px 25px, rgba(98,13,60,0.18) 0 60%, transparent 65%),
+    radial-gradient(ellipse 12px 8px at 90px 30px, rgba(98,13,60,0.14) 0 60%, transparent 65%),
+    radial-gradient(ellipse 16px 10px at 160px 22px, rgba(98,13,60,0.16) 0 60%, transparent 65%),
+    radial-gradient(ellipse 10px 6px at 220px 28px, rgba(98,13,60,0.12) 0 60%, transparent 65%),
+    #f0e6e0;
+  background-size: 280px 50px, 280px 50px, 280px 50px, 280px 50px, auto;
+  background-repeat: repeat-x;
+  border-bottom: 1px solid rgba(98,13,60,0.18);
+}
+
+/* ── Status strip (page-context bar that sits below banner) ───────── */
+.tk-status { background: var(--tk-bg-deep); border-bottom: var(--tk-rule); }
+.tk-status .inner {
+  max-width: var(--tk-max); margin: 0 auto; padding: 10px 40px;
+  display: flex; justify-content: space-between;
+  font-family: var(--tk-mono); font-size: 11px; color: var(--tk-ink-50); letter-spacing: 0.04em;
+}
+.tk-status .dot { color: var(--tk-primary); }
+
+/* ── Breadcrumb ───────────────────────────────────────────────────── */
+/* Padding lives on .inner (not the outer wrapper) so the content area
+   matches the .gcpp-hero__grid pattern: max-width 1240px + 40px side
+   padding → 1160px content. */
+.tk-crumb {
+  padding: 14px 0; border-bottom: var(--tk-rule);
+  font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--tk-ink-50);
+}
+.tk-crumb .inner { max-width: var(--tk-max); margin: 0 auto; padding: 0 var(--tk-pad-x); }
+.tk-crumb a { color: var(--tk-ink); }
+.tk-crumb b { color: var(--tk-primary); }
+
+/* ── Sections / containers ────────────────────────────────────────── */
+.tk-section { border-bottom: var(--tk-rule); padding: 64px var(--tk-pad-x); }
+.tk-section.deep { background: var(--tk-bg-deep); }
+.tk-section.dark { background: var(--tk-ink); color: #fff; }
+.tk-section.brand { background: var(--tk-primary); color: #fff; }
+.tk-container { max-width: var(--tk-max); margin: 0 auto; padding: 0 var(--tk-pad-x); }
+
+/* Section labels — // 01_LABEL */
+.tk-eyebrow {
+  font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.14em;
+  color: var(--tk-ink-50); margin-bottom: 24px; text-transform: none;
+}
+.tk-section.dark .tk-eyebrow,
+.tk-section.brand .tk-eyebrow { color: rgba(255,255,255,0.55); }
+
+/* Headings */
+.tk-h1 { font-family: var(--tk-serif); font-weight: 400; font-size: 72px; line-height: 0.98; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+.tk-h2 { font-family: var(--tk-serif); font-weight: 400; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+.tk-h3 { font-family: var(--tk-serif); font-weight: 500; font-size: 22px; line-height: 1.2; letter-spacing: -0.005em; margin: 0; }
+.tk-h4 { font-family: var(--tk-serif); font-weight: 500; font-size: 18px; line-height: 1.3; margin: 0; }
+.tk-lede { font-family: var(--tk-serif); font-weight: 300; font-size: 22px; line-height: 1.45; color: var(--tk-ink-70); text-wrap: pretty; margin: 0; }
+.tk-italic-em { font-style: italic; color: var(--tk-primary); }
+
+/* Meta */
+.tk-meta { font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tk-ink-50); }
+.tk-meta-sm { font-family: var(--tk-mono); font-size: 10.5px; letter-spacing: 0.16em; color: var(--tk-ink-50); }
+.tk-meta-strong { font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--tk-primary); }
+
+/* Section header row (eyebrow + h2 + view-all link) */
+.tk-section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+.tk-view-all { font-family: var(--tk-mono); font-size: 11px; color: var(--tk-ink); letter-spacing: 0.06em; border-bottom: 1px solid var(--tk-ink); padding-bottom: 4px; text-transform: uppercase; }
+.tk-section.dark .tk-view-all { color: #fff; border-color: #fff; }
+
+/* ── Buttons ──────────────────────────────────────────────────────── */
+.tk-btn {
+  display: inline-block; padding: 14px 28px; font-family: var(--tk-mono);
+  font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border: none;
+}
+.tk-btn-primary { background: var(--tk-primary); color: #fff; }
+.tk-root a.tk-btn-primary { color: #fff; }
+.tk-btn-gold    { background: var(--tk-gold); color: var(--tk-ink); font-weight: 600; }
+.tk-btn-ghost   { background: transparent; border: var(--tk-rule); color: var(--tk-ink); }
+.tk-btn-on-dark { background: var(--tk-gold); color: var(--tk-ink); font-weight: 600; }
+
+/* ── Card grids ───────────────────────────────────────────────────── */
+.tk-grid { display: grid; gap: 0; border: var(--tk-rule); background: var(--tk-paper); }
+.tk-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.tk-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.tk-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Cell with inner gridded borders — use inside .tk-grid */
+.tk-cell { padding: 28px 32px; border-right: var(--tk-rule); border-bottom: var(--tk-rule); }
+.tk-cell:last-child { border-right: none; }
+.tk-grid-3 > .tk-cell:nth-child(3n) { border-right: none; }
+.tk-grid-2 > .tk-cell:nth-child(2n) { border-right: none; }
+.tk-grid-4 > .tk-cell:nth-child(4n) { border-right: none; }
+
+/* Linked card */
+.tk-card { display: block; padding: 28px 32px; border-right: var(--tk-rule); border-bottom: var(--tk-rule); transition: background 0.15s ease; }
+.tk-card:hover { background: var(--tk-bg-deep); }
+
+/* ── Shared listing primitives ────────────────────────────────────── */
+
+/* Publication list wrapper */
+.pub-list,
+.tk-pub-list { border-top: var(--tk-rule); border-bottom: var(--tk-rule); }
+
+/* Publication / blog row item */
+.tk-pub {
+  display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: baseline;
+  padding: 22px 0; border-bottom: var(--tk-rule);
+}
+.tk-pub:last-child { border-bottom: none; }
+.tk-pub .tk-pub-num { font-family: var(--tk-mono); font-size: 11px; color: var(--tk-primary); letter-spacing: 0.08em; }
+.tk-pub .tk-pub-title { font-family: var(--tk-serif); font-size: 22px; line-height: 1.25; letter-spacing: -0.01em; text-wrap: pretty; }
+.tk-pub .tk-pub-title small {
+  display: block; font-family: var(--tk-mono); font-size: 11px;
+  color: var(--tk-ink-50); letter-spacing: 0.06em; margin-top: 4px;
+  font-weight: normal;
+}
+.tk-pub .tk-pub-date { font-family: var(--tk-mono); font-size: 11px; color: var(--tk-ink-50); letter-spacing: 0.06em; white-space: nowrap; }
+.tk-pub:hover { background: var(--tk-bg-deep); }
+
+/* Event cards — four-up grid (home page + pages/events/index.qmd) */
+.ev-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: var(--tk-rule); background: var(--tk-paper); }
+.ev-card { padding: 0; border-right: var(--tk-rule); border-bottom: var(--tk-rule); display: flex; flex-direction: column; transition: background 0.15s ease; }
+.ev-cards > .ev-card:nth-child(2n) { border-right: none; }
+.ev-cards > .ev-card:nth-last-child(-n+2) { border-bottom: none; }
+.ev-card:hover { background: var(--tk-bg-deep); }
+.ev-card .ev-body { padding: 28px 30px 32px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.ev-card .ev-type { font-family: var(--tk-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; background: var(--tk-primary); color: #fff; align-self: flex-start; }
+.ev-card .ev-date { font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.1em; color: var(--tk-primary); }
+.ev-card h3 { font-family: var(--tk-serif); font-size: 26px; line-height: 1.2; letter-spacing: -0.005em; margin: 0; font-weight: 500; text-wrap: pretty; }
+.ev-card p { font-size: 14px; line-height: 1.55; color: var(--tk-ink-70); margin: 0; text-wrap: pretty; flex: 1; }
+.ev-card .ev-link { font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tk-ink); border-bottom: 1px solid var(--tk-ink); padding-bottom: 3px; align-self: flex-start; margin-top: 6px; }
+@media (max-width: 720px) {
+  .ev-cards { grid-template-columns: 1fr; }
+  .ev-card { border-right: none; }
+  .ev-cards > .ev-card:nth-last-child(-n+2) { border-bottom: var(--tk-rule); }
+  .ev-cards > .ev-card:last-child { border-bottom: none; }
+}
+
+/* Image placeholder (striped, with mono caption) */
+.tk-imgph {
+  background: repeating-linear-gradient(135deg, rgba(23,20,19,0.04) 0 8px, rgba(23,20,19,0.09) 8px 16px);
+  position: relative; aspect-ratio: 4/3;
+}
+.tk-imgph .tk-imgph-tag {
+  position: absolute; top: 12px; left: 14px;
+  font-family: var(--tk-mono); font-size: 10px; color: var(--tk-ink-50); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.tk-imgph .tk-imgph-cap {
+  position: absolute; bottom: 12px; left: 14px; right: 14px;
+  font-family: var(--tk-mono); font-size: 10px; color: var(--tk-ink-50); letter-spacing: 0.1em; text-transform: uppercase;
+}
+.tk-imgph.dark { background: repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0 8px, rgba(255,255,255,0.10) 8px 16px); }
+.tk-imgph.dark .tk-imgph-tag,
+.tk-imgph.dark .tk-imgph-cap { color: rgba(255,255,255,0.65); }
+
+/* Featured row (image + text side-by-side) */
+.tk-feat { display: grid; grid-template-columns: 7fr 5fr; gap: 48px; align-items: center; }
+.tk-feat .tk-feat-meta { font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tk-primary); margin-bottom: 18px; }
+
+/* Tag chips */
+.tk-tag {
+  display: inline-block; padding: 4px 10px; border: 1px solid var(--tk-ink-20);
+  font-family: var(--tk-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tk-ink-70);
+  margin-right: 6px;
+}
+.tk-tag.primary { background: var(--tk-primary); color: #fff; border-color: var(--tk-primary); }
+.tk-tag.gold { background: var(--tk-gold); color: var(--tk-ink); border-color: var(--tk-gold); }
+
+/* Stats row */
+.tk-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.18); }
+.tk-stats .n { font-family: var(--tk-serif); font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: var(--tk-gold); margin-bottom: 6px; }
+.tk-stats .l { font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); }
+
+/* News — 3-col card grid (used on home, HTG, research-areas) */
+/* News cards: individual-bordered cards with a gap between them for
+   breathing room. Each card has its own hairline border on all 4 sides;
+   the gap shows the page background between cards. */
+.news-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.news-card {
+  padding: 28px 30px 32px;
+  border: var(--tk-rule); background: var(--tk-paper);
+  display: flex; flex-direction: column; gap: 20px;
+  transition: background 0.15s ease;
+}
+.news-card:hover { background: var(--tk-bg-deep); }
+.news-card .nc-title { font-family: var(--tk-serif); font-size: 21px; line-height: 1.25; letter-spacing: -0.005em; margin: 0; font-weight: 500; text-wrap: pretty; flex: 1; }
+.news-card .nc-foot { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding-top: 16px; border-top: var(--tk-rule); align-items: baseline; }
+.news-card .nc-author { font-family: var(--tk-serif); font-size: 14px; color: var(--tk-ink); font-weight: 500; grid-column: 1 / -1; }
+.news-card .nc-pub { font-family: var(--tk-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tk-primary); }
+.news-card .nc-date { font-family: var(--tk-mono); font-size: 10.5px; letter-spacing: 0.08em; color: var(--tk-ink-50); text-align: right; }
+
+/* Blog list — dense rows (used on home, HTG) */
+.blog-list { border-top: 2px solid var(--tk-ink); }
+.blog-row { display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 22px 0; border-bottom: var(--tk-rule); align-items: baseline; transition: background 0.15s ease; }
+.blog-row:last-child { border-bottom: none; }
+.blog-row:hover { background: var(--tk-bg-deep); }
+.blog-row .br-cat { font-family: var(--tk-mono); font-size: 11px; color: var(--tk-primary); letter-spacing: 0.1em; text-transform: uppercase; }
+.blog-row .br-title { font-family: var(--tk-serif); font-size: 22px; line-height: 1.25; letter-spacing: -0.01em; margin: 0; text-wrap: pretty; font-weight: 500; }
+.blog-row .br-title small { display: block; font-family: var(--tk-mono); font-size: 11px; color: var(--tk-ink-50); letter-spacing: 0.06em; margin-top: 4px; font-weight: normal; }
+.blog-row .br-date { font-family: var(--tk-mono); font-size: 11px; color: var(--tk-ink-50); letter-spacing: 0.06em; white-space: nowrap; }
+.blog-cta-wrap { margin-top: 28px; display: flex; justify-content: center; }
+
+/* Featured blog (home page; reused as one-off elsewhere) */
+.blog-feed { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; align-items: start; }
+.blog-feat { border: var(--tk-rule); background: var(--tk-paper); }
+.blog-feat .img { aspect-ratio: 5/3; position: relative; }
+.blog-feat .img .pin {
+  position: absolute; top: 14px; left: 14px; font-family: var(--tk-mono); font-size: 10px; letter-spacing: 0.14em;
+  padding: 4px 10px; background: var(--tk-gold); color: var(--tk-ink); text-transform: uppercase; font-weight: 600;
+}
+.blog-feat .body { padding: 24px 26px 28px; }
+.blog-feat .body .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.blog-feat .body .tags span { font-family: var(--tk-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tk-primary); padding: 2px 8px; border: 1px solid var(--tk-primary); }
+.blog-feat .body h3 { font-family: var(--tk-serif); font-size: 28px; line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 12px; font-weight: 500; text-wrap: pretty; }
+.blog-feat .body p { font-size: 14.5px; line-height: 1.6; color: var(--tk-ink-70); margin: 0 0 16px; text-wrap: pretty; }
+.blog-feat .body .meta { font-family: var(--tk-mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tk-ink-50); }
+.blog-feat .body .meta b { color: var(--tk-ink); font-weight: 500; }
+
+/* ── Newsletter / podcast cards (N-up, individually bordered, hover-fill) ──
+   Used everywhere (home + research-circle pages). A gap-separated grid of
+   independently-bordered cards handles any item count (1 to 6+) gracefully —
+   unlike a fixed 2-column split, which is only correct for exactly two cells. */
+.np-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.np-tile {
+  padding: 28px 30px 32px; border: var(--tk-rule); background: var(--tk-paper);
+  display: flex; flex-direction: column; gap: 14px;
+  transition: background 0.15s ease;
+}
+.np-tile:hover { background: var(--tk-bg-deep); }
+.np-tile h3 {
+  font-family: var(--tk-serif); font-size: 22px; line-height: 1.15;
+  letter-spacing: -0.01em; margin: 0; font-weight: 500; text-wrap: pretty;
+}
+.np-tile p {
+  font-size: 14.5px; line-height: 1.55; color: var(--tk-ink-70);
+  margin: 0; flex: 1; text-wrap: pretty;
+}
+.np-tile > a.tk-btn { align-self: flex-start; }
+.np-form { display: flex; gap: 0; max-width: 480px; border: var(--tk-rule); }
+.np-form input { flex: 1; padding: 14px 16px; border: none; outline: none; font-family: var(--tk-sans); font-size: 14px; background: var(--tk-paper); }
+.np-form button { padding: 14px 22px; background: var(--tk-primary); color: #fff; border: none; font-family: var(--tk-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; }
+
+/* Generic 3-col tile grid (home blog/books pattern; research-circle pages
+   use the denser .research-tile variant in research-circle.css). */
+.tile-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: var(--tk-rule); background: var(--tk-paper); }
+.tile { padding: 22px 24px 26px; border-right: var(--tk-rule); border-bottom: var(--tk-rule); }
+.tile-grid > .tile:nth-child(3n) { border-right: none; }
+.tile-grid > .tile:nth-last-child(-n+3) { border-bottom: none; }
+.tile .tile-num { font-family: var(--tk-mono); font-size: 10px; color: var(--tk-primary); letter-spacing: 0.1em; margin-bottom: 10px; }
+.tile .tile-title { font-family: var(--tk-serif); font-size: 20px; line-height: 1.25; letter-spacing: -0.005em; margin: 0 0 14px; text-wrap: pretty; }
+.tile .tile-meta { font-family: var(--tk-mono); font-size: 10.5px; color: var(--tk-ink-50); letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* Books shelf */
+.books { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.book .book-cover { aspect-ratio: 2/3; background: var(--tk-bg-deep); position: relative; margin-bottom: 12px; border: var(--tk-rule); }
+.book .book-cover .book-spine-tag { position: absolute; top: 10px; left: 10px; font-family: var(--tk-mono); font-size: 9.5px; color: var(--tk-ink-50); letter-spacing: 0.1em; }
+.book .book-cover .book-title-on-cover {
+  position: absolute; inset: 0; padding: 28px 16px; display: flex; align-items: flex-end;
+  font-family: var(--tk-serif); font-size: 14px; line-height: 1.2; color: var(--tk-ink); font-style: italic;
+}
+.book .book-meta-title { font-family: var(--tk-serif); font-size: 14px; line-height: 1.3; margin: 0; }
+.book .book-meta-sub { font-family: var(--tk-mono); font-size: 10px; color: var(--tk-ink-50); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 4px; }
+
+/* ── Programme / research masthead (.gcpp-hero) ───────────────────────
+   Shared page-top template used by BOTH the policy-school programme pages
+   and the research-circle pages. Scoped under `.programme-page` — every
+   page that uses it supplies that wrapper (policy school at page level;
+   research pages via an inner <div class="programme-page"> around the
+   masthead). Those pages also load programme-page.css, which provides the
+   `.programme-page` token block (e.g. --tk-display) and h1–h4 resets the
+   hero leans on. Responsive rules live in the @media blocks below. */
+.programme-page .gcpp-hero { border-bottom: var(--tk-rule); }
+.programme-page .gcpp-hero__meta {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tk-ink-50);
+}
+.programme-page .gcpp-hero__grid {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 60px 40px 80px;
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 64px;
+  align-items: end;
+}
+.programme-page .gcpp-hero__h1 {
+  font-size: 72px;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.programme-page .gcpp-hero__h1 em { font-style: italic; color: var(--tk-primary); }
+/* Document header (includes/title-block.html — publications, blogs, events,
+   team) reuses the gcpp-hero markup/CSS wholesale, but needs a smaller title
+   than an actual programme masthead: document titles are often long
+   sentences (e.g. "Takshashila Policy Advisory: Draft Regulations for Use
+   of Artificial Intelligence in Courts, 2026"), and 72px was never right
+   for that. Three-class selector (.doc-hero.programme-page) so this reliably
+   outranks both the base rule and its 960px/560px overrides regardless of
+   source order — a fluid clamp() means no separate breakpoint rules are
+   needed here. Programme pages (policy-school, research-areas) don't carry
+   .doc-hero, so their 72px masthead is unaffected. */
+.doc-hero.programme-page .gcpp-hero__h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.2; }
+.programme-page .gcpp-hero__lede {
+  font-family: var(--tk-display);
+  font-size: 22px;
+  line-height: 1.45;
+  font-weight: 300;
+  color: var(--tk-ink-70);
+  margin-top: 36px;
+  max-width: 620px;
+  text-wrap: pretty;
+}
+/* .eyebrow's full definition lives in programme-page.css, scoped the same
+   way — but that stylesheet is opt-in per page, while this header renders
+   globally (includes/title-block.html). Matched here (incl. margin-bottom/
+   display) so pages that also load programme-page.css see no change. */
+.programme-page .eyebrow {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--tk-ink-50);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  display: block;
+}
+.programme-page .gcpp-hero__aside {
+  border-left: 2px solid var(--tk-primary);
+  padding-left: 32px;
+}
+.programme-page .gcpp-hero__aside table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+.programme-page .gcpp-hero__aside td {
+  padding: 7px 0;
+  vertical-align: top;
+  font-size: 14.5px;
+  border: none;
+}
+.programme-page .gcpp-hero__aside td:first-child {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tk-ink-50);
+  padding-right: 24px;
+  white-space: nowrap;
+}
+.programme-page .gcpp-hero__aside td strong { font-weight: inherit; }
+.programme-page .gcpp-hero__aside thead { display: none; }
+.programme-page .gcpp-hero__aside td.gcpp-hero__aside-tags { padding-top: 3px; }
+/* Category tags in the aside drop the boxed .tk-tag chip look and read as
+   uppercase mono links (Roboto Mono, 12px). Colour comes from the td a rule
+   below (maroon = hyperlinked). border: none so .tk-tag's own bottom edge
+   doesn't linger. */
+.programme-page .gcpp-hero__aside td.gcpp-hero__aside-tags .tk-tag {
+  margin: 0 10px 6px 0;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: var(--tk-mono);
+  font-size: 12px;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+/* Author link + category tags — brand maroon to signal they're links. */
+.programme-page .gcpp-hero__aside td a { color: var(--tk-primary); }
+.programme-page .gcpp-hero__cta {
+  margin-top: 32px;
+  padding: 20px 0 0;
+  border-top: var(--tk-rule);
+}
+.programme-page .gcpp-hero__cta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+.programme-page .gcpp-hero__cta-row em {
+  font-family: var(--tk-display);
+  font-size: 20px;
+  font-style: italic;
+}
+.programme-page .gcpp-hero__cta .early-bird {
+  display: block;
+  font-family: var(--tk-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  color: var(--tk-gold);
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+.tk-footer { background: var(--tk-primary); color: rgba(255,255,255,0.85); padding: 80px 40px 32px; }
+.tk-footer .inner { max-width: var(--tk-max); margin: 0 auto; }
+.tk-footer .tk-foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 56px; padding-bottom: 56px; }
+.tk-footer h4 { font-family: var(--tk-sans); font-size: 22px; font-weight: 600; color: #fff; margin: 0 0 28px; letter-spacing: 0; }
+.tk-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; font-size: 15px; }
+.tk-footer ul a { color: rgba(255,255,255,0.78); }
+.tk-footer ul a:hover { color: #fff; }
+.tk-footer .tk-foot-brand { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+.tk-footer .tk-foot-mark { width: 64px; height: 64px; border-radius: 50%; background: var(--tk-gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.tk-footer .tk-foot-mark svg { width: 36px; height: 42px; display: block; }
+.tk-footer .tk-foot-wordmark { font-family: 'Georgia', 'Times New Roman', serif; color: #fff; line-height: 1.05; }
+.tk-footer .tk-foot-wordmark .w1 { font-size: 22px; font-weight: 400; letter-spacing: 0.04em; }
+.tk-footer .tk-foot-wordmark .w2 { font-size: 12px; letter-spacing: 0.22em; margin-top: 4px; }
+.tk-footer .tk-tag-line { font-family: var(--tk-sans); font-size: 22px; line-height: 1.35; max-width: 360px; color: #fff; font-weight: 600; margin: 0 0 24px; }
+.tk-footer .tk-addr { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.78); }
+.tk-footer .tk-bottom { padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.18); text-align: center; font-family: var(--tk-sans); font-size: 14px; color: rgba(255,255,255,0.72); letter-spacing: 0; text-transform: none; }
+
+/* ── Article body alignment (with vs without side notes) ────────────
+   Quarto's blogs/_metadata.yml sets a toc-location even though toc is
+   off, so blog posts always carry the "floating" body class. When a
+   post has no aside/margin content, Quarto also adds "fullcontent",
+   and its generated grid keeps the (unused) TOC track reserved on the
+   left while collapsing the margin-note track on the right — the body
+   copy drifts right with a wide left gutter and ~zero right gutter.
+   Reuse the grid from floating pages that DO have margin content, so
+   the article column sits in the same place either way. */
+@media (min-width: 992px) {
+  body.floating.fullcontent .page-columns {
+    grid-template-columns: [screen-start] 1.5em [screen-start-inset] 5fr [page-start] minmax(30px, 60px) [page-start-inset] minmax(60px, 180px) [body-start-outset] minmax(30px, 60px) [body-start] 1.5em [body-content-start] minmax(500px, calc(1280px - 3em)) [body-content-end] 1.5em [body-end] minmax(30px, 60px) [body-end-outset] minmax(60px, 180px) [page-end-inset] minmax(30px, 60px) [page-end] 5fr [screen-end-inset] 1.5em [screen-end];
+  }
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  :root { --tk-pad-x: 24px; }
+  .tk-container { padding: 0; }
+
+  .tk-feat { grid-template-columns: 1fr; gap: 32px; }
+  .tk-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .tk-grid-4 > .tk-cell:nth-child(4n) { border-right: var(--tk-rule); }
+  .tk-grid-4 > .tk-cell:nth-child(2n) { border-right: none; }
+
+  .news-cards { grid-template-columns: repeat(2, 1fr); }
+  .np-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .blog-feed { grid-template-columns: 1fr; gap: 32px; }
+  .books { grid-template-columns: repeat(3, 1fr); }
+
+  .tk-footer .tk-foot-grid { grid-template-columns: 1fr 1fr 1fr; gap: 40px; }
+
+  /* .gcpp-hero masthead */
+  .programme-page .gcpp-hero__meta,
+  .programme-page .gcpp-hero__grid { padding-left: 24px; padding-right: 24px; }
+  .programme-page .gcpp-hero__meta { flex-direction: column; gap: 4px; text-align: center; }
+  .programme-page .gcpp-hero__grid { grid-template-columns: 1fr; gap: 40px; padding-top: 32px; padding-bottom: 56px; }
+  .programme-page .gcpp-hero__h1 { font-size: 48px; }
+  .programme-page .gcpp-hero__lede { font-size: 18px; }
+}
+
+@media (max-width: 560px) {
+  :root { --tk-pad-x: 18px; }
+  .tk-section { padding: 44px var(--tk-pad-x); }
+  .tk-banner .tk-inner { flex-direction: column; gap: 12px; padding: 12px 20px; }
+  .tk-banner nav { gap: 16px; flex-wrap: wrap; justify-content: center; font-size: 13px; }
+  .tk-h1 { font-size: 44px; }
+  .tk-h2 { font-size: 32px; }
+  .tk-lede { font-size: 18px; }
+
+  .tk-grid-3, .tk-grid-2, .tk-grid-4 { grid-template-columns: 1fr; }
+  .tk-grid-3 > .tk-cell, .tk-grid-2 > .tk-cell, .tk-grid-4 > .tk-cell { border-right: none; }
+  .tk-pub { grid-template-columns: 1fr; gap: 8px; }
+
+  .news-cards { grid-template-columns: 1fr; }
+
+  .blog-row { grid-template-columns: 1fr; gap: 4px; }
+
+  .np-grid { grid-template-columns: 1fr; }
+
+  .tile-grid { grid-template-columns: 1fr; }
+  .tile { border-right: none; border-bottom: var(--tk-rule); }
+  .tile-grid > .tile:last-child { border-bottom: none; }
+  .tile-grid > .tile:nth-last-child(-n+3) { border-bottom: var(--tk-rule); }
+
+  .books { grid-template-columns: repeat(2, 1fr); }
+
+  .tk-footer .tk-foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .tk-status .inner { flex-direction: column; gap: 4px; text-align: center; }
+
+  /* .gcpp-hero masthead */
+  .programme-page .gcpp-hero__grid { padding-left: 18px; padding-right: 18px; }
+  .programme-page .gcpp-hero__h1 { font-size: 40px; }
+  .programme-page .gcpp-hero__lede { font-size: 17px; }
+  .programme-page .gcpp-hero__aside { padding-left: 16px; }
+  .programme-page .gcpp-hero__aside td { font-size: 13.5px; padding: 6px 0; }
+  .programme-page .gcpp-hero__aside td:first-child { padding-right: 14px; }
+}

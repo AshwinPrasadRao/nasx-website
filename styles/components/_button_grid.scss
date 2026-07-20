@@ -1,0 +1,46 @@
+/* Button Grid Styling */
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: clamp(20px, 3vw, 30px);
+}
+
+@media (min-width: 768px) {
+    .button-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .button-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.button-item {
+    background-color: white;
+    border: 1px solid rgba($card-border-color, 0.2);
+    border-radius: 8px;
+    height: 100%;
+    display: flex;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 20px;
+    text-decoration: none;
+    color: black;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-normal);
+    justify-content: space-between;
+
+    &::after {
+        content: "→";
+        margin-left: 5px;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover::after {
+        transform: translateX(3px);
+    }
+}

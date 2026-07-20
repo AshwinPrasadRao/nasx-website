@@ -1,0 +1,11 @@
+---
+pagetitle: "NAS Fellowship — Takshashila Institution"
+page-layout: full
+format:
+  html:
+    include-in-header:
+      text: |
+        <meta http-equiv="refresh" content="0; url=./pages/fellowships/nasx/">
+---
+
+Redirecting to the [Network for Advanced Study Fellowship](./pages/fellowships/nasx/) …

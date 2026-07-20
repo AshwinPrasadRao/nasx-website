@@ -1,0 +1,21 @@
+```{=html}
+<div class="blog-list">
+  <% for (const item of items) { %>
+    <a class="blog-row" href="<%= item.path %>">
+      <h4 class="br-title">
+        <%= item.title %>
+        <% if (item.author) { %>
+          <small><%
+            if (Array.isArray(item.author)) { %><%= item.author.join(", ") %><% } else { %><%= item.author %><% }
+          %></small>
+        <% } %>
+      </h4>
+      <% if (item.date) {
+        const d = new Date(item.date);
+      %>
+        <span class="br-date"><%= d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase() %></span>
+      <% } %>
+    </a>
+  <% } %>
+</div>
+```

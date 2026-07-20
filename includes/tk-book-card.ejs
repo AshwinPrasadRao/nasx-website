@@ -1,0 +1,24 @@
+```{=html}
+<div class="books">
+  <% for (const item of items) { %>
+    <a class="book" href="<%= item.path %>">
+      <div class="book-cover">
+        <% if (item.date) {
+          const d = new Date(item.date);
+        %>
+          <span class="book-spine-tag"><%= d.getFullYear() %></span>
+        <% } %>
+        <% if (item.image) { %>
+          <img src="<%= item.image %>" alt="<%= item.title %>" />
+        <% } else { %>
+          <div class="book-title-on-cover"><%= item.title %></div>
+        <% } %>
+      </div>
+      <div class="book-meta-title"><%= item.title %></div>
+      <% if (item.publishers && item.publishers.length) { %>
+        <div class="book-meta-sub"><%= item.publishers[0].name %></div>
+      <% } %>
+    </a>
+  <% } %>
+</div>
+```

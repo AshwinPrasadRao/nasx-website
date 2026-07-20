@@ -1,0 +1,40 @@
+/* Newsletter Cards Styling */
+
+.newsletter-content-section {
+    padding: clamp(20px, 2vw, 40px) clamp(10px, 1vw, 20px);
+}
+
+.newsletter-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.newsletter-logo img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-title h6 {
+    color: black;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.newsletter-description {
+    color: black;
+    margin-bottom: 20px;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-normal);
+}
+
+.newsletter-footer {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-normal);
+    font-weight: var(--font-normal);
+    color: $light-paragraph-text;
+}

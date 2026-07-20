@@ -1,0 +1,230 @@
+---
+title: "Network for Advanced Study Fellowship"
+description: "The NAS Fellowship builds serious, sustained scholarship across three tracks — Technology (NAST), China (NASC), and Pakistan (NASP) — with structured mentorship from Takshashila scholars."
+page-layout: full
+toc: false
+anchor-sections: false
+section-divs: false
+include-in-header:
+  - text: |
+      <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
+      <link rel="stylesheet" href="../../../assets/css/research-circle.css">
+---
+
+```{=html}
+<!-- ============ BREADCRUMB ============ -->
+<div class="tk-crumb">
+  <div class="inner"><a href="https://takshashila.org.in/pages/fellowships/">FELLOWSHIPS</a> &nbsp;/&nbsp; <b>NAS FELLOWSHIP</b></div>
+</div>
+```
+
+::: {.programme-page}
+
+<!-- ============ HERO ============ -->
+::: {.gcpp-hero}
+::: {.gcpp-hero__grid}
+::: {.gcpp-hero__lead}
+```{=html}
+<h1 class="gcpp-hero__h1">Network for Advanced Study Fellowship</h1>
+```
+
+::: {.gcpp-hero__lede}
+**2026–2027 Cohort.** The Network for Advanced Study Fellowship, offered by the Takshashila Institution, is designed for those who want to develop serious, sustained work in their field. Fellows work on a research topic of their choice, with structured mentorship from Takshashila scholars and a network of domestic and international subject-matter specialists.
+:::
+:::
+
+::: {.gcpp-hero__aside}
+::: {.eyebrow}
+Overview
+:::
+| | |
+|---|---|
+| **DURATION**        | September 2026 – July 2027 |
+| **FORMAT**          | Hybrid · mostly online, with two in-person workshops |
+| **TIME COMMITMENT** | About 8 hours / week |
+| **FELLOWS**         | Up to 6 per cohort |
+| **PROGRAMME FEE**   | INR 45,000 |
+| **CASH AWARD**      | INR 1,00,000 per track (top performer) |
+:::
+:::
+:::
+
+```{=html}
+<!-- ============ THREE TRACKS ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <span class="eyebrow">The Fellowship</span>
+    <h2 class="gcpp-h2">Three distinct tracks</h2>
+    <div class="research-courses">
+      <a class="research-course" href="nast.qmd">
+        <div class="c-type">NAST</div>
+        <h3>NAS&#8209;Technology Track</h3>
+        <p>High-quality scholarship at the intersection of technology and geopolitics — from AI and semiconductors to space, cyber, and quantum.</p>
+        <span class="c-link">Explore NAST &#8594;</span>
+      </a>
+      <a class="research-course" href="nasc.qmd">
+        <div class="c-type">NASC</div>
+        <h3>NAS&#8209;China Track</h3>
+        <p>Rigorous, original scholarship on China — its political system, economy, foreign policy, military modernisation, and India–China relations.</p>
+        <span class="c-link">Explore NASC &#8594;</span>
+      </a>
+      <a class="research-course" href="nasp.qmd">
+        <div class="c-type">NASP</div>
+        <h3>NAS&#8209;Pakistan Track</h3>
+        <p>Dedicated, sustained scholarship on Pakistan — its military and strategic culture, political economy, federalism, and domestic politics.</p>
+        <span class="c-link">Explore NASP &#8594;</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ WHAT'S IN IT FOR YOU ============ -->
+<div class="gcpp-section alt">
+  <div class="gcpp-container">
+    <span class="eyebrow">What's in this for you</span>
+    <h2 class="gcpp-h2">Mentorship, network, and range</h2>
+    <div class="gcpp-questions">
+      <div class="q-card">
+        <span class="q-num">01 — DEDICATED MENTORSHIP</span>
+        Each fellow is paired with a Takshashila researcher for the year and encouraged to translate their work into multiple formats — the primary research paper alongside policy briefs, op-eds, explainers, podcasts, or data visualisations. The result is a body of work that demonstrates range, not just depth.
+      </div>
+      <div class="q-card">
+        <span class="q-num">02 — EXPERT NETWORK</span>
+        A curated group of domestic and international experts delivers masterclass sessions and engages with the cohort throughout the programme year on relevant topics.
+      </div>
+      <div class="q-card">
+        <span class="q-num">03 — IN-PERSON WORKSHOPS</span>
+        Two in-person workshops in Bengaluru over the year, including guest seminars and peer-review sessions.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DELIVERABLES ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <span class="eyebrow">Deliverables</span>
+    <h2 class="gcpp-h2">What fellows produce</h2>
+    <p class="apply-tag" style="margin-bottom:24px;">The fellowship runs from September 2026 to July 2027. Fellows commit about 8 hours per week on average — for research, attending meetings and seminars, and producing deliverables.</p>
+    <div class="apply-list">
+      <div class="apply-item">
+        <span class="n">D.01</span>
+        <div class="body">
+          <h3>One substantive output</h3>
+          <p>At least one substantive output during the programme year. Accepted outputs include journal papers, monographs, book chapters, and policy papers.</p>
+        </div>
+      </div>
+      <div class="apply-item">
+        <span class="n">D.02</span>
+        <div class="body">
+          <h3>Regular public output</h3>
+          <p>A public output every few weeks in the chosen domain — publishing op-eds, blogs, appearing on podcasts, and the like.</p>
+        </div>
+      </div>
+      <div class="apply-item">
+        <span class="n">D.03</span>
+        <div class="body">
+          <h3>Innovative supplementary work</h3>
+          <p>Fellows are encouraged to work on other innovative outputs to supplement their substantive output — quantitative models, simulations, and trackers or dashboards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ AWARD + WHO SHOULD APPLY ============ -->
+<div class="gcpp-section alt">
+  <div class="gcpp-container">
+    <div class="apply-grid">
+      <div class="apply-lead">
+        <span class="eyebrow">Fellowship award</span>
+        <h2 class="gcpp-h2">INR 1,00,000 per track</h2>
+        <div class="apply-fee">
+          <span class="fee-label">Cash award</span>
+          <span class="fee-amt">₹1,00,000</span>
+          <span class="fee-note">to the top performer in each track, at the conclusion of the fellowship.</span>
+        </div>
+        <span class="apply-tag">The fellowship is open to anyone who would like to publish original and independent work. We look for intellectual seriousness and a genuine commitment to producing sustained scholarship.</span>
+      </div>
+      <div>
+        <span class="eyebrow">Who should apply</span>
+        <div class="apply-list">
+          <div class="apply-item">
+            <span class="n">E.01</span>
+            <div class="body"><h3>Indian national, residing in India</h3></div>
+          </div>
+          <div class="apply-item">
+            <span class="n">E.02</span>
+            <div class="body"><h3>An undergraduate degree in any field</h3></div>
+          </div>
+          <div class="apply-item">
+            <span class="n">E.03</span>
+            <div class="body"><h3>Able to attend virtually — and in person</h3><p>Able to attend seminars and meetings virtually, and to attend the two in-person workshops.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PROGRAMME FEE ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <div class="apply-grid">
+      <div class="apply-lead">
+        <span class="eyebrow">Programme fee</span>
+        <h2 class="gcpp-h2">INR 45,000</h2>
+        <div class="apply-fee">
+          <span class="fee-label">Payable on joining the cohort</span>
+          <span class="fee-amt">₹45,000</span>
+          <span class="fee-note">seats limited to 6 per cohort.</span>
+        </div>
+      </div>
+      <div>
+        <p class="apply-tag" style="margin-bottom:16px;">For the upcoming cohort, we have redesigned the fellowship to nurture a smaller group of researchers committed to producing rigorous, high-quality scholarship over the course of a year. The fee asserts the programme's emphasis on long-term commitment, regular engagement, and the successful completion of an original research project.</p>
+        <p class="apply-tag" style="margin-bottom:16px;">Fellows sign a formal commitment document on joining. All public outputs produced during the fellowship are subject to organisational review before publication.</p>
+        <p class="apply-tag">This is primarily an online fellowship with no requirement for frequent travel. The two in-person workshops will require fellows to travel to either Delhi or Bengaluru; fellows are expected to self-fund their travel and accommodation.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TIMELINE ============ -->
+<div class="gcpp-section dark">
+  <div class="gcpp-container">
+    <div class="dates-grid">
+      <div class="dates-lead">
+        <span class="section-label on-dark">FELLOWSHIP TIMELINE</span>
+        <h2 class="gcpp-h2">September 2026 – July 2027</h2>
+        <p>All dates are tentative and subject to revision.</p>
+      </div>
+      <div class="dates-list">
+        <div class="date-row"><span class="t">01</span><span class="label">Applications open</span><span class="date">To be announced</span></div>
+        <div class="date-row highlight"><span class="t">02</span><span class="label">Fellowship commences</span><span class="date">1 September 2026</span></div>
+        <div class="date-row"><span class="t">03</span><span class="label">First in-person workshop</span><span class="date">November 2026</span></div>
+        <div class="date-row"><span class="t">04</span><span class="label">First draft submission</span><span class="date">December 2026</span></div>
+        <div class="date-row"><span class="t">05</span><span class="label">Second draft submission</span><span class="date">March 2027</span></div>
+        <div class="date-row"><span class="t">06</span><span class="label">Second in-person workshop</span><span class="date">March 2027</span></div>
+        <div class="date-row"><span class="t">07</span><span class="label">Final submission</span><span class="date">June 2027</span></div>
+        <div class="date-row highlight"><span class="t">08</span><span class="label">Awards announced</span><span class="date">July 2027</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CTA ============ -->
+<!-- PLACEHOLDER: replace href="#apply" with the Google Form link once ready. -->
+<div class="gcpp-section cta-band">
+  <div class="gcpp-container">
+    <div class="cta-row">
+      <div class="cta-text">
+        <h3>Choose your track and apply</h3>
+        <p class="apply-tag">Applications are submitted per track. Explore each track for its domains, specialists, and application details.</p>
+      </div>
+      <a class="btn-primary" href="nast.qmd">Explore the tracks &#8594;</a>
+    </div>
+  </div>
+</div>
+```
+
+:::

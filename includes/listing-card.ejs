@@ -1,0 +1,31 @@
+```{=html}
+<div class="listing-section">
+    <% if (items.length > 0) { %>
+        <div class="listing-grid">
+            <% for (const item of items) { %>
+                <a href="<%= item.path %>" class="listing-card">
+                    <div class="listing-content">
+                        <h2>
+                            <%= item.title %>
+                        </h2>
+                        <% if (item.description) { %>
+                            <p>
+                                <%= item.description %>
+                            </p>
+                        <% } else if (item.subtitle) { %>
+                            <p>
+                                <%= item.subtitle %>
+                            </p>
+                        <% } %>
+                        <span class="listing-link">
+                            <%= item.linkText || "Learn more" %>
+                        </span>
+                    </div>
+                </a>
+            <% } %>
+        </div>
+    <% } else { %>
+        <p>No items found.</p>
+    <% } %>
+</div>
+```

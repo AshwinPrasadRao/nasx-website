@@ -1,0 +1,85 @@
+```{=html}
+<div class="content-outer" id="<%= templateParams.carousel_id %>">
+    <div class="carousel-container">
+        <div class="carousel-content">
+            <% for (const item of items) { %>
+                <a href="<%= item.path %>">
+                    <div class="content-card accent">
+                        <div class="content-card-image">
+                            <img src="<%= item.image %>" alt="<%= item.name %>" />
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+    </div>
+
+    <div class="carousel-nav-container">
+        <button class="content-nav-btn prev-btn" aria-label="Previous publications">
+            <span aria-hidden="true">&lt;</span>
+        </button>
+
+        <button class="content-nav-btn next-btn" aria-label="Next publications">
+            <span aria-hidden="true">&gt;</span>
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const carouselId = "<%= templateParams.carousel_id %>";
+        const carouselContainer = document.getElementById(carouselId);
+
+        if (!carouselContainer) {
+            console.error("Carousel container not found:", carouselId);
+            return;
+        }
+        const carousel = carouselContainer.querySelector('.carousel-content');
+        const prevBtn = carouselContainer.querySelector('.prev-btn');
+        const nextBtn = carouselContainer.querySelector('.next-btn');
+
+        // Set initial button state
+        updateButtonState();
+
+        // Determine scroll amount based on screen size
+        function getScrollAmount() {
+            // On mobile, scroll full width
+            if (window.innerWidth < 768) {
+                return carousel.offsetWidth;
+            }
+            // On tablet, scroll half width
+            else if (window.innerWidth < 1200) {
+                return carousel.offsetWidth / 2;
+            }
+            // On desktop, scroll one third width
+            else {
+                return carousel.offsetWidth / 3;
+            }
+        }
+
+        // Handle button clicks
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+
+        // Update button state on scroll
+        carousel.addEventListener('scroll', updateButtonState);
+        window.addEventListener('resize', updateButtonState);
+
+        function updateButtonState() {
+            const isAtStart = carousel.scrollLeft <= 10;
+            const isAtEnd = carousel.scrollWidth - carousel.clientWidth - carousel.scrollLeft <= 10;
+
+            prevBtn.disabled = isAtStart;
+            prevBtn.style.opacity = isAtStart ? '0.5' : '1';
+
+            nextBtn.disabled = isAtEnd;
+            nextBtn.style.opacity = isAtEnd ? '0.5' : '1';
+        }
+    });
+</script>
+```

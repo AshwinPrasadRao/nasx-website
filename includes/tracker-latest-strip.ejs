@@ -1,0 +1,24 @@
+```{=html}
+<%
+  // tracker-latest-strip.ejs
+  // Renders a compact horizontal strip of the most-recent item per content type.
+  // Each listing using this template passes a `item_type` template-param and
+  // max-items: 1, so `items` has at most one entry.
+  //
+  // Supported item_type values: "Publication", "Newsletter", "Podcast", "Blog"
+%>
+<% if (items && items.length > 0) { %>
+<%   var item = items[0]; %>
+<%   var type  = (templateParams && templateParams.item_type) || ''; %>
+<%   var href  = item.path ? ('/' + item.path) : (item.url || item.link || '#'); %>
+<%   var title = item.title || ''; %>
+<%   var date  = item.date  ? new Date(item.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : ''; %>
+<%   var author = Array.isArray(item.author) ? item.author.join(', ') : (item.author || ''); %>
+<div class="latest-strip-item latest-strip-item--<%= type.toLowerCase() %>">
+  <span class="latest-strip-type"><%= type %></span>
+  <a href="<%= href %>" class="latest-strip-title" <%= item.path ? '' : 'target="_blank" rel="noopener"' %>><%= title %></a>
+  <% if (author) { %><span class="latest-strip-author"><%= author %></span><% } %>
+  <% if (date)   { %><span class="latest-strip-date"><%= date %></span><% } %>
+</div>
+<% } %>
+```

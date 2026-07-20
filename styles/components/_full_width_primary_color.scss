@@ -1,0 +1,14 @@
+/* Full Width Primary Color Styling */
+
+.full-width-primary-color-wrapper {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background-color: $primary-color;
+}
+
+.full-width-primary-color-section {
+    color: white !important;
+    padding: clamp(20px, 8vw, 40px) 0;
+    width: 100%;
+}

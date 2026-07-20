@@ -1,0 +1,141 @@
+```{=html}
+<div class="bulletin-listing">
+<% if (items.length > 0) { %>
+  <%
+    const latest   = items[0];
+    const MAX_BTNS = 10;
+
+    // Strip "| Day N of Operation ..." (or — / –) from bulletin titles at render time.
+    function cleanTitle(title) {
+      return (title || '').replace(/\s*[|–—]\s*Day\s+\d+\s+of\s+Operation\b.*/i, '').trim();
+    }
+
+    // Extract plain-text from <li> elements in a rendered HTML body.
+    function extractLiText(html, max) {
+      var out = [], re = /<li[^>]*>([\s\S]*?)<\/li>/gi, m;
+      while ((m = re.exec(html || '')) !== null && out.length < max) {
+        var t = m[1]
+          .replace(/<strong>([\s\S]*?)<\/strong>/gi, '$1')
+          .replace(/<em>([\s\S]*?)<\/em>/gi, '$1')
+          .replace(/<a[^>]*>([\s\S]*?)<\/a>/gi, '$1')
+          .replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+        if (t.length > 20) out.push(t);
+      }
+      return out;
+    }
+
+    // Return a display description for a bulletin item.
+    // Uses frontmatter description when present; falls back to body bullet points.
+    function getDisplay(item) {
+      var desc = (item.description || '').trim();
+      if (desc) return { desc: desc };
+      var bullets = extractLiText(item.body, 6);
+      if (bullets.length) desc = bullets.join('. ') + '.';
+      return { desc: desc };
+    }
+
+    const latestDisplay = getDisplay(latest);
+  %>
+
+  <!-- Day-selector navigation (only shown when there are multiple bulletins) -->
+  <% if (items.length > 1) { %>
+  <div class="bulletin-day-nav" id="bulletin-day-nav">
+
+    <!-- Up to MAX_BTNS most-recent dates as buttons -->
+    <% items.forEach(function(item, i) { %>
+    <% if (i < MAX_BTNS) { %>
+    <button class="bulletin-day-btn<%= i === 0 ? ' active' : '' %>"
+            onclick="bulletinGoTo(<%= i %>)">
+      <span class="bulletin-day-wd"><%= new Date(item.date).toLocaleDateString('en-IN', { weekday: 'short' }) %></span>
+      <span class="bulletin-day-dt"><%= new Date(item.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }) %></span>
+    </button>
+    <% } %>
+    <% }); %>
+
+    <!-- Dropdown for dates beyond MAX_BTNS -->
+    <% if (items.length > MAX_BTNS) { %>
+    <select class="bulletin-day-select" id="bulletin-day-select"
+            onchange="bulletinSelectFromDropdown(this)">
+      <option value="" disabled selected>Older…</option>
+      <% items.forEach(function(item, i) { %>
+      <% if (i >= MAX_BTNS) { %>
+      <option value="<%= i %>">
+        <%= new Date(item.date).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }) %>
+      </option>
+      <% } %>
+      <% }); %>
+    </select>
+    <% } %>
+
+  </div>
+  <% } %>
+
+  <!-- Bulletin panels: only the selected one is shown at a time -->
+  <div class="bulletin-panels">
+      <% items.forEach(function(item, i) { %>
+      <% var display = (i === 0) ? latestDisplay : getDisplay(item); %>
+      <div class="bulletin-panel" data-bulletin-idx="<%= i %>" style="<%= i === 0 ? '' : 'display:none;' %>">
+
+        <div class="bulletin-card-current">
+          <div class="bulletin-card-meta">
+            <span class="bulletin-date"><%= new Date(item.date).toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+            <% if (i === 0) { %><span class="bulletin-badge">Latest Bulletin</span><% } %>
+          </div>
+
+          <h2 class="bulletin-card-title">
+            <a href="/<%= item.path %>"><%= cleanTitle(item.title) %></a>
+          </h2>
+
+          <% if (display.desc) { %>
+            <p class="bulletin-card-description"><%= display.desc %></p>
+          <% } %>
+
+          <a href="/<%= item.path %>" class="bulletin-read-btn">Read Full Bulletin →</a>
+        </div>
+
+      </div>
+      <% }); %>
+  </div>
+
+<% } else { %>
+  <p class="bulletin-empty">No bulletins available yet. Check back soon.</p>
+<% } %>
+</div>
+
+<script>
+(function () {
+  function showBulletin(idx) {
+    // Show the selected panel, hide all others
+    document.querySelectorAll('.bulletin-panel').forEach(function (panel) {
+      panel.style.display = (parseInt(panel.dataset.bulletinIdx, 10) === idx) ? '' : 'none';
+    });
+
+    // Sync active state on day buttons
+    document.querySelectorAll('.bulletin-day-btn').forEach(function (btn, i) {
+      btn.classList.toggle('active', i === idx);
+    });
+
+    // Scroll the day nav so the active button is visible
+    var nav = document.getElementById('bulletin-day-nav');
+    var btns = nav && nav.querySelectorAll('.bulletin-day-btn');
+    if (nav && btns && btns[idx]) {
+      var btn = btns[idx];
+      nav.scrollTo({ left: btn.offsetLeft - nav.offsetWidth / 2 + btn.offsetWidth / 2, behavior: 'smooth' });
+    }
+  }
+
+  window.bulletinGoTo = function (idx) {
+    showBulletin(idx);
+    // Reset dropdown to placeholder
+    var sel = document.getElementById('bulletin-day-select');
+    if (sel) sel.value = '';
+  };
+
+  window.bulletinSelectFromDropdown = function (select) {
+    var idx = parseInt(select.value, 10);
+    if (!isNaN(idx)) showBulletin(idx);
+  };
+})();
+
+</script>
+```

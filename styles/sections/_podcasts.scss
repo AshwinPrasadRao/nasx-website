@@ -1,0 +1,16 @@
+/* Podcasts Section Styling */
+
+.podcasts-section-heading {
+    font-size: clamp(18px, 1.8vw, 20px);
+    color: $primary-color;
+    font-weight: 400;
+    margin-bottom: clamp(15px, 2vw, 20px);
+    margin-top: clamp(40px, 6vw, 60px);
+
+    &::before {
+        content: "Podcasts";
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}

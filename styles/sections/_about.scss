@@ -1,0 +1,55 @@
+/* About Section Styling */
+
+.about-us-container {
+    display: flex;
+    gap: clamp(20px, 4vw, 40px);
+
+    @media (max-width: 991px) {
+        flex-direction: column;
+    }
+}
+
+.about-us-content {
+    flex: 1;
+    padding-right: clamp(10px, 2vw, 20px);
+
+    h1 {
+        margin-top: 0 !important;
+        margin-bottom: clamp(16px, 2.4vw, 24px);
+    }
+
+    .highlight {
+        color: $primary-color;
+    }
+
+    p {
+        font-size: var(--font-size-base);
+        line-height: var(--line-height-normal);
+        font-weight: var(--font-normal);
+        margin-bottom: clamp(20px, 3vw, 30px);
+        color: $light-paragraph-text;
+    }
+}
+
+.about-us-image-container {
+    flex: 1;
+    position: relative;
+
+    @media (max-width: 991px) {
+        margin-top: 20px;
+    }
+}
+
+.about-us-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 767px) {
+    .about-us-container {
+        margin-bottom: 40px;
+    }
+}

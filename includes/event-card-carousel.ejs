@@ -1,0 +1,111 @@
+```{=html}
+<div class="horizontal-vertical-container" id="<%= templateParams.carousel_id %>">
+    <div class="horizontal-vertical-content">
+        <% for (const item of items) { %>
+            <a href="<%= item.path %>" class="event-card">
+                <div class="event-content">
+                    <h2 class="event-title"><%= item.title %></h2>
+                    <p class="event-description"><%= item.description %></p>
+                </div>
+                <div class="event-data">
+                    <div class="event-details">
+                        <div class="event-date"><%= item.date %></div>
+                        <% if (item.host) { %>
+                            <div class="event-host"><%= item.host %></div>
+                        <% } %>
+                    </div>
+                    <% if (item.image) { %>
+                        <div class="event-image">
+                            <img src="<%= item.image %>" alt="<%= item.host || 'Event speaker' %>" />
+                        </div>
+                    <% } %>
+                </div>
+            </a>
+        <% } %>
+    </div>
+
+    <div class="carousel-nav-container">
+        <button class="content-nav-btn prev-btn" aria-label="Previous events">
+            <span aria-hidden="true">&lt;</span>
+        </button>
+
+        <button class="content-nav-btn next-btn" aria-label="Next events">
+            <span aria-hidden="true">&gt;</span>
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const carouselId = "<%= templateParams.carousel_id %>";
+        const carouselContainer = document.getElementById(carouselId);
+
+        if (!carouselContainer) {
+            console.error("Carousel container not found:", carouselId);
+            return;
+        }
+
+        const carousel = carouselContainer.querySelector('.horizontal-vertical-content');
+        const prevBtn = carouselContainer.querySelector('.prev-btn');
+        const nextBtn = carouselContainer.querySelector('.next-btn');
+
+        function isCarouselMode() {
+            return window.innerWidth >= 768;
+        }
+
+        function getScrollAmount() {
+            if (window.innerWidth < 1200) {
+                return carousel.offsetWidth / 2;
+            } else {
+                return carousel.offsetWidth / 3;
+            }
+        }
+
+        function updateButtonState() {
+            if (!isCarouselMode()) {
+                if (prevBtn) {
+                    prevBtn.disabled = true;
+                    prevBtn.style.opacity = '0.5';
+                }
+                if (nextBtn) {
+                    nextBtn.disabled = true;
+                    nextBtn.style.opacity = '0.5';
+                }
+                return;
+            }
+
+            const isAtStart = carousel.scrollLeft <= 10;
+            const isAtEnd = carousel.scrollWidth - carousel.clientWidth - carousel.scrollLeft <= 10;
+
+            if (prevBtn) {
+                prevBtn.disabled = isAtStart;
+                prevBtn.style.opacity = isAtStart ? '0.5' : '1';
+            }
+
+            if (nextBtn) {
+                nextBtn.disabled = isAtEnd;
+                nextBtn.style.opacity = isAtEnd ? '0.5' : '1';
+            }
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (!isCarouselMode()) return;
+                carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                if (!isCarouselMode()) return;
+                carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+            });
+        }
+
+        carousel.addEventListener('scroll', updateButtonState);
+        window.addEventListener('resize', updateButtonState);
+
+        updateButtonState();
+    });
+</script>
+```

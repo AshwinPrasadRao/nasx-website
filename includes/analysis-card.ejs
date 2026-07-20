@@ -1,0 +1,35 @@
+```{=html}
+<div class="analysis-listing">
+  <% for (const item of items) { %>
+    <div class="listing-entry" data-categories="<%= item.categories ? item.categories.join(',') : '' %>">
+      <div class="analysis-card">
+        <div class="analysis-card-content">
+          <h2 class="analysis-title"><a href="<%= item.path %>"><%= item.title %></a></h2>
+          <% if (item.description) { %>
+            <div class="analysis-description"><%= item.description %></div>
+          <% } %>
+          <div class="analysis-metadata">
+            <% if (item.date) { %>
+              <span class="analysis-date"><%= new Date(item.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %></span>
+            <% } %>
+            <% if (item.author) { %>
+              <span class="analysis-author">By <%= item.author %></span>
+            <% } %>
+          </div>
+          <% if (item.categories && item.categories.length > 0) { %>
+            <div class="analysis-categories">
+              <% for (const category of item.categories) { %>
+                <span class="analysis-category-tag"><%= category %></span>
+              <% } %>
+            </div>
+          <% } %>
+          <div class="analysis-footer">
+            <a href="<%= item.path %>" class="read-more">Read more <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+```

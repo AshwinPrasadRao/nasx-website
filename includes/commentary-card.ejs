@@ -1,0 +1,74 @@
+```{=html}
+<%
+  // Unified commentary template — handles blogs (QMD), news/opeds (YAML), newsletters (YAML).
+  // Type detection (by path + available author fields):
+  //   Blog:       internal path (not http)
+  //   Oped:       external path + item.authors present
+  //   Newsletter: external path + no item.authors
+  var VISIBLE = 30;
+%>
+<% if (!items || items.length === 0) { %>
+<span class="section-empty-sentinel" style="display:none;"></span>
+<% } else { %>
+
+<div class="commentary-outer-wrap">
+
+<% if (items.length > VISIBLE) { %>
+<div class="commentary-see-all-bar">
+  <button class="commentary-see-all-btn"
+          data-expanded="false"
+          onclick="(function(btn){
+            var wrap = btn.closest('.commentary-outer-wrap');
+            var allItems = wrap.querySelectorAll('.commentary-item');
+            var expanded = btn.getAttribute('data-expanded') === 'true';
+            var LIMIT = <%= VISIBLE %>;
+            allItems.forEach(function(el, i){
+              if (i >= LIMIT) el.classList.toggle('commentary-item-hidden', expanded);
+            });
+            btn.setAttribute('data-expanded', expanded ? 'false' : 'true');
+            btn.querySelector('.csab-label').textContent = expanded ? 'See All Entries' : 'Show Less';
+          })(this)">
+    <span class="csab-label">See All Entries</span>
+  </button>
+</div>
+<% } %>
+
+<div class="commentary-unified-list">
+<% items.forEach(function(item, idx) { %>
+<%
+  var isExternal = item.path && (item.path.indexOf('http://') === 0 || item.path.indexOf('https://') === 0);
+  var href = isExternal ? item.path : (item.path ? '/' + item.path : '#');
+
+  // Determine type
+  var itemType = isExternal
+    ? (item.authors ? 'Oped' : 'Newsletter')
+    : 'Blog';
+
+  // Author: from author (blogs) or authors (opeds)
+  var author = '';
+  if (item.author) {
+    author = Array.isArray(item.author) ? item.author.join(', ') : item.author;
+  } else if (item.authors) {
+    author = Array.isArray(item.authors) ? item.authors.join(', ') : item.authors;
+  }
+  var source = item.source || '';
+
+  var dateStr = item.date
+    ? new Date(item.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' })
+    : '';
+%>
+<div class="commentary-item<%= idx >= VISIBLE ? ' commentary-item-hidden' : '' %>">
+  <a href="<%= href %>"<%= isExternal ? ' target="_blank" rel="noopener"' : '' %> class="commentary-item-title"><%= item.title %></a>
+  <div class="commentary-item-meta">
+    <% if (author) { %><span class="commentary-item-credit"><%= author %></span><% } %>
+    <% if (source && (itemType === 'Oped' || itemType === 'Newsletter')) { %><span class="commentary-item-source"><%= source %></span><% } %>
+    <% if (dateStr) { %><span class="commentary-item-date"><%= dateStr %></span><% } %>
+    <span class="commentary-item-type commentary-item-type--<%= itemType.toLowerCase() %>"><%= itemType %></span>
+  </div>
+</div>
+<% }); %>
+</div>
+
+</div>
+<% } %>
+```

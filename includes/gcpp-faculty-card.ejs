@@ -1,0 +1,21 @@
+```{=html}
+<div class="faculty-grid">
+    <% for (const item of items) { %>
+        <a href="<%= item.path %>" class="f-card">
+            <div class="f-photo">
+                <% if (item.image) { %>
+                    <% if (templateParams && templateParams.path_prefix) { %>
+                        <img src="<%= templateParams.path_prefix %><%= item.image %>" alt="<%= item.title %>" />
+                    <% } else { %>
+                        <img src="<%= item.image %>" alt="<%= item.title %>" />
+                    <% } %>
+                <% } %>
+            </div>
+            <strong><%= item.title %></strong>
+            <% if (item.subtitle) { %>
+                <span class="role"><%= item.subtitle %></span>
+            <% } %>
+        </a>
+    <% } %>
+</div>
+```

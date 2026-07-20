@@ -1,0 +1,170 @@
+---
+title: "NAS-Pakistan Track (NASP)"
+description: "NASP develops original, dedicated, and rigorous scholarship on Pakistan among a new generation of serious Indian researchers — moving beyond assumption and episodic crisis to sustained study."
+page-layout: full
+toc: false
+anchor-sections: false
+section-divs: false
+include-in-header:
+  - text: |
+      <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
+      <link rel="stylesheet" href="../../../assets/css/research-circle.css">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720">
+include-after-body:
+  - text: |
+      <script src="../../../assets/js/nasx-carousel.js?v=20260720" defer></script>
+---
+
+```{=html}
+<!-- ============ BREADCRUMB ============ -->
+<div class="tk-crumb">
+  <div class="inner"><a href="index.qmd">NAS FELLOWSHIP</a> &nbsp;/&nbsp; <b>NASP</b></div>
+</div>
+```
+
+::: {.programme-page}
+
+<!-- ============ HERO ============ -->
+::: {.gcpp-hero}
+::: {.gcpp-hero__grid}
+::: {.gcpp-hero__lead}
+```{=html}
+<h1 class="gcpp-hero__h1">NAS&#8209;Pakistan Track</h1>
+```
+
+::: {.gcpp-hero__lede}
+NASP seeks to develop original, dedicated, and rigorous scholarship on Pakistan among a new generation of serious Indian researchers. This fellowship is particularly relevant because familiarity is often mistaken for understanding: despite Pakistan's centrality to India's strategic mindset, much of the discourse is shaped by assumptions, stereotypes, and episodic crises rather than sustained scholarship.
+:::
+:::
+
+::: {.gcpp-hero__aside}
+::: {.eyebrow}
+Quick facts
+:::
+| | |
+|---|---|
+| **DOMAIN**    | Pakistan studies |
+| **COURSE**    | ECCs + GCPP special sessions |
+| **PROPOSAL**  | 1,000–1,500 words + 500–800-word SoP |
+| **FELLOWS**   | Up to 6 per cohort |
+:::
+:::
+:::
+
+```{=html}
+<!-- ============ RESEARCH DOMAINS ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <span class="eyebrow">Research domains</span>
+    <h2 class="gcpp-h2">Propose your own topic</h2>
+    <p class="apply-tag" style="margin-bottom:24px;">This is a general call for research proposals. Fellows are not required to work on pre-assigned themes. You are encouraged to propose a topic within the broad domain of Pakistan studies, including (but not limited to) the following areas.</p>
+    <ul class="unit-list">
+      <li><span class="u">P.01</span> The Pakistan military, defence policy, and strategic culture</li>
+      <li><span class="u">P.02</span> Pakistan as a geostrategic rentier state and the political economy of security</li>
+      <li><span class="u">P.03</span> Pakistan's defence industry, arms imports and exports, and military modernisation</li>
+      <li><span class="u">P.04</span> Identity formation, federalism, ethnic politics, and sub-national movements</li>
+      <li><span class="u">P.05</span> The military-jihadi complex, militancy, and violent extremism</li>
+      <li><span class="u">P.06</span> Pakistan's maritime strategy, sea power, and the Indian Ocean</li>
+      <li><span class="u">P.07</span> The judiciary, constitutional politics, and institutional evolution</li>
+      <li><span class="u">P.08</span> Pakistan's economy, governance, and domestic political developments</li>
+    </ul>
+    <p class="apply-tag" style="margin-top:24px;">Research proposals may also explore emerging issues such as technology, climate, demographics, information ecosystems, or other themes relevant to understanding contemporary Pakistan.</p>
+    <p class="apply-tag" style="margin-top:16px;">As part of the fellowship, fellows can choose to enrol in any of the <strong>ECCs</strong> running in that period, and will have access to special <strong>GCPP</strong> sessions by guest lecturers on Pakistan studies.</p>
+  </div>
+</div>
+
+<!-- ============ SUBJECT-MATTER SPECIALISTS ============ -->
+<!-- PLACEHOLDER carousel: replace .nc-card contents with real specialists. -->
+<div class="gcpp-section alt">
+  <div class="gcpp-container">
+    <span class="eyebrow">Guidance</span>
+    <h2 class="gcpp-h2">Subject-matter specialists</h2>
+    <div class="nasx-carousel">
+      <div class="nasx-track">
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+      </div>
+      <div class="nc-nav">
+        <button class="nc-btn nc-prev" aria-label="Previous specialists">&#8249;</button>
+        <button class="nc-btn nc-next" aria-label="Next specialists">&#8250;</button>
+      </div>
+    </div>
+    <span class="nasx-placeholder-note">Placeholder — specialist profiles to be confirmed.</span>
+  </div>
+</div>
+
+<!-- ============ APPLICATION PROCESS ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <span class="eyebrow">Application process</span>
+    <h2 class="gcpp-h2">How to apply</h2>
+    <div class="apply-list">
+      <div class="apply-item">
+        <span class="n">A.01</span>
+        <div class="body">
+          <h3>Proposal & Statement of Purpose</h3>
+          <p>Submit a research proposal of 1,000–1,500 words outlining the topic, the research questions, and the approach. Proposals should clearly identify the gap in existing scholarship and explain why the topic merits sustained attention. Applicants will also submit a 500–800-word Statement of Purpose explaining their reasons for pursuing a fellowship in this domain. Only one author per proposal will be accepted.</p>
+        </div>
+      </div>
+      <div class="apply-item">
+        <span class="n">A.02</span>
+        <div class="body">
+          <h3>Interviews</h3>
+          <p>Submitted proposals undergo internal review, and applicants whose proposals are shortlisted will be invited to a virtual interview.</p>
+        </div>
+      </div>
+      <div class="apply-item">
+        <span class="n">A.03</span>
+        <div class="body">
+          <h3>Fellow announcements</h3>
+          <p>Up to 6 selected candidates will be invited to join the 2026–2027 NAS fellowship cohort.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ APPLY CTA ============ -->
+<!-- PLACEHOLDER: replace href="#apply" with the NASP Google Form link once ready. -->
+<div class="gcpp-section cta-band">
+  <div class="gcpp-container">
+    <div class="cta-row">
+      <div class="cta-text">
+        <h3>Apply to NASP</h3>
+        <p class="apply-tag">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
+      </div>
+      <a class="btn-gold" href="#apply">Apply now &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FELLOWS FROM PREVIOUS COHORTS ============ -->
+<!-- PLACEHOLDER carousel. Real fellow profiles/photos to be added once cohort data is confirmed. -->
+<div class="gcpp-section alt">
+  <div class="gcpp-container">
+    <span class="eyebrow">Community</span>
+    <h2 class="gcpp-h2">Fellows from previous cohorts</h2>
+    <div class="nasx-carousel">
+      <div class="nasx-track">
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+      </div>
+      <div class="nc-nav">
+        <button class="nc-btn nc-prev" aria-label="Previous fellows">&#8249;</button>
+        <button class="nc-btn nc-next" aria-label="Next fellows">&#8250;</button>
+      </div>
+    </div>
+    <span class="nasx-placeholder-note">Placeholder — cohort fellow profiles to be added.</span>
+  </div>
+</div>
+```
+
+:::

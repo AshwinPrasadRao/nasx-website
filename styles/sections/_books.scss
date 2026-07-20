@@ -1,0 +1,21 @@
+/* Books Sectin Styling */
+
+.books-container {
+    max-width: 1135px;
+    margin: 0 auto;
+    .section-heading-with-view-all {
+        .section-heading-subtitle {
+            h1 {
+                color: white !important;
+            }
+
+            p {
+                color: white !important;
+            }
+        }
+
+        .view-all {
+            color: white !important;
+        }
+    }
+}
