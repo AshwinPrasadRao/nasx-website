@@ -15,6 +15,37 @@
 /* Fee note / label a touch larger so the definition reads clearly */
 .programme-page .apply-fee .fee-note { font-size: 13.5px; }
 
+/* ─── Track cards: no link underline on the card text ─────────── */
+.programme-page .research-course,
+.programme-page .research-course h3,
+.programme-page .research-course p,
+.programme-page .research-course .c-type,
+.programme-page .research-course .c-link { text-decoration: none; }
+
+/* ─── Apply lists without leading codes (D.01, E.01, A.01 …) ──── */
+.programme-page .apply-list.no-codes .apply-item { grid-template-columns: 1fr; }
+
+/* ─── Timeline: keep milestone + date left-aligned together ───── */
+.programme-page .date-row { grid-template-columns: 40px minmax(200px, 300px) 1fr; }
+.programme-page .date-row .date { text-align: left; }
+@media (max-width: 560px) {
+  .programme-page .date-row { grid-template-columns: 32px 1fr; row-gap: 2px; }
+  .programme-page .date-row .date { grid-column: 2; }
+}
+
+/* ─── Dark (Llama maroon) feature section ─────────────────────── */
+.programme-page .gcpp-section.dark .eyebrow { color: var(--tk-gold); }
+.programme-page .gcpp-section.dark .gcpp-h2 { color: var(--tk-paper); }
+.programme-page .gcpp-section.dark .gcpp-questions {
+  background: transparent;
+  border-color: rgba(255,255,255,0.22);
+}
+.programme-page .gcpp-section.dark .q-card {
+  border-color: rgba(255,255,255,0.22);
+  color: var(--tk-paper);
+}
+.programme-page .gcpp-section.dark .q-num { color: var(--tk-gold); }
+
 /* ─── Carousel (subject-matter specialists · previous cohorts) ─── */
 .programme-page .nasx-carousel {
   position: relative;

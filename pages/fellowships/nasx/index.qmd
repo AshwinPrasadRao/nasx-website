@@ -9,7 +9,7 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720c">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720d">
 ---
 
 ```{=html}
@@ -80,7 +80,7 @@ Overview
 </div>
 
 <!-- ============ WHAT'S IN IT FOR YOU ============ -->
-<div class="gcpp-section alt">
+<div class="gcpp-section dark">
   <div class="gcpp-container">
     <span class="eyebrow">What's in this for you</span>
     <h2 class="gcpp-h2">Mentorship, network, and range</h2>
@@ -107,23 +107,20 @@ Overview
     <span class="eyebrow">Deliverables</span>
     <h2 class="gcpp-h2">What fellows produce</h2>
     <p class="nasx-prose" style="margin-bottom:24px;">The fellowship runs from September 2026 to July 2027. Fellows commit about 8 hours per week on average — for research, attending meetings and seminars, and producing deliverables.</p>
-    <div class="apply-list">
+    <div class="apply-list no-codes">
       <div class="apply-item">
-        <span class="n">D.01</span>
         <div class="body">
           <h3>One substantive output</h3>
           <p>At least one substantive output during the programme year. Accepted outputs include journal papers, monographs, book chapters, and policy papers.</p>
         </div>
       </div>
       <div class="apply-item">
-        <span class="n">D.02</span>
         <div class="body">
           <h3>Regular public output</h3>
           <p>A public output every few weeks in the chosen domain — publishing op-eds, blogs, appearing on podcasts, and the like.</p>
         </div>
       </div>
       <div class="apply-item">
-        <span class="n">D.03</span>
         <div class="body">
           <h3>Innovative supplementary work</h3>
           <p>Fellows are encouraged to work on other innovative outputs to supplement their substantive output — quantitative models, simulations, and trackers or dashboards.</p>
@@ -139,7 +136,6 @@ Overview
     <div class="apply-grid">
       <div class="apply-lead">
         <span class="eyebrow">Fellowship award</span>
-        <h2 class="gcpp-h2">Recognising the best work</h2>
         <div class="apply-fee">
           <span class="fee-label">Cash award · top performer per track</span>
           <span class="fee-amt">₹1,00,000</span>
@@ -148,17 +144,14 @@ Overview
       </div>
       <div>
         <span class="eyebrow">Who should apply</span>
-        <div class="apply-list">
+        <div class="apply-list no-codes">
           <div class="apply-item">
-            <span class="n">E.01</span>
             <div class="body"><h3>Indian national, residing in India</h3></div>
           </div>
           <div class="apply-item">
-            <span class="n">E.02</span>
             <div class="body"><h3>An undergraduate degree in any field</h3></div>
           </div>
           <div class="apply-item">
-            <span class="n">E.03</span>
             <div class="body"><h3>Able to attend virtually — and in person</h3><p>Able to attend seminars and meetings virtually, and to attend the two in-person workshops.</p></div>
           </div>
         </div>
@@ -173,7 +166,6 @@ Overview
     <div class="apply-grid">
       <div class="apply-lead">
         <span class="eyebrow">Programme fee</span>
-        <h2 class="gcpp-h2">A year-long commitment</h2>
         <div class="apply-fee">
           <span class="fee-label">Payable on joining · seats limited to 6 per cohort</span>
           <span class="fee-amt">₹45,000</span>

@@ -9,7 +9,7 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720c">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720d">
 include-after-body:
   - text: |
       <script src="../../../assets/js/nasx-carousel.js?v=20260720" defer></script>
@@ -102,23 +102,20 @@ Quick facts
   <div class="gcpp-container">
     <span class="eyebrow">Application process</span>
     <h2 class="gcpp-h2">How to apply</h2>
-    <div class="apply-list">
+    <div class="apply-list no-codes">
       <div class="apply-item">
-        <span class="n">A.01</span>
         <div class="body">
           <h3>Proposal & Statement of Purpose</h3>
           <p>Submit a research proposal of 1,000–1,500 words outlining the topic, the research questions, and the approach. Proposals should clearly identify the gap in existing scholarship and explain why the topic merits sustained attention. Applicants will also submit a 500–800-word Statement of Purpose explaining their reasons for pursuing a fellowship in this domain. Only one author per proposal will be accepted.</p>
         </div>
       </div>
       <div class="apply-item">
-        <span class="n">A.02</span>
         <div class="body">
           <h3>Interviews</h3>
           <p>Submitted proposals undergo internal review, and applicants whose proposals are shortlisted will be invited to a virtual interview.</p>
         </div>
       </div>
       <div class="apply-item">
-        <span class="n">A.03</span>
         <div class="body">
           <h3>Fellow announcements</h3>
           <p>Up to 6 selected candidates will be invited to join the 2026–2027 NAS fellowship cohort.</p>
