@@ -9,7 +9,7 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720c">
 include-after-body:
   - text: |
       <script src="../../../assets/js/nasx-carousel.js?v=20260720" defer></script>
@@ -57,7 +57,7 @@ Quick facts
   <div class="gcpp-container">
     <span class="eyebrow">Research domains</span>
     <h2 class="gcpp-h2">Propose your own topic</h2>
-    <p class="apply-tag" style="margin-bottom:24px;">This is a general call for research proposals. Fellows are not required to work on pre-assigned themes. You propose a topic within the broad domain of China studies, including the following areas.</p>
+    <p class="nasx-prose" style="margin-bottom:24px;">This is a general call for research proposals. Fellows are not required to work on pre-assigned themes. You propose a topic within the broad domain of China studies, including the following areas.</p>
     <ul class="unit-list">
       <li><span class="u">C.01</span> China's political system, governance, and the Chinese Communist Party</li>
       <li><span class="u">C.02</span> China's economy — growth model, structural challenges, and industrial policy</li>
@@ -70,7 +70,7 @@ Quick facts
       <li><span class="u">C.09</span> China and the Global South</li>
       <li><span class="u">C.10</span> Chinese society, nationalism, and public opinion</li>
     </ul>
-    <p class="apply-tag" style="margin-top:24px;">As part of the fellowship, fellows will have access to the <strong>Open Takshashila Expert Capsule Course (ECC)</strong>. Fellows can choose to enrol in any of the ECCs running during the fellowship period — currently spanning subjects like China, Geospatial Technology, Space Power, and AI.</p>
+    <p class="nasx-prose" style="margin-top:24px;">As part of the fellowship, fellows will have access to the <strong>Open Takshashila Expert Capsule Course (ECC)</strong>. Fellows can choose to enrol in any of the ECCs running during the fellowship period — currently spanning subjects like China, Geospatial Technology, Space Power, and AI.</p>
   </div>
 </div>
 
@@ -136,7 +136,7 @@ Quick facts
     <div class="cta-row">
       <div class="cta-text">
         <h3>Apply to NASC</h3>
-        <p class="apply-tag">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
+        <p class="nasx-prose">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
       </div>
       <a class="btn-gold" href="#apply">Apply now &#8594;</a>
     </div>

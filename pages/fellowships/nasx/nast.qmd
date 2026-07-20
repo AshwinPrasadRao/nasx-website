@@ -9,7 +9,7 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720c">
 include-after-body:
   - text: |
       <script src="../../../assets/js/nasx-carousel.js?v=20260720" defer></script>
@@ -57,7 +57,7 @@ Quick facts
   <div class="gcpp-container">
     <span class="eyebrow">Research domains</span>
     <h2 class="gcpp-h2">Propose your own topic</h2>
-    <p class="apply-tag" style="margin-bottom:24px;">This is a general call for research proposals. Fellows are not required to work on pre-assigned themes. You propose a topic within the broad domain of technology and geopolitics. The domains encompass, but are not limited to, the following areas.</p>
+    <p class="nasx-prose" style="margin-bottom:24px;">This is a general call for research proposals. Fellows are not required to work on pre-assigned themes. You propose a topic within the broad domain of technology and geopolitics. The domains encompass, but are not limited to, the following areas.</p>
     <ul class="unit-list">
       <li><span class="u">T.01</span> Artificial Intelligence and National Security</li>
       <li><span class="u">T.02</span> Semiconductors and Supply Chain Resilience</li>
@@ -70,7 +70,7 @@ Quick facts
       <li><span class="u">T.09</span> Geospatial Technologies</li>
       <li><span class="u">T.10</span> Technology, Geoeconomics, and National Power</li>
     </ul>
-    <p class="apply-tag" style="margin-top:24px;">As part of the fellowship, fellows will undertake Takshashila's flagship <strong>12-week GCPP-TP programme</strong> to update themselves with the geopolitics of the current age of technology.</p>
+    <p class="nasx-prose" style="margin-top:24px;">As part of the fellowship, fellows will undertake Takshashila's flagship <strong>12-week GCPP-TP programme</strong> to update themselves with the geopolitics of the current age of technology.</p>
   </div>
 </div>
 
@@ -136,7 +136,7 @@ Quick facts
     <div class="cta-row">
       <div class="cta-text">
         <h3>Apply to NAST</h3>
-        <p class="apply-tag">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
+        <p class="nasx-prose">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
       </div>
       <a class="btn-gold" href="#apply">Apply now &#8594;</a>
     </div>

@@ -9,7 +9,7 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720c">
 include-after-body:
   - text: |
       <script src="../../../assets/js/nasx-carousel.js?v=20260720" defer></script>
@@ -57,7 +57,7 @@ Quick facts
   <div class="gcpp-container">
     <span class="eyebrow">Research domains</span>
     <h2 class="gcpp-h2">Propose your own topic</h2>
-    <p class="apply-tag" style="margin-bottom:24px;">This is a general call for research proposals. Fellows are not required to work on pre-assigned themes. You are encouraged to propose a topic within the broad domain of Pakistan studies, including (but not limited to) the following areas.</p>
+    <p class="nasx-prose" style="margin-bottom:24px;">This is a general call for research proposals. Fellows are not required to work on pre-assigned themes. You are encouraged to propose a topic within the broad domain of Pakistan studies, including (but not limited to) the following areas.</p>
     <ul class="unit-list">
       <li><span class="u">P.01</span> The Pakistan military, defence policy, and strategic culture</li>
       <li><span class="u">P.02</span> Pakistan as a geostrategic rentier state and the political economy of security</li>
@@ -68,8 +68,8 @@ Quick facts
       <li><span class="u">P.07</span> The judiciary, constitutional politics, and institutional evolution</li>
       <li><span class="u">P.08</span> Pakistan's economy, governance, and domestic political developments</li>
     </ul>
-    <p class="apply-tag" style="margin-top:24px;">Research proposals may also explore emerging issues such as technology, climate, demographics, information ecosystems, or other themes relevant to understanding contemporary Pakistan.</p>
-    <p class="apply-tag" style="margin-top:16px;">As part of the fellowship, fellows can choose to enrol in any of the <strong>ECCs</strong> running in that period, and will have access to special <strong>GCPP</strong> sessions by guest lecturers on Pakistan studies.</p>
+    <p class="nasx-prose" style="margin-top:24px;">Research proposals may also explore emerging issues such as technology, climate, demographics, information ecosystems, or other themes relevant to understanding contemporary Pakistan.</p>
+    <p class="nasx-prose" style="margin-top:16px;">As part of the fellowship, fellows can choose to enrol in any of the <strong>ECCs</strong> running in that period, and will have access to special <strong>GCPP</strong> sessions by guest lecturers on Pakistan studies.</p>
   </div>
 </div>
 
@@ -135,7 +135,7 @@ Quick facts
     <div class="cta-row">
       <div class="cta-text">
         <h3>Apply to NASP</h3>
-        <p class="apply-tag">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
+        <p class="nasx-prose">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
       </div>
       <a class="btn-gold" href="#apply">Apply now &#8594;</a>
     </div>

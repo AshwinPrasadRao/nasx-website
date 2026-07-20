@@ -9,7 +9,7 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720b">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720c">
 ---
 
 ```{=html}
@@ -43,7 +43,7 @@ Overview
 | **DURATION**        | September 2026 – July 2027 |
 | **FORMAT**          | Hybrid · mostly online, with two in-person workshops |
 | **TIME COMMITMENT** | About 8 hours / week |
-| **FELLOWS**         | Up to 6 per cohort |
+| **FELLOWS**         | Up to 6 per track |
 | **PROGRAMME FEE**   | INR 45,000 |
 | **CASH AWARD**      | INR 1,00,000 per track (top performer) |
 :::
@@ -106,7 +106,7 @@ Overview
   <div class="gcpp-container">
     <span class="eyebrow">Deliverables</span>
     <h2 class="gcpp-h2">What fellows produce</h2>
-    <p class="apply-tag" style="margin-bottom:24px;">The fellowship runs from September 2026 to July 2027. Fellows commit about 8 hours per week on average — for research, attending meetings and seminars, and producing deliverables.</p>
+    <p class="nasx-prose" style="margin-bottom:24px;">The fellowship runs from September 2026 to July 2027. Fellows commit about 8 hours per week on average — for research, attending meetings and seminars, and producing deliverables.</p>
     <div class="apply-list">
       <div class="apply-item">
         <span class="n">D.01</span>
@@ -218,7 +218,7 @@ Overview
     <div class="cta-row">
       <div class="cta-text">
         <h3>Choose your track and apply</h3>
-        <p class="apply-tag">Applications are submitted per track. Explore each track for its domains, specialists, and application details.</p>
+        <p class="nasx-prose">Applications are submitted per track. Explore each track for its domains, specialists, and application details.</p>
       </div>
       <a class="btn-primary" href="nast.qmd">Explore the tracks &#8594;</a>
     </div>
