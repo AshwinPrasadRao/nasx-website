@@ -16,7 +16,8 @@ website:
   title: "Takshashila Institution"
   favicon: assets/images/favicon.ico
   # Preview build of the NAS Fellowship (NASx) pages. Not the main site.
-  site-url: https://takshashila.org.in
+  # Hosted on GitHub Pages at a sub-path; keep this in sync with the repo name.
+  site-url: https://ashwinprasadrao.github.io/nasx-website
   search: false
   navbar:
     background: "#620d3c"
