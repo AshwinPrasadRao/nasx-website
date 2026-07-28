@@ -1,6 +1,6 @@
 ---
 title: "NAS-China Track (NASC)"
-description: "NASC develops rigorous, original scholarship on China among a new generation of Indian researchers — at a time when understanding China is increasingly consequential for India."
+description: "NASC develops rigorous, original scholarship on China among a new generation of Indian researchers, at a time when understanding China is increasingly consequential for India."
 page-layout: full
 toc: false
 anchor-sections: false
@@ -33,21 +33,7 @@ include-after-body:
 ```
 
 ::: {.gcpp-hero__lede}
-Turn your interest in understanding China into a well-rounded research portfolio. NASC seeks to develop rigorous, original scholarship on China among a new generation of Indian researchers — at a time when understanding China has never been more consequential for India's foreign policy, economic strategy, and national security.
-:::
-:::
-
-::: {.gcpp-hero__aside}
-::: {.eyebrow}
-Quick facts
-:::
-| | |
-|---|---|
-| **DOMAIN**    | China studies |
-| **COURSE**    | Open Takshashila Expert Capsule Courses |
-| **PROPOSAL**  | 1,000–1,500 words + 500–800-word SoP |
-| **FELLOWS**   | Up to 6 per cohort |
-:::
+Turn your interest in understanding China into a well-rounded research portfolio. NASC seeks to develop rigorous, original scholarship on China among a new generation of Indian researchers, at a time when understanding China has never been more consequential for India's foreign policy, economic strategy, and national security.
 :::
 :::
 
@@ -60,17 +46,17 @@ Quick facts
     <p class="nasx-prose" style="margin-bottom:24px;">This is a general call for research proposals. Fellows are not required to work on pre-assigned themes. You propose a topic within the broad domain of China studies, including the following areas.</p>
     <ul class="unit-list">
       <li><span class="u">C.01</span> China's political system, governance, and the Chinese Communist Party</li>
-      <li><span class="u">C.02</span> China's economy — growth model, structural challenges, and industrial policy</li>
+      <li><span class="u">C.02</span> China's economy, growth model, structural challenges, and industrial policy</li>
       <li><span class="u">C.03</span> China's foreign policy and global ambitions</li>
       <li><span class="u">C.04</span> The Belt and Road Initiative and China's overseas presence</li>
       <li><span class="u">C.05</span> China's military modernisation and the PLA</li>
-      <li><span class="u">C.06</span> India–China relations — border, trade, and strategic competition</li>
-      <li><span class="u">C.07</span> China's technology policy — AI, semiconductors, digital infrastructure, and clean-tech</li>
+      <li><span class="u">C.06</span> India–China relations, border, trade, and strategic competition</li>
+      <li><span class="u">C.07</span> China's technology policy, AI, semiconductors, digital infrastructure, and clean-tech</li>
       <li><span class="u">C.08</span> Taiwan and cross-strait relations</li>
       <li><span class="u">C.09</span> China and the Global South</li>
       <li><span class="u">C.10</span> Chinese society, nationalism, and public opinion</li>
     </ul>
-    <p class="nasx-prose" style="margin-top:24px;">As part of the fellowship, fellows will have access to the <strong>Open Takshashila Expert Capsule Course (ECC)</strong>. Fellows can choose to enrol in any of the ECCs running during the fellowship period — currently spanning subjects like China, Geospatial Technology, Space Power, and AI.</p>
+    <p class="nasx-prose" style="margin-top:24px;">As part of the fellowship, fellows will have access to the <strong>Open Takshashila Expert Capsule Course (ECC)</strong>. Fellows can choose to enrol in any of the ECCs running during the fellowship period, currently spanning subjects like China, Geospatial Technology, Space Power, and AI.</p>
   </div>
 </div>
 
@@ -82,19 +68,19 @@ Quick facts
     <h2 class="gcpp-h2">Subject-matter specialists</h2>
     <div class="nasx-carousel">
       <div class="nasx-track">
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder — a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">China expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
       </div>
       <div class="nc-nav">
         <button class="nc-btn nc-prev" aria-label="Previous specialists">&#8249;</button>
         <button class="nc-btn nc-next" aria-label="Next specialists">&#8250;</button>
       </div>
     </div>
-    <span class="nasx-placeholder-note">Placeholder — specialist profiles to be confirmed.</span>
+    <span class="nasx-placeholder-note">Placeholder, specialist profiles to be confirmed.</span>
   </div>
 </div>
 
@@ -148,19 +134,19 @@ Quick facts
     <h2 class="gcpp-h2">Fellows from previous cohorts</h2>
     <div class="nasx-carousel">
       <div class="nasx-track">
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder — research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
+        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
       </div>
       <div class="nc-nav">
         <button class="nc-btn nc-prev" aria-label="Previous fellows">&#8249;</button>
         <button class="nc-btn nc-next" aria-label="Next fellows">&#8250;</button>
       </div>
     </div>
-    <span class="nasx-placeholder-note">Placeholder — cohort fellow profiles to be added.</span>
+    <span class="nasx-placeholder-note">Placeholder, cohort fellow profiles to be added.</span>
   </div>
 </div>
 ```
