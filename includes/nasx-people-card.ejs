@@ -3,7 +3,14 @@
     <% for (const item of items) { %>
         <% const href = item.path && item.path !== "#" ? item.path : null; %>
         <% const prefix = (templateParams && templateParams.path_prefix) || ""; %>
-        <%- href ? '<a href="' + href + '" class="f-card">' : '<div class="f-card">' %>
+        <%# Tags are written literally inside if-blocks rather than built in an
+            expression: Quarto's EJS escapes <%- output, which would emit the
+            markup as visible &lt;div&gt; text instead of an element. %>
+        <% if (href) { %>
+            <a href="<%= href %>" class="f-card">
+        <% } else { %>
+            <div class="f-card">
+        <% } %>
             <div class="f-photo">
                 <% if (item.image) { %>
                     <img src="<%= prefix %><%= item.image %>" alt="<%= item.title %>" loading="lazy" decoding="async" />
@@ -13,7 +20,11 @@
             <% if (item.subtitle) { %>
                 <span class="role"><%= item.subtitle %></span>
             <% } %>
-        <%- href ? '</a>' : '</div>' %>
+        <% if (href) { %>
+            </a>
+        <% } else { %>
+            </div>
+        <% } %>
     <% } %>
 </div>
 ```
