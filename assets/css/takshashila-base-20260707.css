@@ -514,6 +514,16 @@ html:has(.tk-root) { overflow-x: clip; }
   max-width: 620px;
   text-wrap: pretty;
 }
+/* Pages without a .gcpp-hero__aside (e.g. NASx track pages, which dropped
+   their Quick facts box) leave .gcpp-hero__lead as the grid's only child —
+   revert to a single column instead of the 7fr/5fr split so the hero fills
+   the row and the lede isn't wrapped at aside-column width. */
+.programme-page .gcpp-hero__grid:has(> .gcpp-hero__lead:only-child) {
+  grid-template-columns: 1fr;
+}
+.programme-page .gcpp-hero__grid:has(> .gcpp-hero__lead:only-child) .gcpp-hero__lede {
+  max-width: 760px;
+}
 /* .eyebrow's full definition lives in programme-page.css, scoped the same
    way — but that stylesheet is opt-in per page, while this header renders
    globally (includes/title-block.html). Matched here (incl. margin-bottom/
