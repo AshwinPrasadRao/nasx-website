@@ -3,9 +3,10 @@
     <% for (const item of items) { %>
         <% const href = item.path && item.path !== "#" ? item.path : null; %>
         <% const prefix = (templateParams && templateParams.path_prefix) || ""; %>
-        <%# Tags are written literally inside if-blocks rather than built in an
-            expression: Quarto's EJS escapes <%- output, which would emit the
-            markup as visible &lt;div&gt; text instead of an element. %>
+        <% /* Opening and closing tags are written literally inside if-blocks.
+              Building them in an output expression does not work here: Quarto's
+              EJS escapes expression output, so the markup would appear on the
+              page as visible text instead of becoming an element. */ %>
         <% if (href) { %>
             <a href="<%= href %>" class="f-card">
         <% } else { %>
