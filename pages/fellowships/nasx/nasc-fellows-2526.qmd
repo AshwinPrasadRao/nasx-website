@@ -1,0 +1,122 @@
+---
+title: "NASC Fellows — 2025–26 Cohort"
+description: "The 2025-26 cohort of the NAS-China Track (NASC) fellowship at the Takshashila Institution."
+page-layout: full
+toc: false
+anchor-sections: false
+section-divs: false
+include-in-header:
+  - text: |
+      <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
+      <link rel="stylesheet" href="../../../assets/css/research-circle.css">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260729">
+listing:
+  - id: nasc-fellows-2526
+    template: ../../../includes/nasx-people-card.ejs
+    template-params:
+      path_prefix: ../../../assets/images/nasx/people/nasc-fellows-2526/
+    type: grid
+    sort: false
+    sort-ui: false
+    filter-ui: false
+    categories: false
+    contents:
+      - title: "Rinzin Namgyal"
+        subtitle: "PhD student in Chinese Studies, Department of East Asian Studies, University of Delhi"
+        image: rinzin-namgyal.webp
+        path: "#"
+      - title: "Mandar Ransing"
+        subtitle: "Doctoral Candidate, National Institute of Advanced Studies, Research Analyst, The Geostrata"
+        image: mandar-ransing.webp
+        path: "#"
+      - title: "Nisarg Jani"
+        subtitle: "Doctoral Candidate, Department of International Relations at Pandit Deendayal Energy University"
+        image: nisarg-jani.jpg
+        path: "#"
+      - title: "Aditi Choudhary"
+        subtitle: "Research Analyst, Covering China, the Geostrata"
+        image: aditi-choudhary.webp
+        path: "#"
+      - title: "Pallavi Sareen"
+        subtitle: "International Education Leadership Fellow, International School of Beijing"
+        image: pallavi-sareen.webp
+        path: "#"
+      - title: "Mallika Devi"
+        subtitle: "Independent Analyst"
+        image: mallika-devi.jpg
+        path: "#"
+      - title: "Tanushree Sapkota"
+        subtitle: "Strategy & GTM Professional in AI and Emerging Tech"
+        image: tanushree-sapkota.jpg
+        path: "#"
+      - title: "Anamitra Banerjee"
+        subtitle: "Research Analyst in Strategic Affairs and Foreign Policies, Government of India"
+        image: anamitra-banerjee.webp
+        path: "#"
+      - title: "Ujjawal Upadhyay"
+        subtitle: "Researcher with a focus on China's Hybrid and Non-Kinetic Instruments of Influence in Af-Pak"
+        image: ujjawal-upadhyay.webp
+        path: "#"
+      - title: "Noel Therattil"
+        subtitle: "Co-Founder, Annote LLP"
+        image: noel-therattil.webp
+        path: "#"
+      - title: "Jayshree Borah"
+        subtitle: "Visiting Researcher, Institute of Chinese Studies, New Delhi"
+        image: jayshree-borah.webp
+        path: "#"
+---
+
+```{=html}
+<!-- ============ BREADCRUMB ============ -->
+<div class="tk-crumb">
+  <div class="inner"><a href="index.qmd">NAS FELLOWSHIP</a> &nbsp;/&nbsp; <a href="nasc.qmd">NASC</a> &nbsp;/&nbsp; <b>2025&#8211;26 COHORT</b></div>
+</div>
+```
+
+::: {.programme-page}
+
+<!-- ============ HERO ============ -->
+::: {.gcpp-hero}
+::: {.gcpp-hero__grid}
+::: {.gcpp-hero__lead}
+```{=html}
+<h1 class="gcpp-hero__h1">NASC Fellows</h1>
+```
+
+::: {.gcpp-hero__lede}
+The third cohort of the Network for Advanced Study of China, researching the Chinese party-state, its economy, military and foreign policy.
+:::
+:::
+:::
+:::
+
+```{=html}
+<!-- ============ ROSTER ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <span class="eyebrow">2025&#8211;26 Cohort</span>
+    <h2 class="gcpp-h2">Eleven fellows</h2>
+```
+
+::: {#nasc-fellows-2526}
+:::
+
+```{=html}
+    <span class="roster-note">Roles and affiliations are as recorded at the time of the fellowship.</span>
+  </div>
+</div>
+
+<!-- ============ BACK TO TRACK ============ -->
+<div class="gcpp-section alt">
+  <div class="gcpp-container">
+    <div class="cohort-tiles-grid one-up">
+      <a class="cohort-tile" href="nasc.qmd">
+        <span class="tag">NASC</span><h4>Back to the NASC track</h4><p class="count">Research domains, specialists and how to apply</p><span class="arrow">View track &#8594;</span>
+      </a>
+    </div>
+  </div>
+</div>
+```
+
+:::

@@ -1,0 +1,170 @@
+---
+title: "NASP Fellows — 2024–25 Cohort"
+description: "The 2024-25 cohort of the NAS-Pakistan Track (NASP) fellowship at the Takshashila Institution."
+page-layout: full
+toc: false
+anchor-sections: false
+section-divs: false
+include-in-header:
+  - text: |
+      <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
+      <link rel="stylesheet" href="../../../assets/css/research-circle.css">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260729">
+listing:
+  - id: nasp-fellows-2425
+    template: ../../../includes/nasx-people-card.ejs
+    template-params:
+      path_prefix: ../../../assets/images/nasx/people/nasp-fellows-2425/
+    type: grid
+    sort: false
+    sort-ui: false
+    filter-ui: false
+    categories: false
+    contents:
+      - title: "Yashvi"
+        subtitle: "Holds a Master's in Geopolitics and International Relations from MAHE Manipal"
+        image: yashvi.webp
+        path: "#"
+      - title: "Vanita Shrikant Deshpande"
+        subtitle: "Pursuing a Master’s degree in International Studies from Symbiosis International"
+        image: vanita-shrikant-deshpande.jpg
+        path: "#"
+      - title: "Diksha Singh"
+        subtitle: "Currently enrolled in the Master’s program in International Studies at Symbiosis"
+        image: diksha-singh.webp
+        path: "#"
+      - title: "Malik Moin Abbas"
+        subtitle: "Teaching Fellow at Plaksha University"
+        image: malik-moin-abbas.webp
+        path: "#"
+      - title: "Prashant Singh"
+        subtitle: "Doctoral candidate at JNU’s Centre for South Asian Studies"
+        image: prashant-singh.webp
+        path: "#"
+      - title: "Rishabh Yadav"
+        subtitle: "PhD Scholar at MMAJ Academy of International Studies, Jamia Millia Islamia"
+        image: rishabh-yadav.webp
+        path: "#"
+      - title: "Divyangana Harit"
+        subtitle: "Doctoral Candidate at JNU’s Centre for South Asian Studies"
+        image: divyangana-harit.webp
+        path: "#"
+      - title: "Muneer Ahmed"
+        subtitle: "Senior Researcher at IPCS"
+        image: muneer-ahmed.webp
+        path: "#"
+      - title: "Meha Dixit"
+        subtitle: "Awarded PhD in International Politics from JNU"
+        image: meha-dixit.webp
+        path: "#"
+      - title: "Nachiket Kirit Javali"
+        subtitle: "Undergraduate at Sciences Po Paris and exchange student at the University of St Andrews"
+        image: nachiket-kirit-javali.jpg
+        path: "#"
+      - title: "Porkkodi Ganeshpandian"
+        subtitle: "PhD Candidate at JNU, holds a Master’s in Political Science from Madras Christian"
+        image: porkkodi-ganeshpandian.webp
+        path: "#"
+      - title: "Vasu Sharma"
+        subtitle: "Visiting faculty at KC College, HSNC University Mumbai"
+        image: vasu-sharma.webp
+        path: "#"
+      - title: "Mohit Vashisth"
+        subtitle: "Doctoral Research Fellow at O.P"
+        image: mohit-vashisth.webp
+        path: "#"
+      - title: "Aichuk Debbarma"
+        subtitle: "Specializes in horizontal inequalities and ethnic conflicts"
+        image: aichuk-debbarma.webp
+        path: "#"
+      - title: "Nikita Vats"
+        subtitle: "Doctoral Research Fellow at Jindal School of International Affairs"
+        image: nikita-vats.jpg
+        path: "#"
+      - title: "Raghav Sharma"
+        subtitle: "Associate Professor and Director at O.P"
+        image: raghav-sharma.webp
+        path: "#"
+      - title: "Vaneeta"
+        subtitle: "Postgraduate student at UMISARC & Centre for South Asian Studies at Pondicherry"
+        image: vaneeta.webp
+        path: "#"
+      - title: "Bantirani Patro"
+        subtitle: "Research Associate at Centre for Air Power Studies, New Delhi"
+        image: bantirani-patro.jpg
+        path: "#"
+      - title: "Madhura S Mahesh"
+        subtitle: "Master's student at the University of Bristol and is a research scholar"
+        image: madhura-s-mahesh.webp
+        path: "#"
+      - title: "Bhoomika Sesharaj"
+        subtitle: "Master’s Student at the University of Bristol"
+        image: bhoomika-sesharaj.webp
+        path: "#"
+      - title: "Ratnadeep Chakraborty"
+        subtitle: "Holds dual master’s degrees in International Relations and History"
+        image: ratnadeep-chakraborty.webp
+        path: "#"
+      - title: "Ekampreet"
+        subtitle: "Master’s student in International Studies and Diplomacy at SOAS, University of London"
+        image: ekampreet.webp
+        path: "#"
+      - title: "Priyadarshini Baruah"
+        subtitle: "Research Associate at Centre for Air Power Studies, New Delhi"
+        image: priyadarshini-baruah.webp
+        path: "#"
+---
+
+```{=html}
+<!-- ============ BREADCRUMB ============ -->
+<div class="tk-crumb">
+  <div class="inner"><a href="index.qmd">NAS FELLOWSHIP</a> &nbsp;/&nbsp; <a href="nasp.qmd">NASP</a> &nbsp;/&nbsp; <b>2024&#8211;25 COHORT</b></div>
+</div>
+```
+
+::: {.programme-page}
+
+<!-- ============ HERO ============ -->
+::: {.gcpp-hero}
+::: {.gcpp-hero__grid}
+::: {.gcpp-hero__lead}
+```{=html}
+<h1 class="gcpp-hero__h1">NASP Fellows</h1>
+```
+
+::: {.gcpp-hero__lede}
+The second cohort of the Network for Advanced Study of Pakistan, researching Pakistan's politics, economy, military and foreign policy.
+:::
+:::
+:::
+:::
+
+```{=html}
+<!-- ============ ROSTER ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <span class="eyebrow">2024&#8211;25 Cohort</span>
+    <h2 class="gcpp-h2">Twenty-three fellows</h2>
+```
+
+::: {#nasp-fellows-2425}
+:::
+
+```{=html}
+    <span class="roster-note">Roles and affiliations are as recorded at the time of the fellowship.</span>
+  </div>
+</div>
+
+<!-- ============ BACK TO TRACK ============ -->
+<div class="gcpp-section alt">
+  <div class="gcpp-container">
+    <div class="cohort-tiles-grid one-up">
+      <a class="cohort-tile" href="nasp.qmd">
+        <span class="tag">NASP</span><h4>Back to the NASP track</h4><p class="count">Research domains, specialists and how to apply</p><span class="arrow">View track &#8594;</span>
+      </a>
+    </div>
+  </div>
+</div>
+```
+
+:::

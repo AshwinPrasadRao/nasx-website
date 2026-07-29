@@ -9,10 +9,66 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720d">
-include-after-body:
-  - text: |
-      <script src="../../../assets/js/nasx-carousel.js?v=20260720" defer></script>
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260729">
+listing:
+  - id: nasp-mentors
+    template: ../../../includes/nasx-people-card.ejs
+    template-params:
+      path_prefix: ../../../assets/images/nasx/people/nasp-mentors/
+    type: grid
+    sort: false
+    sort-ui: false
+    filter-ui: false
+    categories: false
+    contents:
+      - title: "Prof. Sumit Ganguly"
+        subtitle: "Senior Fellow, Hoover Institution and Director, Huntington Program on Strengthening US-India Relations"
+        image: prof-sumit-ganguly.webp
+        path: "#"
+      - title: "Dr. Ayesha Siddiqa"
+        subtitle: "Senior Research Fellow, Department of War Studies, Kings College London"
+        image: dr-ayesha-siddiqa.webp
+        path: "#"
+      - title: "Dr. T.C.A Raghavan"
+        subtitle: "Former Indian High Commissioner to Pakistan"
+        image: dr-tca-raghavan.webp
+        path: "#"
+      - title: "Lt General (Dr) Prakash Menon"
+        subtitle: "Director, Strategic Studies Programme, Takshashila Institution"
+        image: lt-general-dr-prakash-menon.webp
+        path: "https://takshashila.org.in/content/team/lt-general-dr-prakash-menon.html"
+      - title: "Dr. Shanthie Mariet D’Souza"
+        subtitle: "Founder & Director, Mantraya Institute of Strategic Studies"
+        image: dr-shanthie-mariet-dsouza.webp
+        path: "#"
+      - title: "Aditya Ramanathan"
+        subtitle: "Chair, Advanced Military Technologies and Outer Space, Takshashila Institution"
+        image: aditya-ramanathan.webp
+        path: "https://takshashila.org.in/content/team/aditya-ramanathan.html"
+      - title: "Dr. Atul Mishra"
+        subtitle: "Head, Department of International Relations and Governance Studies, Shiv Nadar University"
+        image: dr-atul-mishra.webp
+        path: "#"
+      - title: "Pranay Kotasthane"
+        subtitle: "Deputy Director, Takshashila Institution"
+        image: pranay-kotasthane.webp
+        path: "https://takshashila.org.in/content/team/pranay-kotasthane.html"
+      - title: "Dr. Aparna Pande"
+        subtitle: "Research Fellow, Hudson Institute"
+        image: dr-aparna-pande.webp
+        path: "#"
+      - title: "Anand Arni"
+        subtitle: "Distinguished Fellow, Takshashila Institution"
+        image: anand-arni.webp
+        path: "https://takshashila.org.in/content/team/anand-arni.html"
+      - title: "Prof. D Suba Chandran"
+        subtitle: "Dean of the School of Conflict and Security Studies,, National Institute of Advanced Studies (NIAS)"
+        image: prof-d-suba-chandran.webp
+        path: "#"
+      - title: "Manoj Kewalramani"
+        subtitle: "Fellow-China Studies and the Chairperson of the Indo-Pacific Studies Programme, Takshashila Institution"
+        image: manoj-kewalramani.webp
+        path: "https://takshashila.org.in/content/team/manoj-kewalramani.html"
 ---
 
 ```{=html}
@@ -62,26 +118,16 @@ NASP seeks to develop original, dedicated, and rigorous scholarship on Pakistan 
 </div>
 
 <!-- ============ SUBJECT-MATTER SPECIALISTS ============ -->
-<!-- PLACEHOLDER carousel: replace .nc-card contents with real specialists. -->
 <div class="gcpp-section alt">
   <div class="gcpp-container">
     <span class="eyebrow">Guidance</span>
     <h2 class="gcpp-h2">Subject-matter specialists</h2>
-    <div class="nasx-carousel">
-      <div class="nasx-track">
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Pakistan expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-      </div>
-      <div class="nc-nav">
-        <button class="nc-btn nc-prev" aria-label="Previous specialists">&#8249;</button>
-        <button class="nc-btn nc-next" aria-label="Next specialists">&#8250;</button>
-      </div>
-    </div>
-    <span class="nasx-placeholder-note">Placeholder, specialist profiles to be confirmed.</span>
+```
+
+::: {#nasp-mentors}
+:::
+
+```{=html}
   </div>
 </div>
 
@@ -128,26 +174,18 @@ NASP seeks to develop original, dedicated, and rigorous scholarship on Pakistan 
 </div>
 
 <!-- ============ FELLOWS FROM PREVIOUS COHORTS ============ -->
-<!-- PLACEHOLDER carousel. Real fellow profiles/photos to be added once cohort data is confirmed. -->
 <div class="gcpp-section alt">
   <div class="gcpp-container">
     <span class="eyebrow">Community</span>
     <h2 class="gcpp-h2">Fellows from previous cohorts</h2>
-    <div class="nasx-carousel">
-      <div class="nasx-track">
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">Previous cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-      </div>
-      <div class="nc-nav">
-        <button class="nc-btn nc-prev" aria-label="Previous fellows">&#8249;</button>
-        <button class="nc-btn nc-next" aria-label="Next fellows">&#8250;</button>
-      </div>
+    <div class="cohort-tiles-grid two-up">
+      <a class="cohort-tile" href="nasp-fellows-pioneer.qmd">
+        <span class="tag">Pioneer</span><h4>Pioneer cohort</h4><p class="count">15 fellows</p><span class="arrow">View cohort &#8594;</span>
+      </a>
+      <a class="cohort-tile" href="nasp-fellows-2425.qmd">
+        <span class="tag">2024&#8211;25</span><h4>Second cohort</h4><p class="count">23 fellows</p><span class="arrow">View cohort &#8594;</span>
+      </a>
     </div>
-    <span class="nasx-placeholder-note">Placeholder, cohort fellow profiles to be added.</span>
   </div>
 </div>
 ```

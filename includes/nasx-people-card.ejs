@@ -1,0 +1,19 @@
+```{=html}
+<div class="faculty-grid">
+    <% for (const item of items) { %>
+        <% const href = item.path && item.path !== "#" ? item.path : null; %>
+        <% const prefix = (templateParams && templateParams.path_prefix) || ""; %>
+        <%- href ? '<a href="' + href + '" class="f-card">' : '<div class="f-card">' %>
+            <div class="f-photo">
+                <% if (item.image) { %>
+                    <img src="<%= prefix %><%= item.image %>" alt="<%= item.title %>" loading="lazy" decoding="async" />
+                <% } %>
+            </div>
+            <strong><%= item.title %></strong>
+            <% if (item.subtitle) { %>
+                <span class="role"><%= item.subtitle %></span>
+            <% } %>
+        <%- href ? '</a>' : '</div>' %>
+    <% } %>
+</div>
+```

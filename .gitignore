@@ -8,3 +8,5 @@ site_libs/
 .Rproj.user/
 **/*.quarto_ipynb
 /_preview
+# Source pages cached by tools/import-nasx-people.py
+/.cache/

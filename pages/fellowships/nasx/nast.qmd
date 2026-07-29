@@ -9,10 +9,74 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720d">
-include-after-body:
-  - text: |
-      <script src="../../../assets/js/nasx-carousel.js?v=20260720" defer></script>
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260729">
+listing:
+  - id: nast-mentors
+    template: ../../../includes/nasx-people-card.ejs
+    template-params:
+      path_prefix: ../../../assets/images/nasx/people/nast-mentors/
+    type: grid
+    sort: false
+    sort-ui: false
+    filter-ui: false
+    categories: false
+    contents:
+      - title: "Rakesh Sood"
+        subtitle: "Former Ambassador and Permanent Representative to the Conference on Disarmament at the UN in Geneva"
+        image: rakesh-sood.webp
+        path: "#"
+      - title: "Douglas Fuller"
+        subtitle: "Professor in Zhejiang University's School of Management"
+        image: douglas-fuller.webp
+        path: "#"
+      - title: "Kailash Nadh"
+        subtitle: "Chief Technology Officer (CTO) at Zerodha; Founding Director, FOSS United Foundation"
+        image: kailash-nadh.webp
+        path: "#"
+      - title: "Cmde. A P Golaya (Retd.)"
+        subtitle: "Former Member, NSCS; Former in-charge, TDAC, Indian Navy"
+        image: cmde-a-p-golaya-retd.webp
+        path: "#"
+      - title: "Narayan Ramachandran"
+        subtitle: "Co-Founder, The Takshashila Institution; Ex-Country Head of Morgan Stanley India"
+        image: narayan-ramachandran.webp
+        path: "https://takshashila.org.in/content/team/narayan-ramachandran.html"
+      - title: "Manpreet Sethi"
+        subtitle: "Distinguished Fellow and head of the program on nuclear issues at the Centre for Air Power Studies, Delhi"
+        image: manpreet-sethi.jpg
+        path: "#"
+      - title: "Karthik Nachiappan"
+        subtitle: "Research Fellow, Institute of South Asian Studies, National University of Singapore"
+        image: karthik-nachiappan.jpg
+        path: "#"
+      - title: "Anirudh Suri"
+        subtitle: "Managing Partner, India Internet Fund"
+        image: anirudh-suri.webp
+        path: "#"
+      - title: "Prateek Waghre"
+        subtitle: "Former Executive Director, Internet Freedom Foundation (IFF)"
+        image: prateek-waghre.jpg
+        path: "#"
+      - title: "Shambhavi Naik"
+        subtitle: "Head, Advanced Biology Program at the Takshashila Institution"
+        image: shambhavi-naik.webp
+        path: "https://takshashila.org.in/content/team/shambhavi-naik.html"
+      - title: "Gp Capt TH Anand Rao (Retd.)"
+        subtitle: "Director, Indian Space Association (ISpA); Visiting Senior Fellow, CAPS Delhi"
+        image: gp-capt-th-anand-rao-retd.jpg
+        path: "#"
+      - title: "Pranay Kotasthane"
+        subtitle: "Deputy Director, The Takshashila Institution; Chair, High-Tech Geopolitics Program at Takshashila"
+        image: pranay-kotasthane.webp
+        path: "https://takshashila.org.in/content/team/pranay-kotasthane.html"
+      - title: "Y. Nithiyanandam"
+        subtitle: "Professor; Head, Geospatial Program at the Takshashila Institution"
+        image: y-nithiyanandam.webp
+        path: "https://takshashila.org.in/content/team/dr-y-nithiyanandam.html"
+      - title: "Rijesh Panicker"
+        subtitle: "Fellow, High Tech Geopolitics Programme at the Takshashila Institution"
+        image: rijesh-panicker.webp
+        path: "https://takshashila.org.in/content/team/rijesh-panicker.html"
 ---
 
 ```{=html}
@@ -63,26 +127,16 @@ NAST seeks to build high-quality scholarship at the intersection of technology a
 </div>
 
 <!-- ============ SUBJECT-MATTER SPECIALISTS ============ -->
-<!-- PLACEHOLDER carousel: replace .nc-card contents (photo, name, role, bio) with real specialists. -->
 <div class="gcpp-section alt">
   <div class="gcpp-container">
     <span class="eyebrow">Guidance</span>
     <h2 class="gcpp-h2">Subject-matter specialists</h2>
-    <div class="nasx-carousel">
-      <div class="nasx-track">
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Specialist name</strong><span class="nc-role">Domain expert</span><span class="nc-bio">Placeholder, a one-line description of the specialist's focus area.</span></div>
-      </div>
-      <div class="nc-nav">
-        <button class="nc-btn nc-prev" aria-label="Previous specialists">&#8249;</button>
-        <button class="nc-btn nc-next" aria-label="Next specialists">&#8250;</button>
-      </div>
-    </div>
-    <span class="nasx-placeholder-note">Placeholder, specialist profiles to be confirmed.</span>
+```
+
+::: {#nast-mentors}
+:::
+
+```{=html}
   </div>
 </div>
 
@@ -129,34 +183,18 @@ NAST seeks to build high-quality scholarship at the intersection of technology a
 </div>
 
 <!-- ============ FELLOWS FROM PREVIOUS COHORTS ============ -->
-<!-- PLACEHOLDER carousel. Real fellow profiles/photos to be fetched from the cohort pages linked below and dropped into .nc-card. -->
 <div class="gcpp-section alt">
   <div class="gcpp-container">
     <span class="eyebrow">Community</span>
     <h2 class="gcpp-h2">Fellows from previous cohorts</h2>
-    <div class="nasx-carousel">
-      <div class="nasx-track">
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2024–25 Cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2024–25 Cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2024–25 Cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2025–26 Cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2025–26 Cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-        <div class="nc-card"><div class="nc-photo"><span class="nc-initials">TK</span></div><strong>Fellow name</strong><span class="nc-role">2025–26 Cohort</span><span class="nc-bio">Placeholder, research focus of the fellow.</span></div>
-      </div>
-      <div class="nc-nav">
-        <button class="nc-btn nc-prev" aria-label="Previous fellows">&#8249;</button>
-        <button class="nc-btn nc-next" aria-label="Next fellows">&#8250;</button>
-      </div>
-    </div>
-    <div class="cohort-tiles-grid two-up" style="margin-top:24px;">
-      <a class="cohort-tile" href="https://legion.takshashila.org.in/network-for-advanced-study-of-technology-geopolitics-2425" target="_blank" rel="noopener">
-        <span class="tag">2024–25</span><h4>Meet the 24–25 cohort</h4><p class="count">View fellows and their work</p><span class="arrow">View cohort &#8594;</span>
+    <div class="cohort-tiles-grid two-up">
+      <a class="cohort-tile" href="nast-fellows-2425.qmd">
+        <span class="tag">2024&#8211;25</span><h4>Pioneer cohort</h4><p class="count">21 fellows</p><span class="arrow">View cohort &#8594;</span>
       </a>
-      <a class="cohort-tile" href="https://legion.takshashila.org.in/network-for-advanced-study-of-technology-geopolitics" target="_blank" rel="noopener">
-        <span class="tag">2025–26</span><h4>Meet the 25–26 cohort</h4><p class="count">View fellows and their work</p><span class="arrow">View cohort &#8594;</span>
+      <a class="cohort-tile" href="nast-fellows-2526.qmd">
+        <span class="tag">2025&#8211;26</span><h4>Current cohort</h4><p class="count">28 fellows</p><span class="arrow">View cohort &#8594;</span>
       </a>
     </div>
-    <span class="nasx-placeholder-note">Placeholder cards above, individual fellow profiles to be added; cohort links are live.</span>
   </div>
 </div>
 ```

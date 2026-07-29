@@ -1,0 +1,138 @@
+---
+title: "NASP Fellows — Pioneer Cohort"
+description: "The pioneer cohort of the NAS-Pakistan Track (NASP) fellowship at the Takshashila Institution."
+page-layout: full
+toc: false
+anchor-sections: false
+section-divs: false
+include-in-header:
+  - text: |
+      <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
+      <link rel="stylesheet" href="../../../assets/css/research-circle.css">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260729">
+listing:
+  - id: nasp-fellows-pioneer
+    template: ../../../includes/nasx-people-card.ejs
+    template-params:
+      path_prefix: ../../../assets/images/nasx/people/nasp-fellows-pioneer/
+    type: grid
+    sort: false
+    sort-ui: false
+    filter-ui: false
+    categories: false
+    contents:
+      - title: "Aishwarya Verma"
+        subtitle: "MSc in International Relations, London School of Economics and Political Science"
+        image: aishwarya-verma.webp
+        path: "#"
+      - title: "Anakha S Thampy"
+        subtitle: "MA International Studies student, Symbiosis School of International Studies"
+        image: anakha-s-thampy.webp
+        path: "#"
+      - title: "Arpan A Chakravarty"
+        subtitle: "Contributing Editor, The Pulse India & Young Leader (Indo-Pacific), The Pacific Forum, CSIS"
+        image: arpan-a-chakravarty.webp
+        path: "#"
+      - title: "Bashir Ali Abbas"
+        subtitle: "Research Associate, Council for Strategic and Defense Research, New Delhi"
+        image: bashir-ali-abbas.webp
+        path: "#"
+      - title: "Dr. Kaustav Padmapati"
+        subtitle: "Assistant Professor (Senior Scale), School of Modern Media, UPES, Dehradun"
+        image: dr-kaustav-padmapati.webp
+        path: "#"
+      - title: "Manas Priya"
+        subtitle: "Independent researcher & Student, Mahatma Gandhi Kashi Vidyapeeth"
+        image: manas-priya.webp
+        path: "#"
+      - title: "Maria Sony"
+        subtitle: "MA International Studies student, Symbiosis School of International Studies"
+        image: maria-sony.jpg
+        path: "#"
+      - title: "Palak Singh"
+        subtitle: "PhD Student, Department of Political Science, Banaras Hindu University"
+        image: palak-singh.webp
+        path: "#"
+      - title: "Rahul Lad"
+        subtitle: "Senior Research Fellow, Savitribai Phule Pune University, Pune"
+        image: rahul-lad.webp
+        path: "#"
+      - title: "Rohit Kulkarni"
+        subtitle: "Lawyer, Geopolitics Researcher & Student, MA Security & Defence Laws, NALSAR, Hyderabad"
+        image: rohit-kulkarni.jpg
+        path: "#"
+      - title: "Dr. Roshni Sengupta"
+        subtitle: "Associate Professor, School of Modern Media, UPES, Dehradun"
+        image: dr-roshni-sengupta.webp
+        path: "#"
+      - title: "Rushali Saha"
+        subtitle: "Senior Research Associate, Council for Strategic and Defence Research, New Delhi"
+        image: rushali-saha.webp
+        path: "#"
+      - title: "Shourya Gori"
+        subtitle: "M.A International Studies Student, Symbiosis School of International Studies"
+        image: shourya-gori.webp
+        path: "#"
+      - title: "Sneha Sengupta"
+        subtitle: "M.A International Studies Student, Symbiosis School of International Studies"
+        image: sneha-sengupta.webp
+        path: "#"
+      - title: "Subhashish Dutta"
+        subtitle: "Director Architecture, Fidelity Investments, Bangalore"
+        image: subhashish-dutta.webp
+        path: "#"
+---
+
+```{=html}
+<!-- ============ BREADCRUMB ============ -->
+<div class="tk-crumb">
+  <div class="inner"><a href="index.qmd">NAS FELLOWSHIP</a> &nbsp;/&nbsp; <a href="nasp.qmd">NASP</a> &nbsp;/&nbsp; <b>PIONEER COHORT</b></div>
+</div>
+```
+
+::: {.programme-page}
+
+<!-- ============ HERO ============ -->
+::: {.gcpp-hero}
+::: {.gcpp-hero__grid}
+::: {.gcpp-hero__lead}
+```{=html}
+<h1 class="gcpp-hero__h1">NASP Fellows</h1>
+```
+
+::: {.gcpp-hero__lede}
+The pioneer cohort of the Network for Advanced Study of Pakistan, the first fellows to join the programme.
+:::
+:::
+:::
+:::
+
+```{=html}
+<!-- ============ ROSTER ============ -->
+<div class="gcpp-section">
+  <div class="gcpp-container">
+    <span class="eyebrow">Pioneer Cohort</span>
+    <h2 class="gcpp-h2">Fifteen fellows</h2>
+```
+
+::: {#nasp-fellows-pioneer}
+:::
+
+```{=html}
+    <span class="roster-note">Roles and affiliations are as recorded at the time of the fellowship.</span>
+  </div>
+</div>
+
+<!-- ============ BACK TO TRACK ============ -->
+<div class="gcpp-section alt">
+  <div class="gcpp-container">
+    <div class="cohort-tiles-grid one-up">
+      <a class="cohort-tile" href="nasp.qmd">
+        <span class="tag">NASP</span><h4>Back to the NASP track</h4><p class="count">Research domains, specialists and how to apply</p><span class="arrow">View track &#8594;</span>
+      </a>
+    </div>
+  </div>
+</div>
+```
+
+:::

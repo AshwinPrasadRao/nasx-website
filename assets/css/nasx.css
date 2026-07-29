@@ -157,3 +157,48 @@
 @media (max-width: 560px) {
   .programme-page .nc-card { flex-basis: 78%; }
 }
+
+/* ─── People grids (mentors · cohort rosters) ─────────────────────
+   Cards come from includes/nasx-people-card.ejs into .faculty-grid,
+   which programme-page.css already styles 4-up / 2-up / 1-up. Only the
+   NASx-specific bits live here. */
+
+/* Headshots are submitted photos, not framed portraits — many are
+   full-length or tall crops. Bias the square crop upward so faces stay
+   in frame, matching the main site's .team-member-card convention. */
+.programme-page .f-photo img { object-position: 50% 22%; }
+
+/* Cards are links only for people with a profile page; the rest render
+   as plain divs. Keep the affordance on the ones that go somewhere. */
+.programme-page a.f-card { transition: background 0.15s ease; }
+.programme-page a.f-card:hover { background: var(--tk-bg-deep); }
+.programme-page a.f-card:hover strong { color: var(--tk-primary); }
+
+/* Quarto wraps listing output in its own div; keep it from adding
+   spacing between the section heading and the grid. */
+.programme-page .faculty-grid { margin-top: 24px; }
+.programme-page .gcpp-container > div[id] > .faculty-grid:first-child { margin-top: 0; }
+
+/* Subheading between two people grids in one section (NASC runs programme
+   leadership above mentors). */
+.programme-page .faculty-subhead {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tk-ink-50);
+  margin: 32px 0 0;
+  padding-bottom: 10px;
+  border-bottom: var(--tk-rule);
+}
+.programme-page .faculty-subhead + p,
+.programme-page .gcpp-container > .faculty-subhead:first-of-type { margin-top: 24px; }
+
+/* Cohort roster pages: a short caption under the grid. */
+.programme-page .roster-note {
+  display: block;
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--tk-ink-50);
+}
