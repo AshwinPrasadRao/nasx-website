@@ -36,6 +36,8 @@ include-after-body:
 NAST seeks to build high-quality scholarship at the intersection of technology and geopolitics, an area increasingly central to questions of national power, economic strategy, and foreign policy, yet under-studied in Indian academia and policy research.
 :::
 :::
+:::
+:::
 
 ```{=html}
 <!-- ============ RESEARCH DOMAINS ============ -->

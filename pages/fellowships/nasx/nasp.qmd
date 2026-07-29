@@ -36,6 +36,8 @@ include-after-body:
 NASP seeks to develop original, dedicated, and rigorous scholarship on Pakistan among a new generation of serious Indian researchers. This fellowship is particularly relevant because familiarity is often mistaken for understanding: despite Pakistan's centrality to India's strategic mindset, much of the discourse is shaped by assumptions, stereotypes, and episodic crises rather than sustained scholarship.
 :::
 :::
+:::
+:::
 
 ```{=html}
 <!-- ============ RESEARCH DOMAINS ============ -->

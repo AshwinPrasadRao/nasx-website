@@ -36,6 +36,8 @@ include-after-body:
 Turn your interest in understanding China into a well-rounded research portfolio. NASC seeks to develop rigorous, original scholarship on China among a new generation of Indian researchers, at a time when understanding China has never been more consequential for India's foreign policy, economic strategy, and national security.
 :::
 :::
+:::
+:::
 
 ```{=html}
 <!-- ============ RESEARCH DOMAINS ============ -->
