@@ -176,23 +176,10 @@ Turn your interest in understanding China into a well-rounded research portfolio
         <h3>Apply to NASC</h3>
         <p class="nasx-prose">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
       </div>
-      <a class="btn-gold" href="https://forms.gle/oRpU8fGzai8tw2vx7">Apply now &#8594;</a>
+      <a class="btn-gold" href="https://forms.gle/oRpU8fGzai8tw2vx7" target="_blank" rel="noopener noreferrer">Apply now &#8594;</a>
     </div>
   </div>
 </div>
 
-<!-- ============ FELLOWS FROM PREVIOUS COHORTS ============ -->
-<div class="gcpp-section alt">
-  <div class="gcpp-container">
-    <span class="eyebrow">Community</span>
-    <h2 class="gcpp-h2">Fellows from previous cohorts</h2>
-    <div class="cohort-tiles-grid one-up">
-      <a class="cohort-tile" href="nasc-fellows-2526.qmd">
-        <span class="tag">2025&#8211;26</span><h4>Current cohort</h4><p class="count">11 fellows</p><span class="arrow">View cohort &#8594;</span>
-      </a>
-    </div>
-  </div>
-</div>
-```
 
 :::

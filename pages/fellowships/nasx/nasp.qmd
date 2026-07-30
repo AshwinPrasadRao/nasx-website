@@ -168,26 +168,10 @@ NASP seeks to develop original, dedicated, and rigorous scholarship on Pakistan 
         <h3>Apply to NASP</h3>
         <p class="nasx-prose">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
       </div>
-      <a class="btn-gold" href="https://forms.gle/oRpU8fGzai8tw2vx7">Apply now &#8594;</a>
+      <a class="btn-gold" href="https://forms.gle/oRpU8fGzai8tw2vx7" target="_blank" rel="noopener noreferrer">Apply now &#8594;</a>
     </div>
   </div>
 </div>
 
-<!-- ============ FELLOWS FROM PREVIOUS COHORTS ============ -->
-<div class="gcpp-section alt">
-  <div class="gcpp-container">
-    <span class="eyebrow">Community</span>
-    <h2 class="gcpp-h2">Fellows from previous cohorts</h2>
-    <div class="cohort-tiles-grid two-up">
-      <a class="cohort-tile" href="nasp-fellows-pioneer.qmd">
-        <span class="tag">Pioneer</span><h4>Pioneer cohort</h4><p class="count">15 fellows</p><span class="arrow">View cohort &#8594;</span>
-      </a>
-      <a class="cohort-tile" href="nasp-fellows-2425.qmd">
-        <span class="tag">2024&#8211;25</span><h4>Second cohort</h4><p class="count">23 fellows</p><span class="arrow">View cohort &#8594;</span>
-      </a>
-    </div>
-  </div>
-</div>
-```
 
 :::
