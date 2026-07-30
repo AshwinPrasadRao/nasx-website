@@ -168,7 +168,7 @@ NASP seeks to develop original, dedicated, and rigorous scholarship on Pakistan 
         <h3>Apply to NASP</h3>
         <p class="nasx-prose">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
       </div>
-      <a class="btn-gold" href="https://forms.gle/oRpU8fGzai8tw2vx7">Apply now &#8594;</a>
+      <a class="btn-gold" href="https://forms.gle/oRpU8fGzai8tw2vx7" target="_blank" rel="noopener noreferrer">Apply now &#8594;</a>
     </div>
   </div>
 </div>
