@@ -118,7 +118,7 @@ NAST seeks to build high-quality scholarship at the intersection of technology a
       <li><span class="u">T.09</span> Geospatial Technologies</li>
       <li><span class="u">T.10</span> Technology, Geoeconomics, and National Power</li>
     </ul>
-    <p class="nasx-prose" style="margin-top:24px;">As part of the fellowship, fellows will undertake Takshashila's flagship <strong>12-week GCPP-TP programme</strong> to update themselves with the geopolitics of the current age of technology.</p>
+    <p class="nasx-prose" style="margin-top:24px;">As part of the fellowship, fellows can choose to enrol in any of the ECCs running in that period, and will have access to special GCPP sessions by guest lecturers on Technology Geopolitics.</p>
   </div>
 </div>
 
