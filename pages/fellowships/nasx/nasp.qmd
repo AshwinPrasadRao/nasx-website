@@ -122,12 +122,10 @@ NASP seeks to develop original, dedicated, and rigorous scholarship on Pakistan 
   <div class="gcpp-container">
     <span class="eyebrow">Guidance</span>
     <h2 class="gcpp-h2">Subject-matter specialists</h2>
-```
 
 ::: {#nasp-mentors}
 :::
 
-```{=html}
   </div>
 </div>
 
