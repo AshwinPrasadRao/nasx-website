@@ -29,10 +29,6 @@ listing:
         subtitle: "Professor in Zhejiang University's School of Management"
         image: douglas-fuller.webp
         path: "#"
-      - title: "Kailash Nadh"
-        subtitle: "Chief Technology Officer (CTO) at Zerodha; Founding Director, FOSS United Foundation"
-        image: kailash-nadh.webp
-        path: "#"
       - title: "Cmde. A P Golaya (Retd.)"
         subtitle: "Former Member, NSCS; Former in-charge, TDAC, Indian Navy"
         image: cmde-a-p-golaya-retd.webp
