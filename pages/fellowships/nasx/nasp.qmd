@@ -25,10 +25,6 @@ listing:
         subtitle: "Senior Fellow, Hoover Institution and Director, Huntington Program on Strengthening US-India Relations"
         image: prof-sumit-ganguly.webp
         path: "#"
-      - title: "Dr. Ayesha Siddiqa"
-        subtitle: "Senior Research Fellow, Department of War Studies, Kings College London"
-        image: dr-ayesha-siddiqa.webp
-        path: "#"
       - title: "Dr. T.C.A Raghavan"
         subtitle: "Former Indian High Commissioner to Pakistan"
         image: dr-tca-raghavan.webp
@@ -61,10 +57,6 @@ listing:
         subtitle: "Distinguished Fellow, Takshashila Institution"
         image: anand-arni.webp
         path: "https://takshashila.org.in/content/team/anand-arni.html"
-      - title: "Prof. D Suba Chandran"
-        subtitle: "Dean of the School of Conflict and Security Studies,, National Institute of Advanced Studies (NIAS)"
-        image: prof-d-suba-chandran.webp
-        path: "#"
       - title: "Manoj Kewalramani"
         subtitle: "Fellow-China Studies and the Chairperson of the Indo-Pacific Studies Programme, Takshashila Institution"
         image: manoj-kewalramani.webp
