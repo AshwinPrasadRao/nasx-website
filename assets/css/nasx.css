@@ -179,8 +179,9 @@
 .programme-page .faculty-grid { margin-top: 24px; }
 .programme-page .gcpp-container > div[id] > .faculty-grid:first-child { margin-top: 0; }
 
-/* Subheading between two people grids in one section (NASC runs programme
-   leadership above mentors). */
+/* Subheading between two people grids in one section. No page splits its
+   specialists any more — all three tracks run a single grid — but the rule
+   is kept for the next section that needs one. */
 .programme-page .faculty-subhead {
   font-family: var(--tk-mono);
   font-size: 11px;
@@ -202,3 +203,40 @@
   line-height: 1.6;
   color: var(--tk-ink-50);
 }
+
+/* ─── Deadline ribbon ─────────────────────────────────────────────
+   A full-bleed strip directly under the hero. Padding matches
+   .gcpp-section so the inner container lines up with every section
+   below it. */
+.programme-page .nasx-deadline {
+  background: var(--tk-primary);
+  color: var(--tk-paper);
+  padding: 18px 40px;
+}
+.programme-page .nasx-deadline .gcpp-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 20px;
+}
+.programme-page .nasx-deadline .label {
+  font-family: var(--tk-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--tk-gold);
+}
+.programme-page .nasx-deadline .date {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+@media (max-width: 640px) {
+  .programme-page .nasx-deadline { padding: 16px 20px; }
+  .programme-page .nasx-deadline .gcpp-container { padding: 0; }
+  .programme-page .nasx-deadline .date { font-size: 15px; }
+}
+
+/* The same date restated in the apply CTA. */
+.programme-page .deadline-note { color: var(--tk-ink); }
+.programme-page .deadline-note strong { color: var(--tk-primary); }

@@ -9,7 +9,7 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260720d">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260731">
 ---
 
 ```{=html}
@@ -51,6 +51,14 @@ Overview
 :::
 
 ```{=html}
+<!-- ============ DEADLINE RIBBON ============ -->
+<div class="nasx-deadline">
+  <div class="gcpp-container">
+    <span class="label">Proposal deadline</span>
+    <span class="date">Last date for submission of proposals — 7 September 2026</span>
+  </div>
+</div>
+
 <!-- ============ THREE TRACKS ============ -->
 <div class="gcpp-section">
   <div class="gcpp-container">
@@ -191,13 +199,14 @@ Overview
       </div>
       <div class="dates-list">
         <div class="date-row"><span class="t">01</span><span class="label">Applications open</span><span class="date">1 August 2026</span></div>
-        <div class="date-row highlight"><span class="t">02</span><span class="label">Fellowship commences</span><span class="date">5 October 2026</span></div>
-        <div class="date-row"><span class="t">03</span><span class="label">First in-person workshop</span><span class="date">January 2027</span></div>
-        <div class="date-row"><span class="t">04</span><span class="label">First draft submission</span><span class="date">December 2026</span></div>
-        <div class="date-row"><span class="t">05</span><span class="label">Second draft submission</span><span class="date">April 2027</span></div>
-        <div class="date-row"><span class="t">06</span><span class="label">Second in-person workshop</span><span class="date">March 2027</span></div>
-        <div class="date-row"><span class="t">07</span><span class="label">Final submission</span><span class="date">August 2027</span></div>
-        <div class="date-row highlight"><span class="t">08</span><span class="label">Awards announced</span><span class="date">September 2027</span></div>
+        <div class="date-row highlight"><span class="t">02</span><span class="label">Last date for proposals</span><span class="date">7 September 2026</span></div>
+        <div class="date-row highlight"><span class="t">03</span><span class="label">Fellowship commences</span><span class="date">5 October 2026</span></div>
+        <div class="date-row"><span class="t">04</span><span class="label">First in-person workshop</span><span class="date">January 2027</span></div>
+        <div class="date-row"><span class="t">05</span><span class="label">First draft submission</span><span class="date">December 2026</span></div>
+        <div class="date-row"><span class="t">06</span><span class="label">Second draft submission</span><span class="date">April 2027</span></div>
+        <div class="date-row"><span class="t">07</span><span class="label">Second in-person workshop</span><span class="date">March 2027</span></div>
+        <div class="date-row"><span class="t">08</span><span class="label">Final submission</span><span class="date">August 2027</span></div>
+        <div class="date-row highlight"><span class="t">09</span><span class="label">Awards announced</span><span class="date">September 2027</span></div>
       </div>
     </div>
   </div>
@@ -211,6 +220,7 @@ Overview
       <div class="cta-text">
         <h3>Choose your track and apply</h3>
         <p class="nasx-prose">Applications are submitted per track. Explore each track for its domains, specialists, and application details.</p>
+        <p class="nasx-prose deadline-note">Last date for submission of proposals: <strong>7 September 2026</strong>.</p>
       </div>
       <a class="btn-primary" href="#three-tracks">Explore the tracks &#8594;</a>
     </div>

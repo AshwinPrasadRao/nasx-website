@@ -9,12 +9,14 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260729">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260731">
 listing:
-  - id: nasc-leadership
+  # One grid, as on NAST and NASP. Photos sit in two folders, so the prefix
+  # stops at people/ and each image carries its own folder.
+  - id: nasc-mentors
     template: ../../../includes/nasx-people-card.ejs
     template-params:
-      path_prefix: ../../../assets/images/nasx/people/nasc-leadership/
+      path_prefix: ../../../assets/images/nasx/people/
     type: grid
     sort: false
     sort-ui: false
@@ -23,50 +25,39 @@ listing:
     contents:
       - title: "Dr. Alka Acharya"
         subtitle: "Professor, Jawaharlal Nehru University and Honorary Director, Institute of Chinese Studies, Delhi"
-        image: dr-alka-acharya.webp
+        image: nasc-leadership/dr-alka-acharya.webp
         path: "#"
       - title: "Pranay Kotasthane"
         subtitle: "Deputy Director, Takshashila Institution and Chairperson, Takshashila High-Technology Geopolitics Programme"
-        image: pranay-kotasthane.webp
+        image: nasc-leadership/pranay-kotasthane.webp
         path: "https://takshashila.org.in/content/team/pranay-kotasthane.html"
       - title: "Dr. Jabin Jacob"
         subtitle: "Associate Professor, Department of International Relations and Governance Studies, Shiv Nadar University"
-        image: dr-jabin-jacob.webp
+        image: nasc-leadership/dr-jabin-jacob.webp
         path: "#"
       - title: "Dr. Anton Harder"
         subtitle: "Guest Lecturer (International History), King’s College London"
-        image: dr-anton-harder.webp
+        image: nasc-leadership/dr-anton-harder.webp
         path: "#"
       - title: "Manoj Kewalramani"
         subtitle: "Programme Head, NASC Fellowship and Chairperson, Indo-Pacific Studies Programme, Takshashila Institution"
-        image: manoj-kewalramani.webp
+        image: nasc-leadership/manoj-kewalramani.webp
         path: "https://takshashila.org.in/content/team/manoj-kewalramani.html"
-
-  - id: nasc-mentors
-    template: ../../../includes/nasx-people-card.ejs
-    template-params:
-      path_prefix: ../../../assets/images/nasx/people/nasc-mentors/
-    type: grid
-    sort: false
-    sort-ui: false
-    filter-ui: false
-    categories: false
-    contents:
       - title: "Dr. Pradeep Taneja"
         subtitle: "Senior Lecturer, University of Melbourne"
-        image: dr-pradeep-taneja.webp
+        image: nasc-mentors/dr-pradeep-taneja.webp
         path: "#"
       - title: "Katja Drinhausen"
         subtitle: "Head of Program, Politics and Society, MERICS, Berlin, Germany"
-        image: katja-drinhausen.jpg
+        image: nasc-mentors/katja-drinhausen.jpg
         path: "#"
       - title: "Dr. Devendra Kumar"
         subtitle: "Associate Fellow at the Centre of Excellence for Himalayan Studies, School of Humanities and Social Sciences"
-        image: dr-devendra-kumar.webp
+        image: nasc-mentors/dr-devendra-kumar.webp
         path: "#"
       - title: "Helena Legarda"
         subtitle: "Lead Analyst, Mercator Institute for China Studies (MERICS), Berlin, Germany"
-        image: helena-legarda.jpg
+        image: nasc-mentors/helena-legarda.jpg
         path: "#"
 ---
 
@@ -95,6 +86,14 @@ Turn your interest in understanding China into a well-rounded research portfolio
 :::
 
 ```{=html}
+<!-- ============ DEADLINE RIBBON ============ -->
+<div class="nasx-deadline">
+  <div class="gcpp-container">
+    <span class="label">Proposal deadline</span>
+    <span class="date">Last date for submission of proposals — 7 September 2026</span>
+  </div>
+</div>
+
 <!-- ============ RESEARCH DOMAINS ============ -->
 <div class="gcpp-section">
   <div class="gcpp-container">
@@ -122,14 +121,6 @@ Turn your interest in understanding China into a well-rounded research portfolio
   <div class="gcpp-container">
     <span class="eyebrow">Guidance</span>
     <h2 class="gcpp-h2">Subject-matter specialists</h2>
-    <h3 class="faculty-subhead">Programme leadership</h3>
-```
-
-::: {#nasc-leadership}
-:::
-
-```{=html}
-    <h3 class="faculty-subhead">Mentors</h3>
 ```
 
 ::: {#nasc-mentors}
@@ -168,13 +159,13 @@ Turn your interest in understanding China into a well-rounded research portfolio
 </div>
 
 <!-- ============ APPLY CTA ============ -->
-<!-- PLACEHOLDER: replace href="#apply" with the NASC Google Form link once ready. -->
 <div class="gcpp-section cta-band">
   <div class="gcpp-container">
     <div class="cta-row">
       <div class="cta-text">
         <h3>Apply to NASC</h3>
         <p class="nasx-prose">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
+        <p class="nasx-prose deadline-note">Last date for submission of proposals: <strong>7 September 2026</strong>.</p>
       </div>
       <a class="btn-gold" href="https://forms.gle/oRpU8fGzai8tw2vx7" target="_blank" rel="noopener noreferrer">Apply now &#8594;</a>
     </div>

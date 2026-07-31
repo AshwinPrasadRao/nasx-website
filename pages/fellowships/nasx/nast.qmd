@@ -9,7 +9,7 @@ include-in-header:
   - text: |
       <link rel="stylesheet" href="../../../assets/css/programme-page.css?v=20260720">
       <link rel="stylesheet" href="../../../assets/css/research-circle.css">
-      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260729">
+      <link rel="stylesheet" href="../../../assets/css/nasx.css?v=20260731">
 listing:
   - id: nast-mentors
     template: ../../../includes/nasx-people-card.ejs
@@ -100,6 +100,14 @@ NAST seeks to build high-quality scholarship at the intersection of technology a
 :::
 
 ```{=html}
+<!-- ============ DEADLINE RIBBON ============ -->
+<div class="nasx-deadline">
+  <div class="gcpp-container">
+    <span class="label">Proposal deadline</span>
+    <span class="date">Last date for submission of proposals — 7 September 2026</span>
+  </div>
+</div>
+
 <!-- ============ RESEARCH DOMAINS ============ -->
 <div class="gcpp-section">
   <div class="gcpp-container">
@@ -165,13 +173,13 @@ NAST seeks to build high-quality scholarship at the intersection of technology a
 </div>
 
 <!-- ============ APPLY CTA ============ -->
-<!-- PLACEHOLDER: replace href="#apply" with the NAST Google Form link once ready. -->
 <div class="gcpp-section cta-band">
   <div class="gcpp-container">
     <div class="cta-row">
       <div class="cta-text">
         <h3>Apply to NAST</h3>
         <p class="nasx-prose">Submit your proposal and Statement of Purpose for the 2026–2027 cohort.</p>
+        <p class="nasx-prose deadline-note">Last date for submission of proposals: <strong>7 September 2026</strong>.</p>
       </div>
       <a class="btn-gold" href="https://forms.gle/oRpU8fGzai8tw2vx7" target="_blank" rel="noopener noreferrer">Apply now &#8594;</a>
     </div>
