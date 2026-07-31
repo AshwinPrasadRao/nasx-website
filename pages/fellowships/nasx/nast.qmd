@@ -127,10 +127,12 @@ NAST seeks to build high-quality scholarship at the intersection of technology a
   <div class="gcpp-container">
     <span class="eyebrow">Guidance</span>
     <h2 class="gcpp-h2">Subject-matter specialists</h2>
+```
 
 ::: {#nast-mentors}
 :::
 
+```{=html}
   </div>
 </div>
 
@@ -175,6 +177,6 @@ NAST seeks to build high-quality scholarship at the intersection of technology a
     </div>
   </div>
 </div>
-
+```
 
 :::

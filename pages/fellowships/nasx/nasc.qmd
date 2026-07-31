@@ -123,15 +123,19 @@ Turn your interest in understanding China into a well-rounded research portfolio
     <span class="eyebrow">Guidance</span>
     <h2 class="gcpp-h2">Subject-matter specialists</h2>
     <h3 class="faculty-subhead">Programme leadership</h3>
+```
 
 ::: {#nasc-leadership}
 :::
 
+```{=html}
     <h3 class="faculty-subhead">Mentors</h3>
+```
 
 ::: {#nasc-mentors}
 :::
 
+```{=html}
   </div>
 </div>
 
@@ -176,6 +180,6 @@ Turn your interest in understanding China into a well-rounded research portfolio
     </div>
   </div>
 </div>
-
+```
 
 :::
