@@ -165,7 +165,7 @@ NAST seeks to build high-quality scholarship at the intersection of technology a
       <div class="apply-item">
         <div class="body">
           <h3>Fellow announcements</h3>
-          <p>Up to 6 selected candidates will be invited to join the 2026–2027 NAS fellowship cohort.</p>
+          <p>Up to 6 selected candidates per track will be invited to join the 2026–2027 NAS fellowship cohort.</p>
         </div>
       </div>
     </div>
